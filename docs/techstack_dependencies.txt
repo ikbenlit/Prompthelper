@@ -1,0 +1,117 @@
+# Prompt-Helper App - Techstack & Dependencies
+
+## Overzicht
+Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van content op basis van prompts. De gekozen technologieën bieden een schaalbare, snelle en flexibele oplossing.
+
+---
+
+## 1. Techstack
+
+### **Frontend (React & Vite)**
+- **React.js** - Voor een interactieve gebruikersinterface.
+- **Vite.js** - Supersnelle ontwikkelomgeving en build-tool.
+- **Tailwind CSS** - Utility-first CSS-framework voor styling.
+- **React Router** - Routing en paginanavigatie.
+- **Axios** - Voor API-communicatie met de backend.
+- **React Quill** - Rijke teksteditor voor bewerking van prompts.
+- **Fuse.js** - Zoekfunctionaliteit met fuzzy search.
+- **LocalStorage API** - Opslaan van favorieten en voorkeuren in de browser.
+
+### **Backend (WordPress REST API)**
+- **WordPress** - Gebruikt als backend voor prompts, tonen en stijlen.
+- **WP REST API** - Voor het ophalen en bewerken van content.
+- **Advanced Custom Fields (ACF)** - Voor aangepaste gegevensopslag.
+
+### **AI-integratie**
+- **OpenAI API** - Voor het genereren van content op basis van aangepaste prompts.
+- **Axios** - API-verzoeken naar OpenAI.
+
+### **Hosting & Deployment**
+- **Vercel** - Voor de hosting van de React-frontend.
+- **WordPress Hosting** - Backend via je bestaande WordPress-site.
+- **GitHub** - Versiebeheer en samenwerking.
+
+### **Hulpmiddelen en Configuratie**
+- **ESLint + Prettier** - Codekwaliteit en consistentie.
+- **dotenv** - Beheer van omgevingsvariabelen.
+- **React Context API** - Voor state management.
+- **Yarn of NPM** - Voor pakketbeheer.
+
+---
+
+## 2. Dependencies (package.json)
+
+### **Essentiële dependencies**
+
+```json
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "axios": "^1.5.0",
+    "tailwindcss": "^3.4.0",
+    "vite": "^4.5.0",
+    "react-quill": "^2.0.0",
+    "fuse.js": "^6.6.2",
+    "clsx": "^2.0.0",
+    "dotenv": "^16.0.3"
+  }
+}
+```
+
+### **Development dependencies**
+
+```json
+{
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.2.0",
+    "eslint": "^8.41.0",
+    "prettier": "^2.8.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-react": "^7.32.2"
+  }
+}
+```
+
+---
+
+## 3. Installatie en Setup
+
+### **Stap 1: Initialiseren van het project**
+```bash
+npm create vite@latest prompt-helper -- --template react
+cd prompt-helper
+npm install
+npx tailwindcss init
+npm run dev
+```
+
+### **Stap 2: Configuratie van Tailwind CSS**
+```js
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### **Stap 3: Configuratie van .env bestand**
+```
+VITE_API_BASE_URL=https://jouw-wordpress-site.nl/wp-json/wp/v2
+VITE_OPENAI_API_KEY=your-openai-api-key
+```
+
+---
+
+## 4. Waarom deze stack?
+- **Snelheid:** Dankzij Vite is de ontwikkelervaring razendsnel.
+- **Schaalbaarheid:** Makkelijk uitbreidbaar met extra functionaliteit.
+- **Gebruiksvriendelijkheid:** Moderne styling en duidelijke structuur.
+- **Flexibiliteit:** Eenvoudig nieuwe prompts, tonen en stijlen toevoegen via WordPress.
+
+---
+
+

@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "home": "Home",
+    "favorites": "Favorites",
+    "settings": "Settings"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": {
+      "switch": "Switch to Dutch",
+      "current": "English"
+    },
+    "theme": {
+      "light": "Light mode",
+      "dark": "Dark mode"
+    }
+  },
+  "categories": {
+    "all": "All Categories"
+  },
+  "actions": {
+    "favorite": "Add to Favorites",
+    "back": "Back",
+    "backToHome": "Back to Home",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "generate": "Generate Content",
+    "generating": "Generating..."
+  },
+  "search": {
+    "placeholder": "Search prompts...",
+    "noResults": "No prompts found matching your search."
+  },
+  "favorites": {
+    "title": "Favorite Prompts",
+    "empty": {
+      "title": "No favorites yet",
+      "description": "Add prompts to your favorites to see them here."
+    }
+  },
+  "prompt": {
+    "notFound": "Prompt not found",
+    "formula": "Formula",
+    "example": "Example",
+    "moreExamples": "More Examples"
+  },
+  "customize": {
+    "selectTone": "Select Tone",
+    "selectStyle": "Select Style",
+    "noTone": "No specific tone",
+    "noStyle": "No specific style",
+    "apply": "Apply Customization",
+    "result": "Customized Prompt",
+    "sendToLLM": "Generate Content"
+  },
+  "errors": {
+    "generation": "An error occurred while generating content. Please try again."
+  },
+  "generate": {
+    "result": "Generated Content"
+  }
+} 

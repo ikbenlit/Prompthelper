@@ -1,0 +1,62 @@
+{
+  "navigation": {
+    "home": "Home",
+    "favorites": "Favorieten",
+    "settings": "Instellingen"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "language": {
+      "switch": "Wissel naar Engels",
+      "current": "Nederlands"
+    },
+    "theme": {
+      "light": "Lichte modus",
+      "dark": "Donkere modus"
+    }
+  },
+  "categories": {
+    "all": "Alle Categorieën"
+  },
+  "actions": {
+    "favorite": "Toevoegen aan Favorieten",
+    "back": "Terug",
+    "backToHome": "Terug naar Home",
+    "copy": "Kopieer",
+    "copied": "Gekopieerd!",
+    "generate": "Genereer Content",
+    "generating": "Bezig met genereren..."
+  },
+  "search": {
+    "placeholder": "Zoek prompts...",
+    "noResults": "Geen prompts gevonden die aan je zoekopdracht voldoen."
+  },
+  "favorites": {
+    "title": "Favoriete Prompts",
+    "empty": {
+      "title": "Nog geen favorieten",
+      "description": "Voeg prompts toe aan je favorieten om ze hier te zien."
+    }
+  },
+  "prompt": {
+    "notFound": "Prompt niet gevonden",
+    "formula": "Formule",
+    "example": "Voorbeeld",
+    "moreExamples": "Meer Voorbeelden"
+  },
+  "customize": {
+    "selectTone": "Selecteer Toon",
+    "selectStyle": "Selecteer Stijl",
+    "noTone": "Geen specifieke toon",
+    "noStyle": "Geen specifieke stijl",
+    "apply": "Pas Aanpassingen Toe",
+    "result": "Aangepaste Prompt",
+    "sendToLLM": "Genereer Content"
+  },
+  "errors": {
+    "generation": "Er is een fout opgetreden bij het genereren van content. Probeer het opnieuw."
+  },
+  "generate": {
+    "result": "Gegenereerde Content"
+  }
+} 

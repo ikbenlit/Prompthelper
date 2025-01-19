@@ -1,0 +1,110 @@
+[
+    {
+        "Tone": "Beschrijvend",
+        "Description": "Gebruikt levendige taal en zintuiglijke details om beelden te creëren; helpt lezers een scène of concept te visualiseren."
+    },
+    {
+        "Tone": "Objectief",
+        "Description": "Presenteert informatie op een neutrale, onbevooroordeelde manier; vaak gebruikt in journalistiek of verslaggeving."
+    },
+    {
+        "Tone": "Suspenseful",
+        "Description": "Bouwt spanning, anticipatie of onzekerheid op; vaak gebruikt in fictie of verhalend schrijven."
+    },
+    {
+        "Tone": "Educatief",
+        "Description": "Informeert, onderwijst of legt concepten uit; vaak gebruikt in een educatieve of academische context."
+    },
+    {
+        "Tone": "Poëtisch",
+        "Description": "Bevat ritme, figuurlijke taal of andere poëtische middelen; voegt schoonheid of diepte toe aan de tekst."
+    },
+    {
+        "Tone": "Ironisch",
+        "Description": "Geeft betekenis door middel van tegenstrijdigheid, vaak om absurditeit te benadrukken of om een punt te benadrukken."
+    },
+    {
+        "Tone": "Opgewonden",
+        "Description": "Spreekt opwinding, passie of gretigheid uit; betrekt lezers met energieke taal."
+    },
+    {
+        "Tone": "Satirisch",
+        "Description": "Gebruikt humor, ironie of overdrijving om een onderwerp te bekritiseren of te bespotten, vaak om verandering uit te lokken."
+    },
+    {
+        "Tone": "Provocatief",
+        "Description": "Daagt veronderstellingen uit, zet aan tot debat of roept sterke reacties op; vaak gebruikt om discussie te stimuleren."
+    },
+    {
+        "Tone": "Welsprekend",
+        "Description": "Gebruikt elegante, welbespraakte of expressieve taal; vaak gebruikt om complexe ideeën of emoties over te brengen."
+    },
+    {
+        "Tone": "Romantiek",
+        "Description": "Richt zich op emoties, relaties of schoonheid; vaak gebruikt in persoonlijk of expressief schrijven."
+    },
+    {
+        "Tone": "Inspirerend",
+        "Description": "Motiveert, verheft of moedigt lezers aan; vaak gebruikt voor overtuigende of ambitieuze boodschappen."
+    },
+    {
+        "Tone": "Melancholisch",
+        "Description": "Roept gevoelens op van droefheid, introspectie of weemoed; vaak gebruikt in reflectieve of sombere contexten."
+    },
+    {
+        "Tone": "Humoristisch",
+        "Description": "Bevat humor, vermaak of ironie; verlicht de stemming en betrekt lezers op een speelse manier."
+    },
+    {
+        "Tone": "Kritisch",
+        "Description": "Analyseert, evalueert of bekritiseert een onderwerp; vaak gebruikt in recensies of analytisch schrijven."
+    },
+    {
+        "Tone": "Overtuigend",
+        "Description": "Wil lezers overtuigen of beïnvloeden; bevat sterke argumenten of doet een beroep op emoties."
+    },
+    {
+        "Tone": "Formeel",
+        "Description": "Duidt op autoriteit, professionaliteit en ernst; vaak gebruikt in academische of officiële contexten."
+    },
+    {
+        "Tone": "Nostalgisch",
+        "Description": "Roept gevoelens van verlangen of sentimentaliteit op; kan reflecteren op gebeurtenissen, tijdperken of ervaringen uit het verleden."
+    },
+    {
+        "Tone": "Confessioneel",
+        "Description": "Geeft persoonlijke gedachten, gevoelens of ervaringen toe of openbaart ze; bevordert kwetsbaarheid en openheid."
+    },
+    {
+        "Tone": "Informeel",
+        "Description": "Creëert een informele, conversationele sfeer; geschikt voor ontspannen of persoonlijke contexten."
+    },
+    {
+        "Tone": "Sarcastisch",
+        "Description": "Gebruikt ironie, spot of satire; kan worden gebruikt om kritiek te leveren of om een punt te benadrukken door middel van humor."
+    },
+    {
+        "Tone": "Conversationeel",
+        "Description": "Bootst de natuurlijke stroom en het ritme van gesproken taal na; creëert een informele, relateerbare toon."
+    },
+    {
+        "Tone": "Gezaghebbend",
+        "Description": "Geeft deskundigheid, besluitvaardigheid en vertrouwen; geschikt om meningen van experts te presenteren."
+    },
+    {
+        "Tone": "Empathisch",
+        "Description": "Geeft blijk van begrip, medeleven of gevoeligheid; maakt emotioneel contact met lezers."
+    },
+    {
+        "Tone": "Speels",
+        "Description": "Boeit lezers met luchtig, grillig of amusant taalgebruik; creëert een leuke, onderhoudende sfeer."
+    },
+    {
+        "Tone": "Vriendelijk ",
+        "Description": "Roept warmte, benaderbaarheid en kameraadschap op; geschikt voor persoonlijke of sociale situaties."
+    },
+    {
+        "Tone": "Academisch",
+        "Description": "Verwijst naar het gebruik van wetenschappelijke, formele of intellectuele taal en concepten; vaak gebruikt in onderzoeks-, educatieve of professionele contexten."
+    }
+]

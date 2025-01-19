@@ -1,0 +1,36 @@
+1. Doel van de app
+
+De Prompt-Helper app stelt gebruikers in staat om eenvoudig hoogwaardige content te creëren door middel van vooraf gedefinieerde prompts. Door gebruik te maken van toon- en stijlinstellingen kan de gebruiker de content afstemmen op zijn specifieke behoeften, zoals marketing, educatie of persoonlijke ontwikkeling.
+
+2. Usecase
+De app is bedoeld voor:
+Content creators: Bloggers, marketeers en schrijvers die snel content willen genereren.
+Marketingprofessionals: Voor het maken van advertenties en social media posts.
+Educators: Docenten en trainers die educatieve content willen personaliseren.
+Ondernemers: Voor pitches, zakelijke voorstellen en klantcommunicatie.
+
+3. Functionaliteiten
+Zoeken en filteren van prompts:
+Zoekfunctionaliteit op basis van trefwoorden.
+Filters voor categorieën zoals "Marketing", "Educatie", etc.
+
+Personalisatieopties:
+Selecteer een toon van schrijven (formeel, informeel, humoristisch, etc.).
+
+Kies een schrijfstijl (beschrijvend, direct, overtuigend).
+Pas prompts aan naar eigen wens.
+
+Content generatie:
+Genereer content op basis van geselecteerde prompt en instellingen.
+AI-integratie met OpenAI API.
+
+Opslaan en favorieten:
+Gebruikers kunnen favoriete prompts opslaan in localStorage.
+Terugkeren naar eerder gebruikte prompts.
+
+Meertaligheid:
+Ondersteuning voor Nederlands en Engels.
+
+Gebruiksvriendelijke UI:
+Responsief ontwerp met Tailwind CSS.
+Eenvoudige navigatie via React Router.
