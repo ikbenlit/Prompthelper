@@ -25,7 +25,8 @@
     "copy": "Kopieer",
     "copied": "Gekopieerd!",
     "generate": "Genereer Content",
-    "generating": "Bezig met genereren..."
+    "generating": "Bezig met genereren...",
+    "makeContent": "Maak content"
   },
   "search": {
     "placeholder": "Zoek prompts...",
@@ -42,21 +43,24 @@
     "notFound": "Prompt niet gevonden",
     "formula": "Formule",
     "example": "Voorbeeld",
-    "moreExamples": "Meer Voorbeelden"
+    "moreExamples": "Meer Voorbeelden",
+    "editor": "Prompt samenstellen"
   },
   "customize": {
-    "selectTone": "Selecteer Toon",
-    "selectStyle": "Selecteer Stijl",
+    "selectTone": "Selecteer toon",
+    "selectStyle": "Selecteer stijl",
     "noTone": "Geen specifieke toon",
     "noStyle": "Geen specifieke stijl",
-    "apply": "Pas Aanpassingen Toe",
-    "result": "Aangepaste Prompt",
-    "sendToLLM": "Genereer Content"
+    "apply": "Pas aanpassingen toe",
+    "result": "Aangepaste prompt",
+    "sendToLLM": "Genereer content",
+    "promptText": "Jouw prompt",
+    "editPrompt": "Bewerk hier je prompt..."
   },
   "errors": {
     "generation": "Er is een fout opgetreden bij het genereren van content. Probeer het opnieuw."
   },
   "generate": {
-    "result": "Gegenereerde Content"
+    "result": "Gegenereerde content"
   }
 } 

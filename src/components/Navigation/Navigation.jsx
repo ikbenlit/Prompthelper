@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import { useState } from 'react';
+import logo from '../../assets/ikbenlit_logo_banner_small.png';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -18,6 +19,17 @@ export default function Navigation() {
     <nav className="bg-white dark:bg-gray-800 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link to="/">
+              <img
+                src={logo}
+                alt="IkBenLit Logo"
+                className="h-8"
+              />
+            </Link>
+          </div>
+
           {/* Mobile menu button */}
           <div className="flex md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 dark:text-gray-200">
