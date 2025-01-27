@@ -3,7 +3,7 @@ import { PromptProvider } from './context/PromptContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { FavoritesProvider } from './context/FavoritesContext';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
@@ -13,6 +13,46 @@ import NotFound from './pages/NotFound';
 import PromptDetail from './pages/PromptDetail';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
+import { Link, useNavigate } from 'react-router-dom';
+
+function TestAuthButton() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/login');
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
+
+  return (
+    <div className="flex items-center space-x-2">
+      {user ? (
+        <>
+          <span className="text-sm text-gray-600 dark:text-gray-300">
+            {user.email}
+          </span>
+          <button
+            onClick={handleLogout}
+            className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"
+          >
+            Logout
+          </button>
+        </>
+      ) : (
+        <Link
+          to="/login"
+          className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Login
+        </Link>
+      )}
+    </div>
+  );
+}
 
 function App() {
   return (
