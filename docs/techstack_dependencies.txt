@@ -16,10 +16,12 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 - **React Quill** - Rijke teksteditor voor bewerking van prompts.
 - **Fuse.js** - Zoekfunctionaliteit met fuzzy search.
 - **LocalStorage API** - Opslaan van favorieten en voorkeuren in de browser.
+- **Firebase Auth** - Voor gebruikersauthenticatie en autorisatie.
 
-### **Backend (WordPress REST API)**
+### **Backend & Services**
 - **WordPress** - Gebruikt als backend voor prompts, tonen en stijlen.
 - **WP REST API** - Voor het ophalen en bewerken van content.
+- **Firebase** - Voor authenticatie en gebruikersbeheer.
 - **Advanced Custom Fields (ACF)** - Voor aangepaste gegevensopslag.
 
 ### **AI-integratie**
@@ -30,6 +32,7 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 - **Vercel** - Voor de hosting van de React-frontend.
 - **WordPress Hosting** - Backend via je bestaande WordPress-site.
 - **GitHub** - Versiebeheer en samenwerking.
+- **Firebase Hosting** - (Optioneel) Voor hosting van auth-gerelateerde functies.
 
 ### **Hulpmiddelen en Configuratie**
 - **ESLint + Prettier** - Codekwaliteit en consistentie.
@@ -55,7 +58,9 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
     "react-quill": "^2.0.0",
     "fuse.js": "^6.6.2",
     "clsx": "^2.0.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "firebase": "^10.7.0",
+    "@firebase/auth": "^1.5.0"
   }
 }
 ```
@@ -83,6 +88,7 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 npm create vite@latest prompt-helper -- --template react
 cd prompt-helper
 npm install
+npm install firebase @firebase/auth
 npx tailwindcss init
 npm run dev
 ```
@@ -102,6 +108,9 @@ module.exports = {
 ```
 VITE_API_BASE_URL=https://jouw-wordpress-site.nl/wp-json/wp/v2
 VITE_OPENAI_API_KEY=your-openai-api-key
+VITE_FIREBASE_API_KEY=your-firebase-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
+VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
 ```
 
 ---
@@ -111,6 +120,7 @@ VITE_OPENAI_API_KEY=your-openai-api-key
 - **Schaalbaarheid:** Makkelijk uitbreidbaar met extra functionaliteit.
 - **Gebruiksvriendelijkheid:** Moderne styling en duidelijke structuur.
 - **Flexibiliteit:** Eenvoudig nieuwe prompts, tonen en stijlen toevoegen via WordPress.
+- **Veiligheid:** Robuuste authenticatie via Firebase.
 
 ---
 

@@ -7,5 +7,12 @@
     "selectStyle": "Choose an example style",
     "noTone": "No emotion/writing style",
     "noStyle": "No example style"
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Sign in",
+    "error": "Failed to sign in"
   }
 } 
