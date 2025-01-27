@@ -4,7 +4,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
 import clsx from 'clsx';
 import { useState } from 'react';
-import logo from '../../assets/Promptmuse2.png';
+import logo from '../../assets/promptmuse_feather_head.png';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -28,7 +28,7 @@ export default function Navigation() {
               <img 
                 src={logo}
                 alt="PromptMuse Logo"
-                className={`h-10 w-auto transition-opacity hover:opacity-80 ${
+                className={`h-16 w-auto transition-opacity hover:opacity-80 ${
                   darkMode ? 'opacity-90' : ''
                 }`}
               />
