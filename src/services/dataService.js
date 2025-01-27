@@ -7,32 +7,48 @@ import tonesNL from '../data/prompt_tones_nl.json';
 
 // Helper function to normalize tone data
 const normalizeToneData = (tones, isEnglish = true) => {
-  if (isEnglish) {
-    const uniqueTones = Object.entries(tones).map(([tone, description]) => ({
-      Tone: tone,
-      Description: description
-    }));
-    return [...new Map(uniqueTones.map(item => [
-      item.Tone,
-      item
-    ])).values()];
+  if (!Array.isArray(tones)) {
+    console.error('Invalid tones data:', tones);
+    return [];
   }
-  return tones; // Dutch data is already in correct format
+
+  return tones.map(tone => ({
+    Name: tone.Name || tone.Tone,
+    Effect: tone.Effect || tone.Description
+  }));
 };
 
 // Helper function to normalize style data
 const normalizeStyleData = (styles, isEnglish = true) => {
-  // Filter out null entries and ensure unique entries
-  const uniqueStyles = styles.filter(style => style.Name || style.Naam);
-  return [...new Map(uniqueStyles.map(item => [
-    item.Name || item.Naam, 
-    item
-  ])).values()];
+  if (!Array.isArray(styles)) {
+    console.error('Invalid styles data:', styles);
+    return [];
+  }
+
+  return styles.map(style => ({
+    Name: style.Name || style.Naam,
+    Effect: style.Effect,
+    Select: style.Select || style.Selecteren
+  }));
 };
 
 // Helper function to normalize prompt data
-const normalizePromptData = (prompts) => {
-  return prompts.filter(prompt => prompt.Title || prompt.Titel); // Filter out null entries
+const normalizePromptData = (prompts, isEnglish = true) => {
+  if (!Array.isArray(prompts)) {
+    console.error('Invalid prompts data:', prompts);
+    return [];
+  }
+
+  return prompts.filter(prompt => {
+    if (!prompt) return false;
+
+    // Check for required fields based on language
+    if (isEnglish) {
+      return prompt.Title && prompt.Category && prompt.Prompt;
+    } else {
+      return prompt.Titel && prompt.Categorie && prompt.Prompt;
+    }
+  });
 };
 
 export const loadData = (language = 'nl') => {
@@ -40,28 +56,52 @@ export const loadData = (language = 'nl') => {
     const isEnglish = language === 'en';
     
     // Load and normalize the data
-    const prompts = normalizePromptData(isEnglish ? promptsEN : promptsNL);
-    const styles = normalizeStyleData(isEnglish ? stylesEN : stylesNL);
+    const prompts = normalizePromptData(isEnglish ? promptsEN : promptsNL, isEnglish);
+    const styles = normalizeStyleData(isEnglish ? stylesEN : stylesNL, isEnglish);
     const tones = normalizeToneData(isEnglish ? tonesEN : tonesNL, isEnglish);
 
-    return { prompts, styles, tones };
+    // Get categories with the correct language
+    const categories = getUniqueCategories(prompts, language);
+
+    return { prompts, styles, tones, categories };
   } catch (error) {
     console.error('Error loading data:', error);
-    return { prompts: [], styles: [], tones: [] };
+    return { prompts: [], styles: [], tones: [], categories: [] };
   }
 };
 
 // Helper function to filter prompts by category
-export const filterPromptsByCategory = (prompts, category) => {
-  if (!category) return prompts;
-  const categoryField = prompts[0]?.Category ? 'Category' : 'Categorie';
+export const filterPromptsByCategory = (prompts, category, language = 'nl') => {
+  if (!category || !prompts.length) return prompts;
+  const isEnglish = language === 'en';
+  const categoryField = isEnglish ? 'Category' : 'Categorie';
   return prompts.filter(prompt => prompt[categoryField] === category);
 };
 
 // Helper function to get unique categories
-export const getUniqueCategories = (prompts) => {
-  const categoryField = prompts[0]?.Category ? 'Category' : 'Categorie';
-  return [...new Set(prompts.map(prompt => prompt[categoryField]))].filter(Boolean);
+export const getUniqueCategories = (prompts, language = 'nl') => {
+  if (!prompts.length) return [];
+  const isEnglish = language === 'en';
+  const categoryField = isEnglish ? 'Category' : 'Categorie';
+
+  // Get unique categories and sort them
+  const categories = [...new Set(prompts.map(prompt => prompt[categoryField]))].filter(Boolean);
+
+  // Map Dutch categories to English if needed
+  if (isEnglish) {
+    const categoryMap = {
+      'Productivity': 'Productivity',
+      'Writing': 'Writing',
+      'Social': 'Social',
+      'Health': 'Health',
+      'Marketing': 'Marketing',
+      'Entrepreneurship': 'Entrepreneurship',
+      'Entertainment': 'Entertainment'
+    };
+    return categories.map(cat => categoryMap[cat] || cat).sort();
+  }
+
+  return categories.sort();
 };
 
 // Helper function to get favorites

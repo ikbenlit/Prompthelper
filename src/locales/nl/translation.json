@@ -1,0 +1,11 @@
+{
+  "customize": {
+    "tonePrefix": "Schrijf met de volgende emotie/stijl",
+    "stylePrefix": "Gebruik de schrijfstijl van",
+    "promptPrefix": "Opdracht",
+    "selectTone": "Kies een emotie/schrijfstijl",
+    "selectStyle": "Kies een voorbeeldstijl",
+    "noTone": "Geen emotie/schrijfstijl",
+    "noStyle": "Geen voorbeeldstijl"
+  }
+} 

@@ -1,710 +1,592 @@
 [
     {
-        "Favorites":"Yes",
-        "Name":"Academic",
-        "Effect":"Refers to the use of scholarly, formal, or intellectual language and concepts; often used in research, educational, or professional contexts.",
-        "Select":"Tone"
+        "Name": "Academic",
+        "Effect": "Refers to the use of scholarly, formal, or intellectual language and concepts; often used in research, educational, or professional contexts.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Adidas",
-        "Effect":"Athletic performance, innovation, and collaboration.",
-        "Select":"Brand Voices"
+        "Name": "Adidas",
+        "Effect": "Athletic performance, innovation, and collaboration.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Aesthetica",
-        "Effect":"Art, culture, photography",
-        "Select":"Magazines\/Journals"
+        "Name": "Aesthetica",
+        "Effect": "Art, culture, photography",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Airbnb",
-        "Effect":"Belonging, travel experiences, and local connections.",
-        "Select":"Brand Voices"
+        "Name": "Airbnb",
+        "Effect": "Belonging, travel experiences, and local connections.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Amazon",
-        "Effect":"Customer obsession, convenience, and variety.",
-        "Select":"Brand Voices"
+        "Name": "Amazon",
+        "Effect": "Customer obsession, convenience, and variety.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Apple",
-        "Effect":"Minimalist, sleek design, innovation, and user-centric thinking.",
-        "Select":"Brand Voices"
+        "Name": "Apple",
+        "Effect": "Minimalist, sleek design, innovation, and user-centric thinking.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Architectural Digest",
-        "Effect":"Interior design, architecture",
-        "Select":"Magazines\/Journals"
+        "Name": "Architectural Digest",
+        "Effect": "Interior design, architecture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Authoritative",
-        "Effect":"Conveys expertise, decisiveness, and confidence; suitable for presenting expert opinions.",
-        "Select":"Tone"
+        "Name": "Authoritative",
+        "Effect": "Conveys expertise, decisiveness, and confidence; suitable for presenting expert opinions.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Ben & Jerry's",
-        "Effect":"Social activism, unique flavors, and community engagement.",
-        "Select":"Brand Voices"
+        "Name": "Ben & Jerry's",
+        "Effect": "Social activism, unique flavors, and community engagement.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"BMW",
-        "Effect":"Performance, luxury, and German engineering.",
-        "Select":"Brand Voices"
+        "Name": "BMW",
+        "Effect": "Performance, luxury, and German engineering.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Bon App\u00e9tit",
-        "Effect":"Food, cooking, culture",
-        "Select":"Magazines\/Journals"
+        "Name": "Bon App\u00e9tit",
+        "Effect": "Food, cooking, culture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Chanel",
-        "Effect":"Elegance, sophistication, and timeless style.",
-        "Select":"Brand Voices"
+        "Name": "Chanel",
+        "Effect": "Elegance, sophistication, and timeless style.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Charles Bukowski",
-        "Effect":"Raw, gritty realism, and semi-autobiographical works",
-        "Select":"Author Styles"
+        "Name": "Charles Bukowski",
+        "Effect": "Raw, gritty realism, and semi-autobiographical works",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Charles Dickens",
-        "Effect":"Rich, descriptive language and social realism",
-        "Select":"Author Styles"
+        "Name": "Charles Dickens",
+        "Effect": "Rich, descriptive language and social realism",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Coca-Cola",
-        "Effect":"Happiness, positivity, and global unity.",
-        "Select":"Brand Voices"
+        "Name": "Coca-Cola",
+        "Effect": "Happiness, positivity, and global unity.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Confessional",
-        "Effect":"Admits or discloses personal thoughts, feelings, or experiences; fosters vulnerability and openness.",
-        "Select":"Tone"
+        "Name": "Confessional",
+        "Effect": "Admits or discloses personal thoughts, feelings, or experiences; fosters vulnerability and openness.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Conversational",
-        "Effect":"Mimics the natural flow and rhythm of spoken language; creates an informal, relatable tone.",
-        "Select":"Tone"
+        "Name": "Conversational",
+        "Effect": "Mimics the natural flow and rhythm of spoken language; creates an informal, relatable tone.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Cormac McCarthy",
-        "Effect":"The Road, Blood Meridian, No Country for Old Men",
-        "Select":"Author Styles"
+        "Name": "Cormac McCarthy",
+        "Effect": "The Road, Blood Meridian, No Country for Old Men",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Critical",
-        "Effect":"Analyzes, evaluates, or critiques a subject; often used in reviews or analytical writing.",
-        "Select":"Tone"
+        "Name": "Critical",
+        "Effect": "Analyzes, evaluates, or critiques a subject; often used in reviews or analytical writing.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Descriptive",
-        "Effect":"Uses vivid language and sensory details to create imagery; helps readers visualize a scene or concept.",
-        "Select":"Tone"
+        "Name": "Descriptive",
+        "Effect": "Uses vivid language and sensory details to create imagery; helps readers visualize a scene or concept.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Disney",
-        "Effect":"Magic, family entertainment, and storytelling.",
-        "Select":"Brand Voices"
+        "Name": "Disney",
+        "Effect": "Magic, family entertainment, and storytelling.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Dramatic",
-        "Effect":"Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.",
-        "Select":"Tone"
+        "Name": "Dramatic",
+        "Effect": "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Educational",
-        "Effect":"Informs, teaches, or explains concepts; often used in instructional or academic contexts.",
-        "Select":"Tone"
+        "Name": "Educational",
+        "Effect": "Informs, teaches, or explains concepts; often used in instructional or academic contexts.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Eloquent",
-        "Effect":"Uses elegant, articulate, or expressive language; often used to convey complex ideas or emotions.",
-        "Select":"Tone"
+        "Name": "Eloquent",
+        "Effect": "Uses elegant, articulate, or expressive language; often used to convey complex ideas or emotions.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Emily Bront\u00eb",
-        "Effect":"Gothic atmosphere, strong emotions, and complex characters",
-        "Select":"Author Styles"
+        "Name": "Emily Bront\u00eb",
+        "Effect": "Gothic atmosphere, strong emotions, and complex characters",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Empathetic",
-        "Effect":"Demonstrates understanding, compassion, or sensitivity; connects with readers emotionally.",
-        "Select":"Tone"
+        "Name": "Empathetic",
+        "Effect": "Demonstrates understanding, compassion, or sensitivity; connects with readers emotionally.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Ernest Hemingway",
-        "Effect":"Simple and direct prose, strong themes",
-        "Select":"Author Styles"
+        "Name": "Ernest Hemingway",
+        "Effect": "Simple and direct prose, strong themes",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Esquire",
-        "Effect":"Men's fashion, culture, lifestyle",
-        "Select":"Magazines\/Journals"
+        "Name": "Esquire",
+        "Effect": "Men's fashion, culture, lifestyle",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Excited",
-        "Effect":"Expresses excitement, passion, or eagerness; engages readers with energetic language.",
-        "Select":"Tone"
+        "Name": "Excited",
+        "Effect": "Expresses excitement, passion, or eagerness; engages readers with energetic language.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Fast Company",
-        "Effect":"Business, innovation, design",
-        "Select":"Magazines\/Journals"
+        "Name": "Fast Company",
+        "Effect": "Business, innovation, design",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Formal",
-        "Effect":"Projects authority, professionalism, and seriousness; often used in academic or official contexts.",
-        "Select":"Tone"
+        "Name": "Formal",
+        "Effect": "Projects authority, professionalism, and seriousness; often used in academic or official contexts.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Franz Kafka",
-        "Effect":"Absurdist and existential themes, bureaucratic nightmares",
-        "Select":"Author Styles"
+        "Name": "Franz Kafka",
+        "Effect": "Absurdist and existential themes, bureaucratic nightmares",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Friendly",
-        "Effect":"Evokes warmth, approachability, and camaraderie; appropriate for personal or social situations.",
-        "Select":"Tone"
+        "Name": "Friendly",
+        "Effect": "Evokes warmth, approachability, and camaraderie; appropriate for personal or social situations.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Fyodor Dostoevsky",
-        "Effect":"Psychological depth and moral dilemmas",
-        "Select":"Author Styles"
+        "Name": "Fyodor Dostoevsky",
+        "Effect": "Psychological depth and moral dilemmas",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Gabriel Garc\u00eda M\u00e1rquez",
-        "Effect":"Magical realism, poetic prose, and interwoven narratives",
-        "Select":"Author Styles"
+        "Name": "Gabriel Garc\u00eda M\u00e1rquez",
+        "Effect": "Magical realism, poetic prose, and interwoven narratives",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"George Orwell",
-        "Effect":"Political commentary and dystopian settings",
-        "Select":"Author Styles"
+        "Name": "George Orwell",
+        "Effect": "Political commentary and dystopian settings",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Google",
-        "Effect":"Simplicity, user-friendliness, and playful approach to tech.",
-        "Select":"Brand Voices"
+        "Name": "Google",
+        "Effect": "Simplicity, user-friendliness, and playful approach to tech.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"Yes",
-        "Name":"GoPro",
-        "Effect":"Adventure, action, and capturing memories.",
-        "Select":"Brand Voices"
+        "Name": "GoPro",
+        "Effect": "Adventure, action, and capturing memories.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"GQ (Gentlemen's Quarterly)",
-        "Effect":"Men's fashion, lifestyle",
-        "Select":"Magazines\/Journals"
+        "Name": "GQ (Gentlemen's Quarterly)",
+        "Effect": "Men's fashion, lifestyle",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Gucci",
-        "Effect":"Luxury, craftsmanship, and Italian heritage.",
-        "Select":"Brand Voices"
+        "Name": "Gucci",
+        "Effect": "Luxury, craftsmanship, and Italian heritage.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"H.P. Lovecraft",
-        "Effect":"Cosmic horror, rich vocabulary, and atmospheric storytelling",
-        "Select":"Author Styles"
+        "Name": "H.P. Lovecraft",
+        "Effect": "Cosmic horror, rich vocabulary, and atmospheric storytelling",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Harley-Davidson",
-        "Effect":"Freedom, individualism, and American spirit.",
-        "Select":"Brand Voices"
+        "Name": "Harley-Davidson",
+        "Effect": "Freedom, individualism, and American spirit.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Harper's Bazaar",
-        "Effect":"Fashion, culture, beauty",
-        "Select":"Magazines\/Journals"
+        "Name": "Harper's Bazaar",
+        "Effect": "Fashion, culture, beauty",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Haruki Murakami",
-        "Effect":"Surrealism, introspection, and blending genres",
-        "Select":"Author Styles"
+        "Name": "Haruki Murakami",
+        "Effect": "Surrealism, introspection, and blending genres",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Humorous",
-        "Effect":"Incorporates wit, amusement, or irony; lightens the mood and engages readers in a playful way.",
-        "Select":"Tone"
+        "Name": "Humorous",
+        "Effect": "Incorporates wit, amusement, or irony; lightens the mood and engages readers in a playful way.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"IKEA",
-        "Effect":"Scandinavian design, affordability, and functionality.",
-        "Select":"Brand Voices"
+        "Name": "IKEA",
+        "Effect": "Scandinavian design, affordability, and functionality.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Informal",
-        "Effect":"Creates a casual, conversational atmosphere; suitable for relaxed or personal contexts.",
-        "Select":"Tone"
+        "Name": "Informal",
+        "Effect": "Creates a casual, conversational atmosphere; suitable for relaxed or personal contexts.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Inspirational",
-        "Effect":"Motivates, uplifts, or encourages readers; often used for persuasive or aspirational messages.",
-        "Select":"Tone"
+        "Name": "Inspirational",
+        "Effect": "Motivates, uplifts, or encourages readers; often used for persuasive or aspirational messages.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Interview",
-        "Effect":"Celebrity, culture, art",
-        "Select":"Magazines\/Journals"
+        "Name": "Interview",
+        "Effect": "Celebrity, culture, art",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Ironic",
-        "Effect":"Conveys meaning through contradiction, often to highlight absurdity or to emphasize a point.",
-        "Select":"Tone"
+        "Name": "Ironic",
+        "Effect": "Conveys meaning through contradiction, often to highlight absurdity or to emphasize a point.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Italo Calvino",
-        "Effect":"Metafiction, experimental narrative structures, and imaginative worlds",
-        "Select":"Author Styles"
+        "Name": "Italo Calvino",
+        "Effect": "Metafiction, experimental narrative structures, and imaginative worlds",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"J.D. Salinger",
-        "Effect":"Authentic voice, coming-of-age themes",
-        "Select":"Author Styles"
+        "Name": "J.D. Salinger",
+        "Effect": "Authentic voice, coming-of-age themes",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"J.K. Rowling",
-        "Effect":"Engaging storytelling, rich world-building",
-        "Select":"Author Styles"
+        "Name": "J.K. Rowling",
+        "Effect": "Engaging storytelling, rich world-building",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"James Joyce",
-        "Effect":"Innovative narrative techniques, dense prose",
-        "Select":"Author Styles"
+        "Name": "James Joyce",
+        "Effect": "Innovative narrative techniques, dense prose",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Jane Austen",
-        "Effect":"Satire, social commentary, and romance",
-        "Select":"Author Styles"
+        "Name": "Jane Austen",
+        "Effect": "Satire, social commentary, and romance",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"John Steinbeck",
-        "Effect":"Social realism, strong characterizations, and vivid descriptions",
-        "Select":"Author Styles"
+        "Name": "John Steinbeck",
+        "Effect": "Social realism, strong characterizations, and vivid descriptions",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Kinfolk",
-        "Effect":"Lifestyle, design, culture",
-        "Select":"Magazines\/Journals"
+        "Name": "Kinfolk",
+        "Effect": "Lifestyle, design, culture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Kurt Vonnegut",
-        "Effect":"Satire, dark humor, and unconventional narrative structures",
-        "Select":"Author Styles"
+        "Name": "Kurt Vonnegut",
+        "Effect": "Satire, dark humor, and unconventional narrative structures",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"LEGO",
-        "Effect":"Creativity, fun, and endless possibilities.",
-        "Select":"Brand Voices"
+        "Name": "LEGO",
+        "Effect": "Creativity, fun, and endless possibilities.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Leo Tolstoy",
-        "Effect":"Epic narratives, philosophical insights, and vivid characterizations",
-        "Select":"Author Styles"
+        "Name": "Leo Tolstoy",
+        "Effect": "Epic narratives, philosophical insights, and vivid characterizations",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Mailchimp",
-        "Effect":"Approachability, humor, and friendly communication.",
-        "Select":"Brand Voices"
+        "Name": "Mailchimp",
+        "Effect": "Approachability, humor, and friendly communication.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Margaret Atwood",
-        "Effect":"Dystopian worlds, speculative fiction, and feminist themes",
-        "Select":"Author Styles"
+        "Name": "Margaret Atwood",
+        "Effect": "Dystopian worlds, speculative fiction, and feminist themes",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Mark Twain",
-        "Effect":"Humor, social critique, and colloquial language",
-        "Select":"Author Styles"
+        "Name": "Mark Twain",
+        "Effect": "Humor, social critique, and colloquial language",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"McDonald's",
-        "Effect":"Comfort, nostalgia, and family-friendly atmosphere.",
-        "Select":"Brand Voices"
+        "Name": "McDonald's",
+        "Effect": "Comfort, nostalgia, and family-friendly atmosphere.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Melancholic",
-        "Effect":"Elicits feelings of sadness, introspection, or wistfulness; often used in reflective or somber contexts.",
-        "Select":"Tone"
+        "Name": "Melancholic",
+        "Effect": "Elicits feelings of sadness, introspection, or wistfulness; often used in reflective or somber contexts.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Microsoft",
-        "Effect":"Empowerment, productivity, and collaboration.",
-        "Select":"Brand Voices"
+        "Name": "Microsoft",
+        "Effect": "Empowerment, productivity, and collaboration.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Monocle",
-        "Effect":"Global affairs, business, culture",
-        "Select":"Magazines\/Journals"
+        "Name": "Monocle",
+        "Effect": "Global affairs, business, culture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"National Geographic",
-        "Effect":"Science, geography, history",
-        "Select":"Magazines\/Journals"
+        "Name": "National Geographic",
+        "Effect": "Science, geography, history",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"National Geographic",
-        "Effect":"Exploration, education, and stunning visuals.",
-        "Select":"Brand Voices"
+        "Name": "National Geographic",
+        "Effect": "Exploration, education, and stunning visuals.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Nature",
-        "Effect":"Science, research",
-        "Select":"Magazines\/Journals"
+        "Name": "Nature",
+        "Effect": "Science, research",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"New Scientist",
-        "Effect":"Science, technology, environment",
-        "Select":"Magazines\/Journals"
+        "Name": "New Scientist",
+        "Effect": "Science, technology, environment",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Nike",
-        "Effect":"Empowerment, athleticism, and motivation.",
-        "Select":"Brand Voices"
+        "Name": "Nike",
+        "Effect": "Empowerment, athleticism, and motivation.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Nostalgic",
-        "Effect":"Elicits feelings of longing or sentimentality; may reflect on past events, eras, or experiences.",
-        "Select":"Tone"
+        "Name": "Nostalgic",
+        "Effect": "Elicits feelings of longing or sentimentality; may reflect on past events, eras, or experiences.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Objective",
-        "Effect":"Presents information in a neutral, unbiased manner; often used in journalism or reporting.",
-        "Select":"Tone"
+        "Name": "Objective",
+        "Effect": "Presents information in a neutral, unbiased manner; often used in journalism or reporting.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Oreo",
-        "Effect":"Playfulness, fun, and the joy of sharing.",
-        "Select":"Brand Voices"
+        "Name": "Oreo",
+        "Effect": "Playfulness, fun, and the joy of sharing.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Oscar Wilde",
-        "Effect":"Wit, satire, and social commentary",
-        "Select":"Author Styles"
+        "Name": "Oscar Wilde",
+        "Effect": "Wit, satire, and social commentary",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Patagonia",
-        "Effect":"Sustainability, outdoor adventure, and responsibility.",
-        "Select":"Brand Voices"
+        "Name": "Patagonia",
+        "Effect": "Sustainability, outdoor adventure, and responsibility.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Persuasive",
-        "Effect":"Seeks to convince or influence readers; incorporates strong arguments or appeals to emotion.",
-        "Select":"Tone"
+        "Name": "Persuasive",
+        "Effect": "Seeks to convince or influence readers; incorporates strong arguments or appeals to emotion.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Playful",
-        "Effect":"Engages readers with light-hearted, whimsical, or amusing language; creates a fun, entertaining atmosphere.",
-        "Select":"Tone"
+        "Name": "Playful",
+        "Effect": "Engages readers with light-hearted, whimsical, or amusing language; creates a fun, entertaining atmosphere.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Poetic",
-        "Effect":"Incorporates rhythm, figurative language, or other poetic devices; adds beauty or depth to the text.",
-        "Select":"Tone"
+        "Name": "Poetic",
+        "Effect": "Incorporates rhythm, figurative language, or other poetic devices; adds beauty or depth to the text.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Popular Science",
-        "Effect":"Science, technology, environment",
-        "Select":"Magazines\/Journals"
+        "Name": "Popular Science",
+        "Effect": "Science, technology, environment",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Provocative",
-        "Effect":"Challenges assumptions, sparks debate, or incites strong reactions; often used to stimulate discussion.",
-        "Select":"Tone"
+        "Name": "Provocative",
+        "Effect": "Challenges assumptions, sparks debate, or incites strong reactions; often used to stimulate discussion.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Puma",
-        "Effect":"Athletic performance, daring design, and creative collaborations.",
-        "Select":"Brand Voices"
+        "Name": "Puma",
+        "Effect": "Athletic performance, daring design, and creative collaborations.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Ralph Ellison",
-        "Effect":"Exploration of identity, race, and social issues in America",
-        "Select":"Author Styles"
+        "Name": "Ralph Ellison",
+        "Effect": "Exploration of identity, race, and social issues in America",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Red Bull",
-        "Effect":"Energy, extreme sports, and pushing limits.",
-        "Select":"Brand Voices"
+        "Name": "Red Bull",
+        "Effect": "Energy, extreme sports, and pushing limits.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Rolex",
-        "Effect":"Precision, craftsmanship, and prestige.",
-        "Select":"Brand Voices"
+        "Name": "Rolex",
+        "Effect": "Precision, craftsmanship, and prestige.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Rolling Stone",
-        "Effect":"Music, culture, politics",
-        "Select":"Magazines\/Journals"
+        "Name": "Rolling Stone",
+        "Effect": "Music, culture, politics",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Romantic",
-        "Effect":"Focuses on emotions, relationships, or beauty; often used in personal or expressive writing.",
-        "Select":"Tone"
+        "Name": "Romantic",
+        "Effect": "Focuses on emotions, relationships, or beauty; often used in personal or expressive writing.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Samuel Beckett",
-        "Effect":"Minimalism, existentialism, and dark humor",
-        "Select":"Author Styles"
+        "Name": "Samuel Beckett",
+        "Effect": "Minimalism, existentialism, and dark humor",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Sarcastic",
-        "Effect":"Employs irony, mockery, or satire; can be used to critique or emphasize a point through humor.",
-        "Select":"Tone"
+        "Name": "Sarcastic",
+        "Effect": "Employs irony, mockery, or satire; can be used to critique or emphasize a point through humor.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Satirical",
-        "Effect":"Employs humor, irony, or exaggeration to critique or mock a subject, often to provoke change.",
-        "Select":"Tone"
+        "Name": "Satirical",
+        "Effect": "Employs humor, irony, or exaggeration to critique or mock a subject, often to provoke change.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Scientific American",
-        "Effect":"Science, technology",
-        "Select":"Magazines\/Journals"
+        "Name": "Scientific American",
+        "Effect": "Science, technology",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Sports Illustrated",
-        "Effect":"Sports",
-        "Select":"Magazines\/Journals"
+        "Name": "Sports Illustrated",
+        "Effect": "Sports",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Spotify",
-        "Effect":"Personalized music experience, discovery, and community.",
-        "Select":"Brand Voices"
+        "Name": "Spotify",
+        "Effect": "Personalized music experience, discovery, and community.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Starbucks",
-        "Effect":"Consistency, community, and quality coffee experience.",
-        "Select":"Brand Voices"
+        "Name": "Starbucks",
+        "Effect": "Consistency, community, and quality coffee experience.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Suspenseful",
-        "Effect":"Builds tension, anticipation, or uncertainty; often used in fiction or narrative writing.",
-        "Select":"Tone"
+        "Name": "Suspenseful",
+        "Effect": "Builds tension, anticipation, or uncertainty; often used in fiction or narrative writing.",
+        "Select": "Tone"
     },
     {
-        "Favorites":"No",
-        "Name":"Sylvia Plath",
-        "Effect":"Intensity, emotional depth, and confessional style",
-        "Select":"Author Styles"
+        "Name": "Sylvia Plath",
+        "Effect": "Intensity, emotional depth, and confessional style",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Tesla",
-        "Effect":"Bold, innovative, and focused on sustainable energy.",
-        "Select":"Brand Voices"
+        "Name": "Tesla",
+        "Effect": "Bold, innovative, and focused on sustainable energy.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"The Atlantic",
-        "Effect":"Politics, culture, technology",
-        "Select":"Magazines\/Journals"
+        "Name": "The Atlantic",
+        "Effect": "Politics, culture, technology",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The Chronicle of Higher Education",
-        "Effect":"Academia, education",
-        "Select":"Magazines\/Journals"
+        "Name": "The Chronicle of Higher Education",
+        "Effect": "Academia, education",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The Economist",
-        "Effect":"Business, politics, economics",
-        "Select":"Magazines\/Journals"
+        "Name": "The Economist",
+        "Effect": "Business, politics, economics",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The Lancet",
-        "Effect":"Medical research",
-        "Select":"Magazines\/Journals"
+        "Name": "The Lancet",
+        "Effect": "Medical research",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The New York Review of Books",
-        "Effect":"Literature, culture, politics",
-        "Select":"Magazines\/Journals"
+        "Name": "The New York Review of Books",
+        "Effect": "Literature, culture, politics",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The New Yorker",
-        "Effect":"Culture, politics, humor",
-        "Select":"Magazines\/Journals"
+        "Name": "The New Yorker",
+        "Effect": "Culture, politics, humor",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The Paris Review",
-        "Effect":"Literature, art, culture",
-        "Select":"Magazines\/Journals"
+        "Name": "The Paris Review",
+        "Effect": "Literature, art, culture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"The Wall Street Journal",
-        "Effect":"Business, finance, politics",
-        "Select":"Magazines\/Journals"
+        "Name": "The Wall Street Journal",
+        "Effect": "Business, finance, politics",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"TIME",
-        "Effect":"News, politics, current events",
-        "Select":"Magazines\/Journals"
+        "Name": "TIME",
+        "Effect": "News, politics, current events",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Toni Morrison",
-        "Effect":"Rich, lyrical language and African American culture",
-        "Select":"Author Styles"
+        "Name": "Toni Morrison",
+        "Effect": "Rich, lyrical language and African American culture",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Vanity Fair",
-        "Effect":"Pop culture, fashion, current events",
-        "Select":"Magazines\/Journals"
+        "Name": "Vanity Fair",
+        "Effect": "Pop culture, fashion, current events",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Vans",
-        "Effect":"Authenticity, youth culture, and action sports.",
-        "Select":"Brand Voices"
+        "Name": "Vans",
+        "Effect": "Authenticity, youth culture, and action sports.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"VICE",
-        "Effect":"Culture, news, politics",
-        "Select":"Magazines\/Journals"
+        "Name": "VICE",
+        "Effect": "Culture, news, politics",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Virgin",
-        "Effect":"Disruption, innovation, and customer-focused experiences.",
-        "Select":"Brand Voices"
+        "Name": "Virgin",
+        "Effect": "Disruption, innovation, and customer-focused experiences.",
+        "Select": "Brand Voices"
     },
     {
-        "Favorites":"No",
-        "Name":"Virginia Woolf",
-        "Effect":"Stream of consciousness and inner monologues",
-        "Select":"Author Styles"
+        "Name": "Virginia Woolf",
+        "Effect": "Stream of consciousness and inner monologues",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Vladimir Nabokov",
-        "Effect":"Intricate prose, wordplay, and unreliable narrators",
-        "Select":"Author Styles"
+        "Name": "Vladimir Nabokov",
+        "Effect": "Intricate prose, wordplay, and unreliable narrators",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"No",
-        "Name":"Vogue",
-        "Effect":"Fashion, beauty, culture",
-        "Select":"Magazines\/Journals"
+        "Name": "Vogue",
+        "Effect": "Fashion, beauty, culture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"William Shakespeare",
-        "Effect":"Poetry, wordplay, and complex characters",
-        "Select":"Author Styles"
+        "Name": "William Shakespeare",
+        "Effect": "Poetry, wordplay, and complex characters",
+        "Select": "Author Styles"
     },
     {
-        "Favorites":"Yes",
-        "Name":"Wired",
-        "Effect":"Technology, science, culture",
-        "Select":"Magazines\/Journals"
+        "Name": "Wired",
+        "Effect": "Technology, science, culture",
+        "Select": "Magazines\/Journals"
     },
     {
-        "Favorites":"No",
-        "Name":"Zora Neale Hurston",
-        "Effect":"Rich, authentic dialogue and celebration of African American culture",
-        "Select":"Author Styles"
+        "Name": "Zora Neale Hurston",
+        "Effect": "Rich, authentic dialogue and celebration of African American culture",
+        "Select": "Author Styles"
     }
 ]

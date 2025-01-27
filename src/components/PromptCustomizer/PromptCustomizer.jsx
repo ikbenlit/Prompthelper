@@ -7,27 +7,30 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
   const { t } = useTranslation();
   const [selectedTone, setSelectedTone] = useState('');
   const [selectedStyle, setSelectedStyle] = useState('');
-  const [customizedPrompt, setCustomizedPrompt] = useState(prompt.Prompt || prompt.Formula);
+  const [customizedPrompt, setCustomizedPrompt] = useState(prompt.Prompt);
   const [generatedContent, setGeneratedContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  console.log('Tones received:', JSON.stringify(tones, null, 2));
+
   const updatePrompt = (newTone, newStyle) => {
-    let newPrompt = prompt.Prompt || prompt.Formula;
+    let newPrompt = prompt.Prompt;
     const promptParts = [];
     
     if (newTone) {
-      const tone = tones.find(t => t.Tone === newTone);
-      promptParts.push(`Tone of voice: ${tone.Description}`);
+      const tone = tones.find(t => t.Name === newTone);
+      promptParts.push(`${t('customize.tonePrefix')}: ${tone.Effect}`);
     }
     
     if (newStyle) {
-      const style = styles.find(s => (s.Name || s.Naam) === newStyle);
-      promptParts.push(`Schrijfstijl: ${style.Effect}`);
+      const style = styles.find(s => s.Name === newStyle);
+      promptParts.push(`${t('customize.stylePrefix')} ${style.Name}: ${style.Effect}`);
     }
 
-    promptParts.push(`Prompt: ${newPrompt}`);
+    promptParts.push(`${t('customize.promptPrefix')}: ${newPrompt}`);
+
     const formattedPrompt = promptParts.join('\n\n');
 
     setCustomizedPrompt(formattedPrompt);
@@ -65,11 +68,16 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
             className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
           >
             <option value="">{t('customize.noTone')}</option>
-            {tones.map((tone, index) => (
-              <option key={`${tone.Tone}-${index}`} value={tone.Tone}>
-                {tone.Tone} - {tone.Description}
-              </option>
-            ))}
+            {tones && tones.map((tone) => {
+              console.log('Processing tone:', tone);
+              if (!tone || !tone.Name) return null;
+              
+              return (
+                <option key={`tone-${tone.Name}`} value={tone.Name}>
+                  {tone.Name} - {tone.Effect}
+                </option>
+              );
+            })}
           </select>
         </div>
 
@@ -87,11 +95,16 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
             className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
           >
             <option value="">{t('customize.noStyle')}</option>
-            {styles.map((style, index) => (
-              <option key={`${style.Name || style.Naam}-${index}`} value={style.Name || style.Naam}>
-                {style.Name || style.Naam} - {style.Effect}
-              </option>
-            ))}
+            {styles && styles.map((style) => {
+              console.log('Processing style:', style);
+              if (!style || !style.Name) return null;
+
+              return (
+                <option key={`style-${style.Name}`} value={style.Name}>
+                  {style.Name} - {style.Effect}
+                </option>
+              );
+            })}
           </select>
         </div>
 
@@ -139,32 +152,36 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
         )}
       </div>
 
-      {/* Modal voor gegenereerde content */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold">{t('generate.result')}</h2>
-          
-          <div className="prose dark:prose-invert max-w-none">
-            <p className="whitespace-pre-wrap">{generatedContent}</p>
-          </div>
+      {/* Generated Content Modal */}
+      <div className="relative z-[200]">
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold">{t('generate.result')}</h2>
+            
+            <div className="prose dark:prose-invert max-w-none">
+              <p className="whitespace-pre-wrap">{generatedContent}</p>
+            </div>
 
-          {/* Actions */}
-          <div className="flex justify-end gap-4 mt-8">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
-            >
-              {t('actions.close')}
-            </button>
-            <button
-              onClick={() => {/* Copy logic */}}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-            >
-              {t('actions.copy')}
-            </button>
+            {/* Actions */}
+            <div className="flex justify-end gap-4 mt-8">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+              >
+                {t('actions.close')}
+              </button>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(generatedContent);
+                }}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              >
+                {t('actions.copy')}
+              </button>
+            </div>
           </div>
-        </div>
-      </Modal>
+        </Modal>
+      </div>
     </>
   );
 } 

@@ -917,10 +917,45 @@
         "More Examples":"Can you formulate pickup lines as if you were a robot programmed to flirt?\n\nCan you formulate pickup lines as if you were a time traveler trying to woo someone from the past?\n\nCan you formulate pickup lines as if you were a romantic vampire?\n\nCan you formulate pickup lines as if you were a famous literary character?\n\nCan you formulate pickup lines as if you were a street performer?\n\nCan you formulate pickup lines as if you were a detective trying to solve a romantic mystery?\n\nCan you formulate pickup lines as if you were a comedian trying to win over a tough crowd?"
     },
     {
-        "Title":null,
-        "Category":null,
-        "Prompt":null,
-        "Formula":null,
-        "More Examples":null
+        "Title": "Understanding Decisions",
+        "Category": "Social",
+        "Prompt": "In a competitive job market, what factors might influence someone to pursue further education and what are the potential consequences of this decision?",
+        "Formula": "In a [context], what factors might influence someone to [action] and what are the potential consequences of this decision?",
+        "More Examples": "In a growing digital economy, what factors might influence someone to switch careers to tech and what are the potential consequences of this decision?\n\nIn a changing climate, what factors might influence someone to adopt sustainable practices and what are the potential consequences of this decision?\n\nIn a remote work environment, what factors might influence someone to relocate to a different city and what are the potential consequences of this decision?"
+    },
+    {
+        "Title": "Consult a Psychologist",
+        "Category": "Social",
+        "Prompt": "Act as a psychologist. What suggestions do you have for reducing my anxiety based on these thoughts: 'I can't handle this' and 'I'm going to fail'? What underlying causes or factors might be influencing these thoughts and how can they be addressed?",
+        "Formula": "Act as a psychologist. What suggestions might you have for [improvement] based on these thoughts: [thoughts]? What underlying causes or contributing factors might be influencing these thoughts and how can they be addressed?",
+        "More Examples": "Act as a psychologist. What suggestions do you have for improving my self-worth based on these thoughts: 'I'm not good enough' and 'I don't deserve happiness'? What underlying causes or factors might be influencing these thoughts and how can they be addressed?"
+    },
+    {
+        "Title": "Persuading People",
+        "Category": "Social",
+        "Prompt": "How can I effectively persuade my team to adopt a new project management methodology while addressing their concerns about change and maintaining team morale?",
+        "Formula": "How can I effectively persuade [group] to [action] while addressing their [concerns] and maintaining [important factors]?",
+        "More Examples": "How can I effectively persuade my family to adopt sustainable practices while addressing their concerns about convenience and maintaining household harmony?\n\nHow can I effectively persuade my colleagues to embrace remote work while addressing their concerns about collaboration and maintaining productivity?"
+    },
+    {
+        "Title": "Relationship Advice",
+        "Category": "Social",
+        "Prompt": "Acting as a relationship coach, what would you advise if I asked for guidance on the following issue: How could my spouse and I propose to resolve conflicts and improve our understanding of each other's perspectives?",
+        "Formula": "Acting as a relationship coach, what would you advise if I asked for guidance on the following issue: [relationship issue], considering each partner's role and responsibility, the emotional and psychological impact of the issue, and strategies to improve communication and trust?",
+        "More Examples": "Acting as a relationship coach, what would you advise if I asked for guidance on managing different financial priorities in a marriage?\n\nActing as a relationship coach, what would you advise if I asked for guidance on maintaining work-life balance in a dual-career relationship?"
+    },
+    {
+        "Title": "Interview Preparation",
+        "Category": "Social",
+        "Prompt": "How can I effectively address a question about my team skills during a group interview for a sales position, including potential challenges and strategies to overcome them?",
+        "Formula": "How can I effectively address a question about [trait] during a [type of interview] for [type of position], including potential challenges and strategies to overcome them?",
+        "More Examples": "How can I effectively address a question about leadership experience during a panel interview for a management position?\n\nHow can I effectively address a question about problem-solving during a technical interview for a software developer position?"
+    },
+    {
+        "Title": "Effective Communication",
+        "Category": "Social",
+        "Prompt": "How can I effectively communicate my beliefs about human rights to others who have different cultural norms, while understanding their values and traditions? What specific strategies can I use to promote understanding and respect for different viewpoints?",
+        "Formula": "How can I effectively communicate my [beliefs] to others who have [characteristics], while understanding their beliefs and perspectives? What specific strategies can I use to promote understanding and respect for different viewpoints?",
+        "More Examples": "How can I effectively communicate environmental concerns to those who prioritize economic growth?\n\nHow can I effectively communicate the importance of diversity to those who have traditional workplace views?"
     }
 ]

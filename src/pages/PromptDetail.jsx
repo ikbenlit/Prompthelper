@@ -10,7 +10,7 @@ export default function PromptDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { prompts, styles, tones } = usePrompts();
+  const { prompts, styles, tones, loading } = usePrompts();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const [copiedText, setCopiedText] = useState('');
   const [showExamples, setShowExamples] = useState(false);
@@ -18,7 +18,23 @@ export default function PromptDetail() {
   const [formulaPopover, setFormulaPopover] = useState({ show: false, x: 0, y: 0 });
   const formulaButtonRef = useRef(null);
 
-  const prompt = prompts.find(p => (p.Title || p.Titel) === decodeURIComponent(id));
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  const prompt = prompts.find(p => {
+    const promptTitle = p.Title || p.Titel;
+    console.log({
+      match: promptTitle === decodeURIComponent(id),
+      promptTitle,
+      urlId: decodeURIComponent(id)
+    });
+    return promptTitle === decodeURIComponent(id);
+  });
 
   if (!prompt) {
     return (
@@ -99,6 +115,8 @@ export default function PromptDetail() {
     </CopyToClipboard>
   );
 
+  console.log('Tones in PromptDetail:', tones);
+
   return (
     <div className="max-w-7xl mx-auto">
       <button
@@ -112,7 +130,7 @@ export default function PromptDetail() {
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="lg:sticky lg:top-8">
+        <div className="lg:sticky lg:top-8 z-10">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 prompt-customizer">
             <h2 className="text-xl font-semibold mb-4">{t('prompt.editor')}</h2>
             <PromptCustomizer 

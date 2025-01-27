@@ -1,110 +1,114 @@
 [
     {
-        "Dramatic":"Descriptive",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Uses vivid language and sensory details to create imagery; helps readers visualize a scene or concept."
+        "Name": "Dramatic",
+        "Effect": "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing."
     },
     {
-        "Dramatic":"Objective",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Presents information in a neutral, unbiased manner; often used in journalism or reporting."
+        "Name": "Descriptive",
+        "Effect": "Uses vivid language and sensory details to create imagery; helps readers visualize a scene or concept."
     },
     {
-        "Dramatic":"Suspenseful",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Builds tension, anticipation, or uncertainty; often used in fiction or narrative writing."
+        "Name": "Objective",
+        "Effect": "Presents information in a neutral, unbiased manner; often used in journalism or reporting."
     },
     {
-        "Dramatic":"Educational",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Informs, teaches, or explains concepts; often used in instructional or academic contexts."
+        "Name": "Suspenseful",
+        "Effect": "Builds tension, anticipation, or uncertainty; often used in fiction or narrative writing."
     },
     {
-        "Dramatic":"Poetic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Incorporates rhythm, figurative language, or other poetic devices; adds beauty or depth to the text."
+        "Name": "Educational",
+        "Effect": "Informs, teaches, or explains concepts; often used in instructional or academic contexts."
     },
     {
-        "Dramatic":"Ironic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Conveys meaning through contradiction, often to highlight absurdity or to emphasize a point."
+        "Name": "Poetic",
+        "Effect": "Incorporates rhythm, figurative language, or other poetic devices; adds beauty or depth to the text."
     },
     {
-        "Dramatic":"Excited",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Expresses excitement, passion, or eagerness; engages readers with energetic language."
+        "Name": "Ironic",
+        "Effect": "Conveys meaning through contradiction, often to highlight absurdity or to emphasize a point."
     },
     {
-        "Dramatic":"Satirical",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Employs humor, irony, or exaggeration to critique or mock a subject, often to provoke change."
+        "Name": "Excited",
+        "Effect": "Expresses excitement, passion, or eagerness; engages readers with energetic language."
     },
     {
-        "Dramatic":"Provocative",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Challenges assumptions, sparks debate, or incites strong reactions; often used to stimulate discussion."
+        "Name": "Satirical",
+        "Effect": "Employs humor, irony, or exaggeration to critique or mock a subject, often to provoke change."
     },
     {
-        "Dramatic":"Eloquent",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Uses elegant, articulate, or expressive language; often used to convey complex ideas or emotions."
+        "Name": "Provocative",
+        "Effect": "Challenges assumptions, sparks debate, or incites strong reactions; often used to stimulate discussion."
     },
     {
-        "Dramatic":"Romantic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Focuses on emotions, relationships, or beauty; often used in personal or expressive writing."
+        "Name": "Eloquent",
+        "Effect": "Uses elegant, articulate, or expressive language; often used to convey complex ideas or emotions."
     },
     {
-        "Dramatic":"Inspirational",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Motivates, uplifts, or encourages readers; often used for persuasive or aspirational messages."
+        "Name": "Romantic",
+        "Effect": "Focuses on emotions, relationships, or beauty; often used in personal or expressive writing."
     },
     {
-        "Dramatic":"Melancholic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Elicits feelings of sadness, introspection, or wistfulness; often used in reflective or somber contexts."
+        "Name": "Inspirational",
+        "Effect": "Motivates, uplifts, or encourages readers; often used for persuasive or aspirational messages."
     },
     {
-        "Dramatic":"Humorous",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Incorporates wit, amusement, or irony; lightens the mood and engages readers in a playful way."
+        "Name": "Melancholic",
+        "Effect": "Elicits feelings of sadness, introspection, or wistfulness; often used in reflective or somber contexts."
     },
     {
-        "Dramatic":"Critical",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Analyzes, evaluates, or critiques a subject; often used in reviews or analytical writing."
+        "Name": "Humorous",
+        "Effect": "Incorporates wit, amusement, or irony; lightens the mood and engages readers in a playful way."
     },
     {
-        "Dramatic":"Persuasive",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Seeks to convince or influence readers; incorporates strong arguments or appeals to emotion."
+        "Name": "Critical",
+        "Effect": "Analyzes, evaluates, or critiques a subject; often used in reviews or analytical writing."
     },
     {
-        "Dramatic":"Formal",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Projects authority, professionalism, and seriousness; often used in academic or official contexts."
+        "Name": "Persuasive",
+        "Effect": "Seeks to convince or influence readers; incorporates strong arguments or appeals to emotion."
     },
     {
-        "Dramatic":"Nostalgic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Elicits feelings of longing or sentimentality; may reflect on past events, eras, or experiences."
+        "Name": "Formal",
+        "Effect": "Projects authority, professionalism, and seriousness; often used in academic or official contexts."
     },
     {
-        "Dramatic":"Confessional",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Admits or discloses personal thoughts, feelings, or experiences; fosters vulnerability and openness."
+        "Name": "Nostalgic",
+        "Effect": "Elicits feelings of longing or sentimentality; may reflect on past events, eras, or experiences."
     },
     {
-        "Dramatic":"Informal",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Creates a casual, conversational atmosphere; suitable for relaxed or personal contexts."
+        "Name": "Confessional",
+        "Effect": "Admits or discloses personal thoughts, feelings, or experiences; fosters vulnerability and openness."
     },
     {
-        "Dramatic":"Sarcastic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Employs irony, mockery, or satire; can be used to critique or emphasize a point through humor."
+        "Name": "Informal",
+        "Effect": "Creates a casual, conversational atmosphere; suitable for relaxed or personal contexts."
     },
     {
-        "Dramatic":"Conversational",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Mimics the natural flow and rhythm of spoken language; creates an informal, relatable tone."
+        "Name": "Sarcastic",
+        "Effect": "Employs irony, mockery, or satire; can be used to critique or emphasize a point through humor."
     },
     {
-        "Dramatic":"Authoritative",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Conveys expertise, decisiveness, and confidence; suitable for presenting expert opinions."
+        "Name": "Conversational",
+        "Effect": "Mimics the natural flow and rhythm of spoken language; creates an informal, relatable tone."
     },
     {
-        "Dramatic":"Empathetic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Demonstrates understanding, compassion, or sensitivity; connects with readers emotionally."
+        "Name": "Authoritative",
+        "Effect": "Conveys expertise, decisiveness, and confidence; suitable for presenting expert opinions."
     },
     {
-        "Dramatic":"Playful",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Engages readers with light-hearted, whimsical, or amusing language; creates a fun, entertaining atmosphere."
+        "Name": "Empathetic",
+        "Effect": "Demonstrates understanding, compassion, or sensitivity; connects with readers emotionally."
     },
     {
-        "Dramatic":"Friendly",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Evokes warmth, approachability, and camaraderie; appropriate for personal or social situations."
+        "Name": "Playful",
+        "Effect": "Engages readers with light-hearted, whimsical, or amusing language; creates a fun, entertaining atmosphere."
     },
     {
-        "Dramatic":"Academic",
-        "Employs heightened emotions, action, or intensity; often used in storytelling or expressive writing.":"Refers to the use of scholarly, formal, or intellectual language and concepts; often used in research, educational, or professional contexts."
+        "Name": "Friendly",
+        "Effect": "Evokes warmth, approachability, and camaraderie; appropriate for personal or social situations."
+    },
+    {
+        "Name": "Academic",
+        "Effect": "Refers to the use of scholarly, formal, or intellectual language and concepts; often used in research, educational, or professional contexts."
     }
 ]

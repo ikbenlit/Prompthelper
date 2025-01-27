@@ -30,36 +30,44 @@ export default function Home() {
     }
     
     // Apply category filter if selected
-    if (selectedCategory) {
-      const categoryField = results[0]?.Category ? 'Category' : 'Categorie';
-      results = results.filter(prompt => prompt[categoryField] === selectedCategory);
+    if (selectedCategory && results.length > 0) {
+      // Check both Category and Categorie fields
+      results = results.filter(prompt => 
+        (prompt.Category === selectedCategory || prompt.Categorie === selectedCategory)
+      );
     }
     
     return results;
   }, [searchQuery, selectedCategory, prompts, fuse]);
 
-  // Voeg deze console.log toe in de Home component om te zien welke categorieën we hebben
-  console.log('Available categories:', categories);
-
   const getCategoryColor = (category) => {
     const colors = {
-      'Productiviteit': 'blue',         // Blauw
-      'Schrijven': 'purple',            // Paars
-      'Sociaal': 'green',               // Groen
-      'Gezondheid': 'yellow',           // Geel
-      'Marketing': 'orange',            // Oranje
-      'Ondernemerschap': 'red',         // Rood
-      'Entertainment': 'cyan',          // Turquoise
-      'Amusement': 'pink',              // Roze
-      'Vermaak': 'indigo'              // Indigo
+      // We need to add English categories here too
+      'Productiviteit': 'blue',
+      'Schrijven': 'purple',
+      'Sociaal': 'green',
+      'Gezondheid': 'yellow',
+      'Marketing': 'orange',
+      'Ondernemerschap': 'red',
+      'Amusement': 'pink',
+      'Vermaak': 'indigo',
+      'Entertainment': 'cyan',
+      // Add English categories
+      'Productivity': 'blue',
+      'Writing': 'purple',
+      'Social': 'green', 
+      'Health': 'yellow',
+      'Marketing': 'orange',
+      'Entrepreneurship': 'red',
+      'Entertainment': 'cyan'
     };
     
-    // Log wanneer een categorie geen kleur krijgt
     if (!colors[category]) {
-      console.warn(`No color defined for category: ${category}`);
+      // Change console.warn to just return default color silently
+      return 'gray';
     }
     
-    return colors[category] || 'gray';
+    return colors[category];
   };
 
   if (loading) {

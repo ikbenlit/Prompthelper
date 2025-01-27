@@ -1,592 +1,592 @@
 [
     {
-        "Naam": "Academisch",
+        "Name": "Academisch",
         "Effect": "Verwijst naar het gebruik van wetenschappelijke, formele of intellectuele taal en concepten; vaak gebruikt in onderzoeks-, onderwijs- of beroepscontexten.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Adidas",
+        "Name": "Adidas",
         "Effect": "Atletische prestaties, innovatie en samenwerking.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Aesthetica",
+        "Name": "Aesthetica",
         "Effect": "Kunst, cultuur, fotografie",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Airbnb",
+        "Name": "Airbnb",
         "Effect": "Erbij horen, reiservaringen en lokale connecties.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Amazon",
+        "Name": "Amazon",
         "Effect": "Klantwaarneming, gemak en verscheidenheid.",
-        "Selecteren": "Merk Stemmen"
+        "Select": "Merk Stemmen"
     },
     {
-        "Naam": "Apple",
+        "Name": "Apple",
         "Effect": "Minimalistisch, strak ontwerp, innovatie en gebruikersgericht denken.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Architectural Digest",
+        "Name": "Architectural Digest",
         "Effect": "Interieurontwerp, architectuur",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Gezaghebbend",
+        "Name": "Gezaghebbend",
         "Effect": "straalt deskundigheid, besluitvaardigheid en vertrouwen uit; geschikt om meningen van deskundigen te presenteren.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Ben & Jerry's",
+        "Name": "Ben & Jerry's",
         "Effect": "Sociaal activisme, unieke smaken en maatschappelijke betrokkenheid.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "BMW",
+        "Name": "BMW",
         "Effect": "Prestaties, luxe en Duitse techniek.",
-        "Selecteren": "Merk Stemmen"
+        "Select": "Merk Stemmen"
     },
     {
-        "Naam": "Bon Appétit",
+        "Name": "Bon Appétit",
         "Effect": "Eten, koken, cultuur",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Chanel",
+        "Name": "Chanel",
         "Effect": "Elegantie, verfijning en tijdloze stijl.",
-        "Selecteren": "Merk Voices"
+        "Select": "Merk Voices"
     },
     {
-        "Naam": "Charles Bukowski",
+        "Name": "Charles Bukowski",
         "Effect": "Rauw, gruizig realisme en semi-autobiografische werken",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Charles Dickens",
+        "Name": "Charles Dickens",
         "Effect": "Rijke, beschrijvende taal en sociaal realisme",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Coca-Cola",
+        "Name": "Coca-Cola",
         "Effect": "Geluk, positiviteit en wereldwijde eenheid.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Confessioneel",
+        "Name": "Confessioneel",
         "Effect": "Geeft persoonlijke gedachten, gevoelens of ervaringen toe of openbaart ze; bevordert kwetsbaarheid en openheid",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Conversationeel",
+        "Name": "Conversationeel",
         "Effect": "Bootst de natuurlijke stroom en het ritme van gesproken taal na; creëert een informele, relateerbare toon.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Cormac McCarthy",
+        "Name": "Cormac McCarthy",
         "Effect": "The Road, Blood Meridian, No Country for Old Men",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Kritisch",
+        "Name": "Kritisch",
         "Effect": "Analyseert, beoordeelt of bekritiseert een onderwerp; vaak gebruikt in recensies of analytisch schrijven.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Beschrijvend",
+        "Name": "Beschrijvend",
         "Effect": "Gebruikt levendige taal en zintuiglijke details om beelden te creëren; helpt lezers een scène of concept te visualiseren",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Disney",
+        "Name": "Disney",
         "Effect": "Magie, familievermaak en verhalen vertellen.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Dramatisch",
+        "Name": "Dramatisch",
         "Effect": "Maakt gebruik van verhoogde emoties, actie of intensiteit; vaak gebruikt bij het vertellen van verhalen of expressief schrijven.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Educatief",
+        "Name": "Educatief",
         "Effect": "Informeert, onderwijst of legt concepten uit; vaak gebruikt in educatieve of academische contexten.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Welsprekend",
+        "Name": "Welsprekend",
         "Effect": "Gebruikt elegante, welbespraakte of expressieve taal; vaak gebruikt om complexe ideeën of emoties over te brengen.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Emily Brontë",
+        "Name": "Emily Brontë",
         "Effect": "Gotische sfeer, sterke emoties en complexe personages",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Empathisch",
+        "Name": "Empathisch",
         "Effect": "Toont begrip, medeleven of gevoeligheid; sluit emotioneel aan bij lezers.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Ernest Hemingway",
+        "Name": "Ernest Hemingway",
         "Effect": "Eenvoudig en direct proza, sterke thema's",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Esquire",
+        "Name": "Esquire",
         "Effect": "Mannenmode, cultuur, lifestyle",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Opgewonden",
+        "Name": "Opgewonden",
         "Effect": "Geeft uitdrukking aan opwinding, passie of gretigheid; boeit lezers met energieke taal.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Fast Company",
+        "Name": "Fast Company",
         "Effect": "Bedrijfsleven, innovatie, ontwerp",
-        "Selecteren": "Tijdschriften/Tijdschriften"
+        "Select": "Tijdschriften/Tijdschriften"
     },
     {
-        "Naam": "Formeel",
+        "Name": "Formeel",
         "Effect": "straalt autoriteit, professionaliteit en ernst uit; vaak gebruikt in academische of officiële contexten.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Franz Kafka",
+        "Name": "Franz Kafka",
         "Effect": "Absurdistische en existentiële thema's, bureaucratische nachtmerries",
-        "Selecteren": "Auteur Stijlen"
+        "Select": "Auteur Stijlen"
     },
     {
-        "Naam": "Vriendelijk",
+        "Name": "Vriendelijk",
         "Effect": "Roept warmte, benaderbaarheid en kameraadschap op; geschikt voor persoonlijke of sociale situaties",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Fjodor Dostojevski",
+        "Name": "Fjodor Dostojevski",
         "Effect": "Psychologische diepgang en morele dilemma's",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Gabriel García Márquez",
+        "Name": "Gabriel García Márquez",
         "Effect": "Magisch realisme, poëtisch proza en verweven verhaallijnen",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "George Orwell",
+        "Name": "George Orwell",
         "Effect": "Politiek commentaar en dystopische settings",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Google",
+        "Name": "Google",
         "Effect": "Eenvoud, gebruiksvriendelijkheid en speelse benadering van technologie.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "GoPro",
+        "Name": "GoPro",
         "Effect": "Avontuur, actie en herinneringen vastleggen.",
-        "Selecteren": "Merk Stemmen"
+        "Select": "Merk Stemmen"
     },
     {
-        "Naam": "GQ (Gentlemen's Quarterly)",
+        "Name": "GQ (Gentlemen's Quarterly)",
         "Effect": "Mannenmode, lifestyle",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Gucci",
+        "Name": "Gucci",
         "Effect": "Luxe, vakmanschap en Italiaans erfgoed.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "H.P. Lovecraft",
+        "Name": "H.P. Lovecraft",
         "Effect": "Kosmische horror, rijk vocabulaire en sfeervol verhaal",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Harley-Davidson",
+        "Name": "Harley-Davidson",
         "Effect": "Vrijheid, individualisme en Amerikaanse geest.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Harper's Bazaar",
+        "Name": "Harper's Bazaar",
         "Effect": "Mode, cultuur, schoonheid",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Haruki Murakami",
+        "Name": "Haruki Murakami",
         "Effect": "Surrealisme, introspectie en het vermengen van genres",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Humoristisch",
+        "Name": "Humoristisch",
         "Effect": "Bevat humor, vermaak of ironie; vrolijkt de stemming op en betrekt lezers op een speelse manier.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "IKEA",
+        "Name": "IKEA",
         "Effect": "Scandinavisch design, betaalbaarheid en functionaliteit.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Informeel",
+        "Name": "Informeel",
         "Effect": "Creëert een informele, conversationele sfeer; geschikt voor ontspannen of persoonlijke contexten.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Inspirerend",
+        "Name": "Inspirerend",
         "Effect": "Motiveert, verheft of moedigt lezers aan; vaak gebruikt voor overtuigende of ambitieuze boodschappen.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Interview",
+        "Name": "Interview",
         "Effect": "Beroemdheid, cultuur, kunst",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Ironisch",
+        "Name": "Ironisch",
         "Effect": "Geeft betekenis door tegenstrijdigheid, vaak om absurditeit te benadrukken of een punt te benadrukken.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Italo Calvino",
+        "Name": "Italo Calvino",
         "Effect": "Metafictie, experimentele verhaalstructuren en fantasierijke werelden",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "J.D. Salinger",
+        "Name": "J.D. Salinger",
         "Effect": "Authentieke stem, coming-of-age thema's",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "J.K. Rowling",
+        "Name": "J.K. Rowling",
         "Effect": "Meeslepend verhaal, rijke wereldopbouw",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "James Joyce",
+        "Name": "James Joyce",
         "Effect": "Innovatieve verteltechnieken, dicht proza",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Jane Austen",
+        "Name": "Jane Austen",
         "Effect": "Satire, sociaal commentaar en romantiek",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "John Steinbeck",
+        "Name": "John Steinbeck",
         "Effect": "Sociaal realisme, sterke karakteriseringen en levendige beschrijvingen",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Kinfolk",
+        "Name": "Kinfolk",
         "Effect": "Lifestyle, design, cultuur",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Kurt Vonnegut",
+        "Name": "Kurt Vonnegut",
         "Effect": "Satire, donkere humor en onconventionele verhaalstructuren",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "LEGO",
+        "Name": "LEGO",
         "Effect": "Creativiteit, plezier en eindeloze mogelijkheden.",
-        "Selecteren": "Merk Stemmen"
+        "Select": "Merk Stemmen"
     },
     {
-        "Naam": "Leo Tolstoj",
+        "Name": "Leo Tolstoj",
         "Effect": "Epische verhalen, filosofische inzichten en levendige karakteriseringen",
-        "Selecteren": "Auteur Stijlen"
+        "Select": "Auteur Stijlen"
     },
     {
-        "Naam": "Mailchimp",
+        "Name": "Mailchimp",
         "Effect": "Benaderbaarheid, humor en vriendelijke communicatie.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Margaret Atwood",
+        "Name": "Margaret Atwood",
         "Effect": "Dystopische werelden, speculatieve fictie en feministische thema's",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Mark Twain",
+        "Name": "Mark Twain",
         "Effect": "Humor, maatschappijkritiek en spreektaal",
-        "Selecteren": "Auteur Stijlen"
+        "Select": "Auteur Stijlen"
     },
     {
-        "Naam": "McDonald's",
+        "Name": "McDonald's",
         "Effect": "Comfort, nostalgie en een gezinsvriendelijke sfeer",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Melancholisch",
+        "Name": "Melancholisch",
         "Effect": "wekt gevoelens op van droefheid, introspectie of weemoed; vaak gebruikt in reflectieve of sombere contexten.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Microsoft",
+        "Name": "Microsoft",
         "Effect": "Empowerment, productiviteit en samenwerking.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Monocle",
+        "Name": "Monocle",
         "Effect": "Global affairs, business, culture",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "National Geographic",
+        "Name": "National Geographic",
         "Effect": "Wetenschap, aardrijkskunde, geschiedenis",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "National Geographic",
+        "Name": "National Geographic",
         "Effect": "Verkenning, educatie en verbluffende beelden.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Natuur",
+        "Name": "Natuur",
         "Effect": "Wetenschap, onderzoek",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "New Scientist",
+        "Name": "New Scientist",
         "Effect": "Wetenschap, technologie, milieu",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Nike",
+        "Name": "Nike",
         "Effect": "Empowerment, sportiviteit en motivatie.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Nostalgisch",
+        "Name": "Nostalgisch",
         "Effect": "wekt gevoelens van verlangen of sentimentaliteit op; kan terugblikken op gebeurtenissen, tijdperken of ervaringen uit het verleden.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Objectief",
+        "Name": "Objectief",
         "Effect": "presenteert informatie op een neutrale, onbevooroordeelde manier; vaak gebruikt in journalistiek of verslaggeving.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Oreo",
+        "Name": "Oreo",
         "Effect": "Speelsheid, plezier en de vreugde van het delen.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Oscar Wilde",
+        "Name": "Oscar Wilde",
         "Effect": "Geestigheid, satire en sociaal commentaar",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Patagonia",
+        "Name": "Patagonia",
         "Effect": "Duurzaamheid, outdooravontuur en verantwoordelijkheid.",
-        "Selecteren": "Merk Stemmen"
+        "Select": "Merk Stemmen"
     },
     {
-        "Naam": "Overtuigend",
+        "Name": "Overtuigend",
         "Effect": "Probeert lezers te overtuigen of te beïnvloeden; gebruikt sterke argumenten of roept emoties op",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Speels",
+        "Name": "Speels",
         "Effect": "Boeit lezers met lichtvoetig, grillig of amusant taalgebruik; creëert een leuke, onderhoudende sfeer.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Poëtisch",
+        "Name": "Poëtisch",
         "Effect": "Bevat ritme, figuurlijke taal of andere poëtische middelen; voegt schoonheid of diepte toe aan de tekst.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Popular Science",
+        "Name": "Popular Science",
         "Effect": "Wetenschap, technologie, milieu",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Provocerend",
+        "Name": "Provocerend",
         "Effect": "Daagt aannames uit, wakkert discussie aan of lokt heftige reacties uit; vaak gebruikt om discussie te stimuleren.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Puma",
+        "Name": "Puma",
         "Effect": "Atletische prestaties, gedurfd design en creatieve samenwerkingen.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Ralph Ellison",
+        "Name": "Ralph Ellison",
         "Effect": "Verkenning van identiteit, ras en sociale kwesties in Amerika",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Red Bull",
+        "Name": "Red Bull",
         "Effect": "Energie, extreme sporten en grenzen verleggen.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Rolex",
+        "Name": "Rolex",
         "Effect": "Precisie, vakmanschap en prestige.",
-        "Selecteren": "Merk Stemmen"
+        "Select": "Merk Stemmen"
     },
     {
-        "Naam": "Rolling Stone",
+        "Name": "Rolling Stone",
         "Effect": "Muziek, cultuur, politiek",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Romantisch",
+        "Name": "Romantisch",
         "Effect": "Richt zich op emoties, relaties of schoonheid; vaak gebruikt in persoonlijk of expressief schrijven.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Samuel Beckett",
+        "Name": "Samuel Beckett",
         "Effect": "Minimalisme, existentialisme en donkere humor",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Sarcastisch",
+        "Name": "Sarcastisch",
         "Effect": "Maakt gebruik van ironie, spot of satire; kan worden gebruikt om kritiek te leveren of een punt te benadrukken met humor.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Satirisch",
+        "Name": "Satirisch",
         "Effect": "Gebruikt humor, ironie of overdrijving om een onderwerp te bekritiseren of te bespotten, vaak om verandering uit te lokken.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Scientific American",
+        "Name": "Scientific American",
         "Effect": "Wetenschap, technologie",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Sports Illustrated",
+        "Name": "Sports Illustrated",
         "Effect": "Sport",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Spotify",
+        "Name": "Spotify",
         "Effect": "Gepersonaliseerde muziekervaring, ontdekking en community.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Starbucks",
+        "Name": "Starbucks",
         "Effect": "Consistentie, gemeenschap en kwaliteit koffie-ervaring.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Spannend",
+        "Name": "Spannend",
         "Effect": "Bouwt spanning, anticipatie of onzekerheid op; vaak gebruikt in fictie of verhalend schrijven.",
-        "Selecteren": "Toon"
+        "Select": "Toon"
     },
     {
-        "Naam": "Sylvia Plath",
+        "Name": "Sylvia Plath",
         "Effect": "Intensiteit, emotionele diepgang en bekentenisstijl",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Tesla",
+        "Name": "Tesla",
         "Effect": "Gedurfd, innovatief en gericht op duurzame energie.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "The Atlantic",
+        "Name": "The Atlantic",
         "Effect": "Politiek, cultuur, technologie",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The Chronicle of Higher Education",
+        "Name": "The Chronicle of Higher Education",
         "Effect": "Academia, onderwijs",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The Economist",
+        "Name": "The Economist",
         "Effect": "Bedrijfsleven, politiek, economie",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The Lancet",
+        "Name": "The Lancet",
         "Effect": "Medisch onderzoek",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The New York Review of Books",
+        "Name": "The New York Review of Books",
         "Effect": "Literatuur, cultuur, politiek",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The New Yorker",
+        "Name": "The New Yorker",
         "Effect": "Cultuur, politiek, humor",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The Paris Review",
+        "Name": "The Paris Review",
         "Effect": "Literatuur, kunst, cultuur",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "The Wall Street Journal",
+        "Name": "The Wall Street Journal",
         "Effect": "Bedrijfsleven, financiën, politiek",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "TIME",
+        "Name": "TIME",
         "Effect": "Nieuws, politiek, actuele gebeurtenissen",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Toni Morrison",
+        "Name": "Toni Morrison",
         "Effect": "Rijke, lyrische taal en Afro-Amerikaanse cultuur",
-        "Selecteren": "Auteur Stijlen"
+        "Select": "Auteur Stijlen"
     },
     {
-        "Naam": "Vanity Fair",
+        "Name": "Vanity Fair",
         "Effect": "Popcultuur, mode, actuele gebeurtenissen",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Vans",
+        "Name": "Vans",
         "Effect": "Authenticiteit, jeugdcultuur en actiesporten.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "VICE",
+        "Name": "VICE",
         "Effect": "Cultuur, nieuws, politiek",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Virgin",
+        "Name": "Virgin",
         "Effect": "Disruptie, innovatie en klantgerichte ervaringen.",
-        "Selecteren": "Brand Voices"
+        "Select": "Brand Voices"
     },
     {
-        "Naam": "Virginia Woolf",
+        "Name": "Virginia Woolf",
         "Effect": "Stroom van bewustzijn en innerlijke monologen",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Vladimir Nabokov",
+        "Name": "Vladimir Nabokov",
         "Effect": "Ingewikkeld proza, woordspelingen en onbetrouwbare vertellers",
-        "Selecteren": "Auteursstijlen"
+        "Select": "Auteursstijlen"
     },
     {
-        "Naam": "Vogue",
+        "Name": "Vogue",
         "Effect": "Mode, schoonheid, cultuur",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "William Shakespeare",
+        "Name": "William Shakespeare",
         "Effect": "Poëzie, woordspelingen en complexe personages",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     },
     {
-        "Naam": "Wired",
+        "Name": "Wired",
         "Effect": "Technologie, wetenschap, cultuur",
-        "Selecteren": "Tijdschriften/Journaals"
+        "Select": "Tijdschriften/Journaals"
     },
     {
-        "Naam": "Zora Neale Hurston",
+        "Name": "Zora Neale Hurston",
         "Effect": "Rijke, authentieke dialoog en viering van de Afro-Amerikaanse cultuur",
-        "Selecteren": "Auteur Styles"
+        "Select": "Auteur Styles"
     }
 ]
