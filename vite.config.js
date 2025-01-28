@@ -7,9 +7,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
-        'firebase/app',
-        'firebase/auth',
-        'firebase/firestore'
+        '@firebase/app',
+        '@firebase/auth'
       ]
     }
   }
