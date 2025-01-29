@@ -1,9 +1,7 @@
-import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
 export default function Settings() {
-  const { language, toggleLanguage } = useLanguage();
   const { darkMode, toggleDarkMode } = useTheme();
   const { t } = useTranslation();
 
@@ -13,14 +11,6 @@ export default function Settings() {
         {t('settings.title')}
       </h1>
       <div className="space-y-4">
-        <div>
-          <button 
-            onClick={toggleLanguage}
-            className="btn btn-primary mr-4"
-          >
-            {t('settings.language.switch')}
-          </button>
-        </div>
         <div>
           <button 
             onClick={toggleDarkMode}

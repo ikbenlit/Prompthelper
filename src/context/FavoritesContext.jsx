@@ -4,34 +4,66 @@ const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState(() => {
-    const saved = localStorage.getItem('favorites');
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem('favorites');
+      return saved ? JSON.parse(saved) : [];
+    } catch (error) {
+      console.error('Error loading favorites:', error);
+      return [];
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    try {
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    } catch (error) {
+      console.error('Error saving favorites:', error);
+    }
   }, [favorites]);
 
   const addFavorite = (prompt) => {
-    setFavorites(prev => [...prev, prompt]);
+    if (!prompt) return;
+    
+    setFavorites(prev => {
+      // Check if already exists
+      if (prev.some(fav => fav.prompt_id === prompt.prompt_id)) {
+        return prev;
+      }
+      
+      // Bewaar alle relevante velden
+      return [...prev, {
+        prompt_id: prompt.prompt_id,
+        title: prompt.title,
+        prompt: prompt.prompt,
+        category: prompt.category,
+        formula: prompt.formula,
+        more_examples: prompt.more_examples
+      }];
+    });
   };
 
   const removeFavorite = (prompt) => {
-    setFavorites(prev => 
-      prev.filter(fav => 
-        (fav.Title || fav.Titel) !== (prompt.Title || prompt.Titel)
-      )
-    );
+    if (!prompt?.prompt_id) return;
+    setFavorites(prev => prev.filter(fav => fav.prompt_id !== prompt.prompt_id));
   };
 
   const isFavorite = (prompt) => {
-    return favorites.some(fav => 
-      (fav.Title || fav.Titel) === (prompt.Title || prompt.Titel)
-    );
+    if (!prompt?.prompt_id) return false;
+    return favorites.some(fav => fav.prompt_id === prompt.prompt_id);
+  };
+
+  const getFavoriteById = (promptId) => {
+    return favorites.find(fav => fav.prompt_id === promptId);
   };
 
   return (
-    <FavoritesContext.Provider value={{ favorites, addFavorite, removeFavorite, isFavorite }}>
+    <FavoritesContext.Provider value={{ 
+      favorites, 
+      addFavorite, 
+      removeFavorite, 
+      isFavorite,
+      getFavoriteById
+    }}>
       {children}
     </FavoritesContext.Provider>
   );

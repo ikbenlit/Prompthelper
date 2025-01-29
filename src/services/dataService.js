@@ -33,35 +33,69 @@ const normalizeStyleData = (styles, isEnglish = true) => {
 };
 
 // Helper function to normalize prompt data
-const normalizePromptData = (prompts, isEnglish = true) => {
-  if (!Array.isArray(prompts)) {
-    console.error('Invalid prompts data:', prompts);
-    return [];
-  }
-
-  return prompts.filter(prompt => {
-    if (!prompt) return false;
-
-    // Check for required fields based on language
-    if (isEnglish) {
-      return prompt.Title && prompt.Category && prompt.Prompt;
-    } else {
-      return prompt.Titel && prompt.Categorie && prompt.Prompt;
+const normalizePromptData = (prompts) => {
+  const idSet = new Set();
+  const duplicates = new Set();
+  
+  const filtered = prompts.filter(prompt => {
+    // Controleer of prompt_id een nummer is
+    if (typeof prompt.prompt_id !== 'number') {
+      console.error('Ongeldig prompt_id type:', prompt);
+      return false;
     }
+    if (!prompt.category || !Number.isInteger(prompt.prompt_id)) {
+      console.error('Invalid prompt:', prompt);
+      return false;
+    }
+    if (idSet.has(prompt.prompt_id)) {
+      duplicates.add(prompt.prompt_id);
+      return false;
+    }
+    idSet.add(prompt.prompt_id);
+    return true;
   });
+
+  if (duplicates.size > 0) {
+    console.error('Dubbele IDs gevonden:', Array.from(duplicates));
+  }
+  
+  return filtered;
 };
 
-export const loadData = (language = 'nl') => {
+export const loadData = () => {
   try {
-    const isEnglish = language === 'en';
+    const rawPrompts = promptsNL;
     
-    // Load and normalize the data
-    const prompts = normalizePromptData(isEnglish ? promptsEN : promptsNL, isEnglish);
-    const styles = normalizeStyleData(isEnglish ? stylesEN : stylesNL, isEnglish);
-    const tones = normalizeToneData(isEnglish ? tonesEN : tonesNL, isEnglish);
+    // Load raw data
+    const rawStyles = stylesNL;
+    const rawTones = tonesNL;
 
-    // Get categories with the correct language
-    const categories = getUniqueCategories(prompts, language);
+    // Normalize data
+    const prompts = normalizePromptData(rawPrompts);
+    const styles = normalizeStyleData(rawStyles);
+    const tones = normalizeToneData(rawTones);
+
+    // Get categories
+    const categories = getUniqueCategories(prompts);
+    
+    // Voeg deze tijdelijke log toe
+    console.log('Laatste 5 prompts:', 
+      promptsNL.slice(-5).map(p => p.prompt_id)
+    );
+
+    // Controleer of alle IDs uniek en sequentieel zijn
+    const allIds = promptsNL.map(p => p.prompt_id);
+    const duplicates = allIds.filter((id, index) => allIds.indexOf(id) !== index);
+    const isSequential = allIds.every((id, index) => 
+      index === 0 || id === allIds[index - 1] + 1
+    );
+
+    console.log('ID Check:', {
+      total: allIds.length,
+      unique: new Set(allIds).size,
+      duplicates,
+      isSequential
+    });
 
     return { prompts, styles, tones, categories };
   } catch (error) {
@@ -71,37 +105,13 @@ export const loadData = (language = 'nl') => {
 };
 
 // Helper function to filter prompts by category
-export const filterPromptsByCategory = (prompts, category, language = 'nl') => {
-  if (!category || !prompts.length) return prompts;
-  const isEnglish = language === 'en';
-  const categoryField = isEnglish ? 'Category' : 'Categorie';
-  return prompts.filter(prompt => prompt[categoryField] === category);
+export const filterPromptsByCategory = (prompts, category) => {
+  return prompts.filter(prompt => prompt.category === category);
 };
 
 // Helper function to get unique categories
-export const getUniqueCategories = (prompts, language = 'nl') => {
-  if (!prompts.length) return [];
-  const isEnglish = language === 'en';
-  const categoryField = isEnglish ? 'Category' : 'Categorie';
-
-  // Get unique categories and sort them
-  const categories = [...new Set(prompts.map(prompt => prompt[categoryField]))].filter(Boolean);
-
-  // Map Dutch categories to English if needed
-  if (isEnglish) {
-    const categoryMap = {
-      'Productivity': 'Productivity',
-      'Writing': 'Writing',
-      'Social': 'Social',
-      'Health': 'Health',
-      'Marketing': 'Marketing',
-      'Entrepreneurship': 'Entrepreneurship',
-      'Entertainment': 'Entertainment'
-    };
-    return categories.map(cat => categoryMap[cat] || cat).sort();
-  }
-
-  return categories.sort();
+export const getUniqueCategories = (prompts) => {
+  return [...new Set(prompts.map(prompt => prompt.category))];
 };
 
 // Helper function to get favorites

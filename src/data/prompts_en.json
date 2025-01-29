@@ -1,10 +1,11 @@
 [
     {
-        "Title":"Make Analogies",
-        "Category":"Productivity",
-        "Prompt":"Can you create an analogy for being overwhelmed?",
-        "Formula":"Can you create an analogy for [concept]?",
-        "More Examples":"Can you create an analogy for explaining photosynthesis?\n\nCan you create an analogy for understanding how a computer processor works?\n\nCan you create an analogy for the concept of supply and demand in economics?\n\nCan you create an analogy for the process of cell division?\n\nCan you create an analogy for the theory of relativity?\n\nCan you create an analogy for the concept of machine learning?\n\nCan you create an analogy for the principle of buoyancy?"
+        "Titel": "Analogieën maken",
+        "id": "analogieen-maken",
+        "Category": "Productivity",
+        "Prompt": "Kun je een analogie maken voor...",
+        "Formula": "Kun je een analogie maken voor [concept]?",
+        "More Examples": "Kun je een analogie maken voor het begrijpen van fotosynthese?\n\nKun je een analogie maken voor het begrijpen van hoe een computerprocessor werkt?\n\nKun je een analogie maken voor het concept van vraag en aanbod in economie?\n\nKun je een analogie maken voor het proces van celdeling?\n\nKun je een analogie maken voor de theorie van relativiteit?\n\nKun je een analogie maken voor het concept van machine learning?\n\nKun je een analogie maken voor het principe van opwaartse kracht?"
     },
     {
         "Title":"Generate Web Code",

@@ -7,7 +7,6 @@
   "settings": {
     "title": "Settings",
     "language": {
-      "switch": "Switch to Dutch",
       "current": "English"
     },
     "theme": {
@@ -25,7 +24,8 @@
     "copy": "Copy",
     "copied": "Copied!",
     "generate": "Generate Content",
-    "generating": "Generating..."
+    "generating": "Generating...",
+    "close": "Close"
   },
   "search": {
     "placeholder": "Search prompts...",
@@ -58,5 +58,8 @@
   },
   "generate": {
     "result": "Generated Content"
+  },
+  "filters": {
+    "allCategories": "All categories"
   }
 } 

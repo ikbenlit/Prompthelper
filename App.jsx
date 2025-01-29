@@ -10,6 +10,19 @@ function ErrorFallback({ error }) {
 }
 
 // Wrap je root component
-<ErrorBoundary FallbackComponent={ErrorFallback}>
+<ErrorBoundary 
+  FallbackComponent={ErrorFallback}
+  onReset={() => window.location.reload()}
+>
   <App />
 </ErrorBoundary> 
+
+function App() {
+  return (
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Router>
+        {/* Routes */}
+      </Router>
+    </ErrorBoundary>
+  );
+} 

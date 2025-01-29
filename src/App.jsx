@@ -71,7 +71,11 @@ function App() {
                         <Home />
                       </ProtectedRoute>
                     } />
-                    <Route path="/prompt/:id" element={<PromptDetail />} />
+                    <Route path="/prompts/:id" element={
+                      <ProtectedRoute>
+                        <PromptDetail />
+                      </ProtectedRoute>
+                    } />
                     <Route path="/favorites" element={
                       <ProtectedRoute>
                         <Favorites />

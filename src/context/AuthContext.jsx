@@ -10,7 +10,11 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log('Auth state changed:', user);
+      if (import.meta.env.DEV) {
+        console.groupCollapsed('Auth State Update');
+        console.log('User:', user ? user.uid : 'None');
+        console.groupEnd();
+      }
       setUser(user);
       setLoading(false);
     });
@@ -20,17 +24,29 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.debug('Login successful for:', userCredential.user.uid);
       return userCredential.user;
     } catch (error) {
-      throw new Error(error.message);
+      console.error('Auth Error:', { 
+        code: error.code,
+        message: error.message,
+        timestamp: new Date().toISOString()
+      });
+      throw new Error('Inloggen mislukt. Controleer je gegevens.');
     }
   };
 
   const logout = async () => {
     try {
       await signOut(auth);
+      console.debug('User logged out');
     } catch (error) {
-      throw new Error(error.message);
+      console.error('Logout Error:', {
+        code: error.code,
+        message: error.message,
+        stack: error.stack.split('\n')[0] // Eerste regel van stack trace
+      });
+      throw new Error('Uitloggen mislukt. Probeer het opnieuw.');
     }
   };
 

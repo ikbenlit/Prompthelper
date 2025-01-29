@@ -7,7 +7,6 @@
   "settings": {
     "title": "Instellingen",
     "language": {
-      "switch": "Wissel naar Engels",
       "current": "Nederlands"
     },
     "theme": {
@@ -26,7 +25,8 @@
     "copied": "Gekopieerd!",
     "generate": "Genereer Content",
     "generating": "Bezig met genereren...",
-    "makeContent": "Maak content"
+    "makeContent": "Maak content",
+    "close": "Sluit"
   },
   "search": {
     "placeholder": "Zoek prompts...",
@@ -44,7 +44,9 @@
     "formula": "Formule",
     "example": "Voorbeeld",
     "moreExamples": "Meer Voorbeelden",
-    "editor": "Prompt samenstellen"
+    "editor": "Prompt samenstellen",
+    "showFormula": "Toon formule",
+    "showMoreExamples": "Meer voorbeelden"
   },
   "customize": {
     "selectTone": "Selecteer toon",
@@ -62,5 +64,8 @@
   },
   "generate": {
     "result": "Gegenereerde content"
+  },
+  "filters": {
+    "allCategories": "Alle categorieën"
   }
 } 

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { usePrompts } from '../context/PromptContext';
 import { useFavorites } from '../context/FavoritesContext';
@@ -10,13 +10,42 @@ export default function PromptDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { prompts, styles, tones, loading } = usePrompts();
+  const { allPrompts: prompts, styles, tones, loading } = usePrompts();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const [copiedText, setCopiedText] = useState('');
   const [showExamples, setShowExamples] = useState(false);
   const [showFormula, setShowFormula] = useState(false);
   const [formulaPopover, setFormulaPopover] = useState({ show: false, x: 0, y: 0 });
   const formulaButtonRef = useRef(null);
+  const [expandedExamples, setExpandedExamples] = useState(false);
+  const [hoveredExample, setHoveredExample] = useState(null);
+  const [showFormulaContent, setShowFormulaContent] = useState(false);
+  const formulaPopoverRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        formulaButtonRef.current && 
+        !formulaButtonRef.current.contains(event.target) &&
+        formulaPopoverRef.current && 
+        !formulaPopoverRef.current.contains(event.target)
+      ) {
+        setFormulaPopover(prev => ({ ...prev, show: false }));
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const prompt = useMemo(() => {
+    const numericId = Number(id);
+    return prompts.find(p => p.prompt_id === numericId);
+  }, [id, prompts]);
+
+  console.log('Current prompt:', prompt);
+  console.log('Looking for ID:', id, 'Type:', typeof id);
+  console.log('Available prompts:', prompts.map(p => ({id: p.prompt_id, Titel: p.Titel})));
 
   if (loading) {
     return (
@@ -25,16 +54,6 @@ export default function PromptDetail() {
       </div>
     );
   }
-
-  const prompt = prompts.find(p => {
-    const promptTitle = p.Title || p.Titel;
-    console.log({
-      match: promptTitle === decodeURIComponent(id),
-      promptTitle,
-      urlId: decodeURIComponent(id)
-    });
-    return promptTitle === decodeURIComponent(id);
-  });
 
   if (!prompt) {
     return (
@@ -52,11 +71,10 @@ export default function PromptDetail() {
 
   const handleCopy = (text) => {
     setCopiedText(text);
-    setTimeout(() => setCopiedText(''), 2000); // Reset na 2 seconden
+    setTimeout(() => setCopiedText(''), 2000);
   };
 
   const handleExampleSelect = (example) => {
-    // Update de prompt in de customizer
     const customizer = document.querySelector('.prompt-customizer');
     if (customizer) {
       customizer.querySelector('textarea').value = example;
@@ -67,55 +85,54 @@ export default function PromptDetail() {
     setFormulaPopover(prev => ({ ...prev, show: !prev.show }));
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (formulaButtonRef.current && 
-          !formulaButtonRef.current.contains(event.target) && 
-          formulaPopover.show) {
-        setFormulaPopover(prev => ({ ...prev, show: false }));
-      }
+  const CopyButton = ({ text, className = '' }) => {
+    const { t } = useTranslation();
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = () => {
+      navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [formulaPopover.show]);
-
-  const CopyButton = ({ text, onCopy }) => (
-    <CopyToClipboard 
-      text={text} 
-      onCopy={() => {
-        handleCopy(text);
-        onCopy?.();
-      }}
-    >
+    return (
       <button
-        className={`p-2 rounded-lg transition-colors ${
-          copiedText === text
-            ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300'
-            : 'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600'
-        }`}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleCopy();
+        }}
+        className={`flex items-center gap-2 p-1.5 rounded bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all ${className}`}
       >
-        {copiedText === text ? (
-          <span className="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+        {copied ? (
+          <>
+            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            {t('actions.copied')}
-          </span>
+            <span className="text-sm text-green-500">Gekopieerd</span>
+          </>
         ) : (
-          <span className="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-              <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+          <>
+            <svg className="w-4 h-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            {t('actions.copy')}
-          </span>
+            <span className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Kopieer</span>
+          </>
         )}
       </button>
-    </CopyToClipboard>
-  );
+    );
+  };
 
   console.log('Tones in PromptDetail:', tones);
+
+  const applyExample = (example) => {
+    const customizerTextarea = document.querySelector('.prompt-customizer textarea');
+    if (customizerTextarea) {
+      customizerTextarea.value = example;
+      const event = new Event('input', { bubbles: true });
+      customizerTextarea.dispatchEvent(event);
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -130,28 +147,63 @@ export default function PromptDetail() {
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="lg:sticky lg:top-8 z-10">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 prompt-customizer">
-            <h2 className="text-xl font-semibold mb-4">{t('prompt.editor')}</h2>
-            <PromptCustomizer 
-              prompt={prompt}
-              tones={tones}
-              styles={styles}
-              onCustomize={(customizedPrompt) => {
-                console.log('Customized prompt:', customizedPrompt);
-              }}
-            />
-          </div>
+        <div className="lg:sticky lg:top-8 z-10 space-y-6">
+          <PromptCustomizer 
+            prompt={prompt}
+            tones={tones}
+            styles={styles}
+          />
         </div>
 
-        <div className="space-y-8">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <div className="flex justify-between items-start mb-6">
-              <h1 className="text-3xl font-bold">
-                {prompt.Title || prompt.Titel}
-              </h1>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <div className="flex justify-between items-start mb-6">
+            <h1 className="text-2xl font-bold">
+              {prompt.Title || prompt.Titel}
+            </h1>
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <button
+                  ref={formulaButtonRef}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFormulaPopover(prev => ({ 
+                      show: !prev.show,
+                      x: 0,
+                      y: 0
+                    }));
+                  }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                    <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+                  </svg>
+                  <span>Prompt formule</span>
+                </button>
+
+                {formulaPopover.show && (
+                  <div 
+                    ref={formulaPopoverRef}
+                    className="absolute z-50 mt-2 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 min-w-[300px]"
+                    style={{
+                      left: 0,
+                      top: '100%'
+                    }}
+                  >
+                    <div className="relative group">
+                      <p className="text-gray-600 dark:text-gray-300 font-mono text-sm whitespace-pre-wrap">
+                        {prompt.formula}
+                      </p>
+                      <CopyButton
+                        text={prompt.formula}
+                        className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
               <button
-                className={`flex items-center gap-2 ${
+                className={`${
                   isFavorite(prompt)
                     ? 'text-yellow-500 dark:text-yellow-400'
                     : 'text-gray-400 dark:text-gray-500'
@@ -160,113 +212,76 @@ export default function PromptDetail() {
                   isFavorite(prompt) ? removeFavorite(prompt) : addFavorite(prompt);
                 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
                   <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
                 </svg>
               </button>
             </div>
+          </div>
 
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">{t('prompt.example')}</h2>
-                <div className="relative" ref={formulaButtonRef}>
-                  <button
-                    onClick={handleFormulaClick}
-                    className="flex items-center gap-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-                    </svg>
-                    Prompt formule
-                  </button>
-
-                  {formulaPopover.show && (
-                    <div 
-                      className="absolute z-50 w-96 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 p-4"
-                      style={{ 
-                        top: 'calc(100% + 0.5rem)',
-                        right: 0
-                      }}
-                    >
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                          {t('prompt.formula')}
-                        </span>
-                        <CopyButton 
-                          text={prompt.Formula || prompt.Formule} 
-                          onCopy={() => setFormulaPopover(prev => ({ ...prev, show: false }))}
-                        />
-                      </div>
-                      <p className="font-mono text-sm italic text-gray-600 dark:text-gray-300">
-                        {prompt.Formula || prompt.Formule}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div 
-                className="group relative bg-gray-100 dark:bg-gray-700 rounded-lg p-4 hover:bg-gray-200 dark:hover:bg-gray-600 cursor-pointer transition-colors"
-                onClick={() => handleExampleSelect(prompt.Prompt)}
-              >
-                <p className="text-base leading-relaxed pr-20">{prompt.Prompt}</p>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <CopyButton text={prompt.Prompt} />
-                </div>
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">Voorbeeld</h2>
+            <div className="relative group bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+              <p className="text-gray-600 dark:text-gray-300 pr-12 cursor-pointer"
+                 onClick={() => applyExample(prompt.prompt)}>
+                {prompt.prompt}
+              </p>
+              <div className="absolute top-4 right-4">
+                <CopyButton
+                  text={prompt.prompt}
+                  className="opacity-0 group-hover:opacity-100 transition-opacity"
+                />
               </div>
             </div>
-
-            {(prompt['More Examples'] || prompt['Meer voorbeelden']) && (
-              <div>
-                <button
-                  onClick={() => setShowExamples(!showExamples)}
-                  className="flex items-center gap-2 text-xl font-semibold mb-4 group"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-5 w-5 transition-transform ${showExamples ? 'rotate-90' : ''}`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {t('prompt.moreExamples')}
-                  <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                    ({(prompt['More Examples'] || prompt['Meer voorbeelden'])
-                      .split(/\r?\n/)
-                      .filter(example => example.trim())
-                      .length} voorbeelden)
-                  </span>
-                </button>
-
-                <div className={`space-y-4 transition-all duration-300 ${
-                  showExamples 
-                    ? 'max-h-[2000px] opacity-100' 
-                    : 'max-h-0 opacity-0 overflow-hidden'
-                }`}>
-                  {(prompt['More Examples'] || prompt['Meer voorbeelden'])
-                    .split(/\r?\n/)
-                    .filter(example => example.trim())
-                    .map((example, index) => (
-                      <div 
-                        key={index} 
-                        className="group relative bg-gray-100 dark:bg-gray-700 rounded-lg p-4 hover:bg-gray-200 dark:hover:bg-gray-600 cursor-pointer transition-colors"
-                        onClick={() => handleExampleSelect(example.trim())}
-                      >
-                        <p className="text-base leading-relaxed pr-20">{example.trim()}</p>
-                        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <CopyButton text={example.trim()} />
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            )}
           </div>
+
+          {prompt.more_examples && (
+            <div className="mt-6">
+              <button
+                onClick={() => setExpandedExamples(!expandedExamples)}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+              >
+                <span className="text-sm font-medium">
+                  Meer Voorbeelden
+                </span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  ({prompt.more_examples.split(/\r\n\r\n/).length} voorbeelden)
+                </span>
+                <svg 
+                  className={`w-4 h-4 transform transition-transform ${expandedExamples ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {expandedExamples && (
+                <div className="mt-4 space-y-4">
+                  {prompt.more_examples.split(/\r\n\r\n/).map((example, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 relative group"
+                    >
+                      <p 
+                        className="text-gray-600 dark:text-gray-300 pr-12 cursor-pointer"
+                        onClick={() => applyExample(example.trim())}
+                      >
+                        {example.trim()}
+                      </p>
+                      <div className="absolute top-4 right-4 z-10">
+                        <CopyButton
+                          text={example.trim()}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

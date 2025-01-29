@@ -334,15 +334,9 @@
         "Effect": "Global affairs, business, culture",
         "Select": "Tijdschriften/Journaals"
     },
-    {
-        "Name": "National Geographic",
-        "Effect": "Wetenschap, aardrijkskunde, geschiedenis",
-        "Select": "Tijdschriften/Journaals"
-    },
-    {
-        "Name": "National Geographic",
-        "Effect": "Verkenning, educatie en verbluffende beelden.",
-        "Select": "Brand Voices"
+    {   "Name": "National Geographic Fotografie",
+        "Effect": "Visueel rijke beschrijvingen van landschappen",
+        "Select": "Fotografische stijl van National Geographic"
     },
     {
         "Name": "Natuur",

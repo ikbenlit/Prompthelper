@@ -4,11 +4,19 @@ import { useTranslation } from 'react-i18next';
 import Fuse from 'fuse.js';
 import { useFavorites } from '../context/FavoritesContext';
 import { Link } from 'react-router-dom';
+import { filterPromptsByCategory } from '../services/dataService';
+import usePromptFilter from '../hooks/usePromptFilter';
 
 export default function Home() {
   const { t } = useTranslation();
   const { prompts, categories, selectedCategory, setSelectedCategory, loading } = usePrompts();
-  const [searchQuery, setSearchQuery] = useState('');
+  const { 
+    searchQuery,
+    setSearchQuery,
+    selectedCategory: filteredSelectedCategory,
+    setSelectedCategory: setFilteredSelectedCategory,
+    filteredPrompts 
+  } = usePromptFilter();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
 
   // Configure Fuse.js for fuzzy search
@@ -20,55 +28,25 @@ export default function Home() {
     });
   }, [prompts]);
 
-  // Filter prompts based on search and category
-  const filteredPrompts = useMemo(() => {
-    let results = prompts;
-    
-    // Apply search filter if query exists
-    if (searchQuery) {
-      results = fuse.search(searchQuery).map(result => result.item);
-    }
-    
-    // Apply category filter if selected
-    if (selectedCategory && results.length > 0) {
-      // Check both Category and Categorie fields
-      results = results.filter(prompt => 
-        (prompt.Category === selectedCategory || prompt.Categorie === selectedCategory)
-      );
-    }
-    
-    return results;
-  }, [searchQuery, selectedCategory, prompts, fuse]);
+  const categoryColorMap = {
+    'Productiviteit': 'blue',
+    'Schrijven': 'purple',
+    'Sociaal': 'green',
+    'Gezondheid': 'yellow',
+    'Marketing': 'orange',
+    'Ondernemerschap': 'red',
+    'Amusement': 'pink',
+    'Entertainment': 'cyan'
+  };
 
   const getCategoryColor = (category) => {
-    const colors = {
-      // We need to add English categories here too
-      'Productiviteit': 'blue',
-      'Schrijven': 'purple',
-      'Sociaal': 'green',
-      'Gezondheid': 'yellow',
-      'Marketing': 'orange',
-      'Ondernemerschap': 'red',
-      'Amusement': 'pink',
-      'Vermaak': 'indigo',
-      'Entertainment': 'cyan',
-      // Add English categories
-      'Productivity': 'blue',
-      'Writing': 'purple',
-      'Social': 'green', 
-      'Health': 'yellow',
-      'Marketing': 'orange',
-      'Entrepreneurship': 'red',
-      'Entertainment': 'cyan'
-    };
-    
-    if (!colors[category]) {
-      // Change console.warn to just return default color silently
-      return 'gray';
-    }
-    
-    return colors[category];
+    console.log('Getting color for:', category);
+    return categoryColorMap[category] || 'gray';
   };
+
+  console.log('Available categories:', categories);
+  console.log('Categories:', categories);
+  console.log('Category colors:', categoryColorMap);
 
   if (loading) {
     return (
@@ -91,7 +69,10 @@ export default function Home() {
           type="text"
           placeholder={t('search.placeholder')}
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setFilteredSelectedCategory(null);
+          }}
           className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-shadow"
         />
       </div>
@@ -100,9 +81,9 @@ export default function Home() {
       <div className="mb-8 overflow-x-auto">
         <div className="flex flex-nowrap gap-2 pb-2">
           <button
-            onClick={() => setSelectedCategory(null)}
+            onClick={() => setFilteredSelectedCategory(null)}
             className={`px-4 py-2 rounded-xl whitespace-nowrap transition-all ${
-              !selectedCategory 
+              !filteredSelectedCategory 
                 ? 'bg-blue-600 text-white shadow-md' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
@@ -112,9 +93,12 @@ export default function Home() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setFilteredSelectedCategory(prev => prev === category ? null : category);
+                setSearchQuery('');
+              }}
               className={`px-4 py-2 rounded-xl whitespace-nowrap transition-all ${
-                selectedCategory === category
+                filteredSelectedCategory === category
                   ? `bg-${getCategoryColor(category)}-600 text-white shadow-md`
                   : `bg-${getCategoryColor(category)}-50 dark:bg-${getCategoryColor(category)}-900/10 
                      text-${getCategoryColor(category)}-700 dark:text-${getCategoryColor(category)}-300 
@@ -131,14 +115,14 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredPrompts.map((prompt) => (
           <Link
-            key={prompt.Title || prompt.Titel}
-            to={`/prompt/${encodeURIComponent(prompt.Title || prompt.Titel)}`}
+            key={`prompt-${prompt.prompt_id}`}
+            to={`/prompts/${prompt.prompt_id}`}
             className="group block"
           >
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl p-6 transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500">
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {prompt.Title || prompt.Titel}
+                  {prompt.title}
                 </h3>
                 <button
                   className={`flex items-center justify-center w-8 h-8 rounded-full ${
@@ -157,17 +141,17 @@ export default function Home() {
                 </button>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                {prompt.Prompt}
+                {prompt.prompt}
               </p>
               <div className="flex items-center gap-2">
                 <span 
                   className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-                    bg-${getCategoryColor(prompt.Category || prompt.Categorie)}-100 
-                    dark:bg-${getCategoryColor(prompt.Category || prompt.Categorie)}-900/20
-                    text-${getCategoryColor(prompt.Category || prompt.Categorie)}-700
-                    dark:text-${getCategoryColor(prompt.Category || prompt.Categorie)}-300`}
+                    bg-${getCategoryColor(prompt.category)}-100 
+                    dark:bg-${getCategoryColor(prompt.category)}-900/20
+                    text-${getCategoryColor(prompt.category)}-700
+                    dark:text-${getCategoryColor(prompt.category)}-300`}
                 >
-                  {prompt.Category || prompt.Categorie}
+                  {prompt.category}
                 </span>
               </div>
             </div>

@@ -77,7 +77,7 @@
     },
     {
         "Name": "Informeel",
-        "Effect": "Creëert een informele, conversationele sfeer; geschikt voor ontspannen of persoonlijke contexten."
+        "Effect": "Creëert een informele, ontspannen sfeer; geschikt voor casual communicatie."
     },
     {
         "Name": "Sarcastisch",
@@ -100,7 +100,7 @@
         "Effect": "Boeit lezers met luchtig, grillig of amusant taalgebruik; creëert een leuke, onderhoudende sfeer."
     },
     {
-        "Name": "Vriendelijk ",
+        "Name": "Vriendelijk",
         "Effect": "Roept warmte, benaderbaarheid en kameraadschap op; geschikt voor persoonlijke of sociale situaties."
     },
     {

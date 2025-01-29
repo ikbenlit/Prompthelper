@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -8,7 +7,6 @@ import logo from '../../assets/promptmuse_feather_head.png';
 
 export default function Navigation() {
   const { t } = useTranslation();
-  const { language, toggleLanguage } = useLanguage();
   const { darkMode, toggleDarkMode } = useTheme();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -68,15 +66,6 @@ export default function Navigation() {
                 </svg>
               )}
             </button>
-
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-              title={t('settings.language.switch')}
-            >
-              {language === 'nl' ? 'ENG' : 'NL'}
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -95,14 +84,6 @@ export default function Navigation() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
               )}
-            </button>
-
-            {/* Language Toggle Mobile */}
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-            >
-              {language === 'nl' ? 'ENG' : 'NL'}
             </button>
 
             {/* Menu Toggle */}

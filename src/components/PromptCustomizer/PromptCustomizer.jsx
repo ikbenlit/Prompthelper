@@ -1,40 +1,52 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { generateContent } from '../../services/openAIService';
 import Modal from '../Modal/Modal';
 
-export default function PromptCustomizer({ prompt, tones, styles, onCustomize }) {
+export default function PromptCustomizer({ prompt, tones, styles }) {
   const { t } = useTranslation();
   const [selectedTone, setSelectedTone] = useState('');
   const [selectedStyle, setSelectedStyle] = useState('');
-  const [customizedPrompt, setCustomizedPrompt] = useState(prompt.Prompt);
+  const [customizedPrompt, setCustomizedPrompt] = useState('');
   const [generatedContent, setGeneratedContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [originalPrompt, setOriginalPrompt] = useState('');
+  const [selectedFormula, setSelectedFormula] = useState('');
+  const [examples, setExamples] = useState('');
 
   console.log('Tones received:', JSON.stringify(tones, null, 2));
 
-  const updatePrompt = (newTone, newStyle) => {
-    let newPrompt = prompt.Prompt;
-    const promptParts = [];
+  useEffect(() => {
+    if (prompt) {
+      setOriginalPrompt(prompt.prompt);
+      setCustomizedPrompt(prompt.prompt);
+      setSelectedFormula(prompt.formula || '');
+      setExamples(prompt.more_examples || '');
+    }
+  }, [prompt]);
+
+  const updatePrompt = (tone, style) => {
+    let newPrompt = '';
     
-    if (newTone) {
-      const tone = tones.find(t => t.Name === newTone);
-      promptParts.push(`${t('customize.tonePrefix')}: ${tone.Effect}`);
+    if (tone) {
+      const selectedTone = tones.find(t => t.Name === tone);
+      if (selectedTone) {
+        newPrompt += `Toon: ${selectedTone.Name} - ${selectedTone.Effect}\n\n`;
+      }
     }
     
-    if (newStyle) {
-      const style = styles.find(s => s.Name === newStyle);
-      promptParts.push(`${t('customize.stylePrefix')} ${style.Name}: ${style.Effect}`);
+    if (style) {
+      const selectedStyle = styles.find(s => s.Name === style);
+      if (selectedStyle) {
+        newPrompt += `Stijl: ${selectedStyle.Name} - ${selectedStyle.Effect}\n\n`;
+      }
     }
 
-    promptParts.push(`${t('customize.promptPrefix')}: ${newPrompt}`);
+    newPrompt += `Prompt:\n${originalPrompt}`;
 
-    const formattedPrompt = promptParts.join('\n\n');
-
-    setCustomizedPrompt(formattedPrompt);
-    if (onCustomize) onCustomize(formattedPrompt);
+    setCustomizedPrompt(newPrompt);
   };
 
   const handleGenerate = async () => {
@@ -53,7 +65,21 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
 
   return (
     <>
-      <div className="space-y-6">
+      <div className="space-y-6 relative">
+        {/* Formule icoon rechtsboven */}
+        {prompt.formula && (
+          <div className="absolute top-0 right-0 p-2">
+            <button
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              title={t('prompt.showFormula')}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </button>
+          </div>
+        )}
+
         {/* Tone Selection */}
         <div>
           <label className="block text-sm font-medium mb-2">
@@ -68,16 +94,11 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
             className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
           >
             <option value="">{t('customize.noTone')}</option>
-            {tones && tones.map((tone) => {
-              console.log('Processing tone:', tone);
-              if (!tone || !tone.Name) return null;
-              
-              return (
-                <option key={`tone-${tone.Name}`} value={tone.Name}>
-                  {tone.Name} - {tone.Effect}
-                </option>
-              );
-            })}
+            {tones?.map((tone) => (
+              <option key={tone.Name} value={tone.Name}>
+                {tone.Name} - {tone.Effect}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -95,16 +116,11 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
             className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
           >
             <option value="">{t('customize.noStyle')}</option>
-            {styles && styles.map((style) => {
-              console.log('Processing style:', style);
-              if (!style || !style.Name) return null;
-
-              return (
-                <option key={`style-${style.Name}`} value={style.Name}>
-                  {style.Name} - {style.Effect}
-                </option>
-              );
-            })}
+            {styles?.map((style) => (
+              <option key={style.Name} value={style.Name}>
+                {style.Name} - {style.Effect}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -139,7 +155,7 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
           <textarea
             value={customizedPrompt}
             onChange={(e) => setCustomizedPrompt(e.target.value)}
-            className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 min-h-[200px] resize-y"
+            className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 min-h-[200px] resize-y text-sm leading-relaxed"
             placeholder={t('customize.editPrompt')}
           />
         </div>
@@ -155,18 +171,19 @@ export default function PromptCustomizer({ prompt, tones, styles, onCustomize })
       {/* Generated Content Modal */}
       <div className="relative z-[200]">
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold">{t('generate.result')}</h2>
+          <div className="flex flex-col h-full max-h-[80vh]">
+            <h2 className="text-2xl font-bold mb-4">{t('generate.result')}</h2>
             
-            <div className="prose dark:prose-invert max-w-none">
-              <p className="whitespace-pre-wrap">{generatedContent}</p>
+            <div className="flex-1 overflow-y-auto mb-4">
+              <div className="prose dark:prose-invert max-w-none">
+                <p className="whitespace-pre-wrap">{generatedContent}</p>
+              </div>
             </div>
 
-            {/* Actions */}
-            <div className="flex justify-end gap-4 mt-8">
+            <div className="sticky bottom-0 bg-white dark:bg-gray-800 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between gap-4">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 rounded-lg transition-colors"
               >
                 {t('actions.close')}
               </button>
