@@ -1,0 +1,194 @@
+[
+    {
+        "role_id": "1",
+        "role_name": "Ondernemer",
+        "role_description": "Gericht op innovatie, groei en business development",
+        "role_category": "Ondernemerschap"
+    },
+    {
+        "role_id": "2",
+        "role_name": "Coach",
+        "role_description": "Begeleidt en motiveert anderen naar betere prestaties",
+        "role_category": "Ondernemerschap"
+    },
+    {
+        "role_id": "3",
+        "role_name": "Manager",
+        "role_description": "Richt zich op teamcoördinatie, efficiëntie en strategie",
+        "role_category": "Ondernemerschap"
+    },
+    {
+        "role_id": "4",
+        "role_name": "Consultant",
+        "role_description": "Adviseert bedrijven op basis van expertise in een specifiek vakgebied",
+        "role_category": "Ondernemerschap"
+    },
+    {
+        "role_id": "5",
+        "role_name": "Marketeer",
+        "role_description": "Richt zich op branding, advertenties en contentstrategie",
+        "role_category": "Marketing & Branding"
+    },
+    {
+        "role_id": "6",
+        "role_name": "Regisseur",
+        "role_description": "Stuurt een productie aan en neemt artistieke beslissingen",
+        "role_category": "Creatieve Beroepen"
+    },
+    {
+        "role_id": "7",
+        "role_name": "Acteur",
+        "role_description": "Brengt een personage tot leven met emotionele expressie",
+        "role_category": "Creatieve Beroepen"
+    },
+    {
+        "role_id": "8",
+        "role_name": "Schrijver",
+        "role_description": "Creëert verhalen, content of journalistieke stukken",
+        "role_category": "Creatieve Beroepen"
+    },
+    {
+        "role_id": "9",
+        "role_name": "Designer",
+        "role_description": "Ontwerpt visuele concepten voor branding, UI/UX of media",
+        "role_category": "Creatieve Beroepen"
+    },
+    {
+        "role_id": "10",
+        "role_name": "Muzikant/Producer",
+        "role_description": "Creëert muziek en beheerst het productieproces",
+        "role_category": "Creatieve Beroepen"
+    },
+    {
+        "role_id": "11",
+        "role_name": "Softwareontwikkelaar",
+        "role_description": "Bouwt en onderhoudt applicaties en systemen",
+        "role_category": "Technologie & Innovatie"
+    },
+    {
+        "role_id": "12",
+        "role_name": "AI-specialist",
+        "role_description": "Werkt met kunstmatige intelligentie, algoritmes en automatisering",
+        "role_category": "Technologie & Innovatie"
+    },
+    {
+        "role_id": "13",
+        "role_name": "UX/UI Designer",
+        "role_description": "Ontwerpt intuïtieve gebruikersinterfaces en -ervaringen",
+        "role_category": "Technologie & Innovatie"
+    },
+    {
+        "role_id": "14",
+        "role_name": "Growth Hacker",
+        "role_description": "Combineert data en creativiteit om snel te schalen",
+        "role_category": "Marketing & Branding"
+    },
+    {
+        "role_id": "15",
+        "role_name": "Cybersecurity-expert",
+        "role_description": "Richt zich op het beschermen van digitale infrastructuur",
+        "role_category": "Technologie & Innovatie"
+    },
+    {
+        "role_id": "16",
+        "role_name": "Docent/Trainer",
+        "role_description": "Draagt kennis over en ontwikkelt educatieve content",
+        "role_category": "Educatie & Coaching"
+    },
+    {
+        "role_id": "17",
+        "role_name": "Journalist",
+        "role_description": "Rapporteert objectief en onderzoekt actuele themas",
+        "role_category": "Media & Communicatie"
+    },
+    {
+        "role_id": "18",
+        "role_name": "Psycholoog/Therapeut",
+        "role_description": "Analyseert gedrag en helpt mensen mentaal groeien",
+        "role_category": "Gezondheid & Zorg"
+    },
+    {
+        "role_id": "19",
+        "role_name": "Politicus",
+        "role_description": "Werkt aan beleidsvorming en maatschappelijke vraagstukken",
+        "role_category": "Maatschappij & Bestuur"
+    },
+    {
+        "role_id": "20",
+        "role_name": "Advocaat",
+        "role_description": "Vertegenwoordigt cliënten en analyseert juridische kwesties",
+        "role_category": "Recht & Wetgeving"
+    },
+    {
+        "role_id": "21",
+        "role_name": "E-sports Coach",
+        "role_description": "Begeleidt professionele gamers in strategie en mentale focus",
+        "role_category": "Gaming & E-sports"
+    },
+    {
+        "role_id": "22",
+        "role_name": "Influencer",
+        "role_description": "Creëert content en bouwt een community op social media",
+        "role_category": "Marketing & Branding"
+    },
+    {
+        "role_id": "23",
+        "role_name": "Event Planner",
+        "role_description": "Organiseert evenementen en coördineert logistiek",
+        "role_category": "Organisatie & Logistiek"
+    },
+    {
+        "role_id": "24",
+        "role_name": "Financieel Analist",
+        "role_description": "Onderzoekt markttrends en adviseert over investeringen",
+        "role_category": "Finance & Economie"
+    },
+    {
+        "role_id": "25",
+        "role_name": "HR-manager",
+        "role_description": "Richt zich op talentontwikkeling, werving en bedrijfscultuur",
+        "role_category": "Organisatie & Logistiek"
+    },
+    {
+        "role_id": "26",
+        "role_name": "Detective/Rechercheur",
+        "role_description": "Lost mysteries op met logische analyse",
+        "role_category": "Recht & Wetgeving"
+    },
+    {
+        "role_id": "27",
+        "role_name": "Stand-up Comedian",
+        "role_description": "Gebruikt humor en observaties om een publiek te boeien",
+        "role_category": "Entertainment"
+    },
+    {
+        "role_id": "28",
+        "role_name": "Filosoof",
+        "role_description": "Stelt diepgaande vragen over het leven en de samenleving",
+        "role_category": "Maatschappij & Bestuur"
+    },
+    {
+        "role_id": "29",
+        "role_name": "Chef-kok",
+        "role_description": "Creëert culinaire meesterwerken en leidt een keukenbrigade",
+        "role_category": "Horeca & Voeding"
+    },
+    {
+        "role_id": "30",
+        "role_name": "Reisblogger/Avonturier",
+        "role_description": "Ontdekt nieuwe plekken en inspireert anderen met verhalen",
+        "role_category": "Reizen & Lifestyle"
+    },
+    {
+        "role_id": "31",
+        "role_name": "Biohacker",
+        "role_description": "Experimenteert met technologie en biologie om prestaties te verbeteren",
+        "role_category": "Gezondheid & Innovatie"
+    },
+    {
+        "role_id": "32",
+        "role_name": "Astronaut",
+        "role_description": "Verkent de ruimte en overleeft in extreme omstandigheden",
+        "role_category": "Wetenschap & Ruimtevaart"
+    }
+]

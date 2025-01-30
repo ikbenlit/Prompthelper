@@ -1,0 +1,182 @@
+[
+    {
+        "target_id": "1",
+        "target_name": "Startende Ondernemers",
+        "target_description": "Mensen die net een bedrijf beginnen en strategie nodig hebben.",
+        "target_category": "Ondernemerschap"
+    },
+    {
+        "target_id": "2",
+        "target_name": "Groeibedrijven (Scale-ups)",
+        "target_description": "Bedrijven die al omzet draaien en snel willen schalen.",
+        "target_category": "Ondernemerschap"
+    },
+    {
+        "target_id": "3",
+        "target_name": "Corporate Professionals",
+        "target_description": "Werknemers en managers binnen grotere bedrijven.",
+        "target_category": "Zakelijk & Management"
+    },
+    {
+        "target_id": "4",
+        "target_name": "Freelancers",
+        "target_description": "Zelfstandige professionals die hun diensten aanbieden.",
+        "target_category": "Zelfstandig Ondernemerschap"
+    },
+    {
+        "target_id": "5",
+        "target_name": "Marketeers & Content Creators",
+        "target_description": "Mensen die zich richten op marketing, copywriting en branding.",
+        "target_category": "Marketing & Branding"
+    },
+    {
+        "target_id": "6",
+        "target_name": "Investors & Traders",
+        "target_description": "Mensen die zich bezighouden met aandelen, crypto of venture capital.",
+        "target_category": "Finance & Economie"
+    },
+    {
+        "target_id": "7",
+        "target_name": "E-commerce Ondernemers",
+        "target_description": "Eigenaren van webshops en online retailbedrijven.",
+        "target_category": "E-commerce & Retail"
+    },
+    {
+        "target_id": "8",
+        "target_name": "SaaS Founders",
+        "target_description": "Mensen die softwareproducten als dienst aanbieden.",
+        "target_category": "Technologie & Software"
+    },
+    {
+        "target_id": "9",
+        "target_name": "Sales Professionals",
+        "target_description": "Verkopen producten of diensten en willen hun conversies verhogen.",
+        "target_category": "Sales & Business Development"
+    },
+    {
+        "target_id": "10",
+        "target_name": "HR & Recruiters",
+        "target_description": "Specialisten in talentwerving en personeelsmanagement.",
+        "target_category": "HR & Talentmanagement"
+    },
+    {
+        "target_id": "11",
+        "target_name": "Docenten & Trainers",
+        "target_description": "Mensen die anderen opleiden en coachen.",
+        "target_category": "Educatie & Training"
+    },
+    {
+        "target_id": "12",
+        "target_name": "Non-Profit & NGO's",
+        "target_description": "Organisaties die maatschappelijke impact willen maken.",
+        "target_category": "Maatschappij & Goed Doel"
+    },
+    {
+        "target_id": "13",
+        "target_name": "Psychologen & Coaches",
+        "target_description": "Mensen die zich richten op mentaal welzijn en groei.",
+        "target_category": "Gezondheid & Coaching"
+    },
+    {
+        "target_id": "14",
+        "target_name": "Studenten & Onderzoekers",
+        "target_description": "Mensen in academische of wetenschappelijke omgevingen.",
+        "target_category": "Onderwijs & Wetenschap"
+    },
+    {
+        "target_id": "15",
+        "target_name": "Politici & Beleidsmakers",
+        "target_description": "Mensen die invloed hebben op wetgeving en bestuur.",
+        "target_category": "Overheid & Politiek"
+    },
+    {
+        "target_id": "16",
+        "target_name": "Gezondheids- & Fitnessliefhebbers",
+        "target_description": "Mensen die zich richten op sport en welzijn.",
+        "target_category": "Gezondheid & Lifestyle"
+    },
+    {
+        "target_id": "17",
+        "target_name": "Reizigers & Avonturiers",
+        "target_description": "Mensen die de wereld ontdekken en ervaringen delen.",
+        "target_category": "Reizen & Avontuur"
+    },
+    {
+        "target_id": "18",
+        "target_name": "Spirituele & Holistische Coaches",
+        "target_description": "Mensen die zich bezighouden met mindset, meditatie en energie.",
+        "target_category": "Persoonlijke Groei & Spiritualiteit"
+    },
+    {
+        "target_id": "19",
+        "target_name": "Gamer & E-sports Community",
+        "target_description": "Mensen die actief zijn in gaming en competitieve e-sports.",
+        "target_category": "Gaming & E-sports"
+    },
+    {
+        "target_id": "20",
+        "target_name": "Influencers & Social Media Experts",
+        "target_description": "Mensen met een online community die content creëren.",
+        "target_category": "Social Media & Branding"
+    },
+	{
+        "target_id": "21",
+        "target_name": "Huiseigenaren & Renters",
+        "target_description": "Mensen die bezig zijn met woningbeheer en financiën.",
+        "target_category": "Consument & Vastgoed"
+    },
+    {
+        "target_id": "22",
+        "target_name": "Ouders & Gezinnen",
+        "target_description": "Mensen die zich richten op opvoeding en gezinsleven.",
+        "target_category": "Gezin & Lifestyle"
+    },
+    {
+        "target_id": "23",
+        "target_name": "Pensioengerechtigden",
+        "target_description": "Mensen die hun leven na hun carrière plannen.",
+        "target_category": "Persoonlijke Financiën & Lifestyle"
+    },
+    {
+        "target_id": "24",
+        "target_name": "Financieel Bewuste Consumenten",
+        "target_description": "Mensen die bezig zijn met sparen, beleggen en budgetteren.",
+        "target_category": "Finance & Persoonlijke Ontwikkeling"
+    },
+    {
+        "target_id": "25",
+        "target_name": "Online Shoppers",
+        "target_description": "Mensen die veel gebruik maken van e-commerce.",
+        "target_category": "Consument & Retail"
+    },
+    {
+        "target_id": "26",
+        "target_name": "Leraren & Onderwijzers",
+        "target_description": "Mensen die werken in het onderwijs.",
+        "target_category": "Educatie & Training"
+    },
+    {
+        "target_id": "27",
+        "target_name": "Studenten",
+        "target_description": "Mensen die studeren en hun carrière willen voorbereiden.",
+        "target_category": "Onderwijs & Wetenschap"
+    },
+    {
+        "target_id": "28",
+        "target_name": "Gezondheidswerkers",
+        "target_description": "Mensen in de zorgsector, zoals verpleegkundigen en artsen.",
+        "target_category": "Gezondheid & Zorg"
+    },
+    {
+        "target_id": "29",
+        "target_name": "Overheidsmedewerkers",
+        "target_description": "Mensen die werken bij gemeenten, ministeries of andere instanties.",
+        "target_category": "Overheid & Bestuur"
+    },
+    {
+        "target_id": "30",
+        "target_name": "Vrijwilligers & Gemeenschapsleiders",
+        "target_description": "Mensen die zich inzetten voor non-profits en lokale initiatieven.",
+        "target_category": "Maatschappij & Gemeenschap"
+    }
+]

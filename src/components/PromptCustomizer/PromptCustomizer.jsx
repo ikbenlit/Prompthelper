@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { generateContent } from '../../services/openAIService';
 import Modal from '../Modal/Modal';
+import SearchableDropdown from '../SearchableDropdown/SearchableDropdown';
 
-export default function PromptCustomizer({ prompt, tones, styles }) {
+export default function PromptCustomizer({ prompt, tones, styles, targets, roles }) {
   const { t } = useTranslation();
   const [selectedTone, setSelectedTone] = useState('');
   const [selectedStyle, setSelectedStyle] = useState('');
@@ -15,8 +16,15 @@ export default function PromptCustomizer({ prompt, tones, styles }) {
   const [originalPrompt, setOriginalPrompt] = useState('');
   const [selectedFormula, setSelectedFormula] = useState('');
   const [examples, setExamples] = useState('');
+  const [selectedTarget, setSelectedTarget] = useState('');
+  const [selectedRole, setSelectedRole] = useState('');
 
   console.log('Tones received:', JSON.stringify(tones, null, 2));
+  console.log('Received data:', { 
+    targets: targets?.length, 
+    roles: roles?.length 
+  });
+  console.log('Roles data:', roles);
 
   useEffect(() => {
     if (prompt) {
@@ -27,7 +35,7 @@ export default function PromptCustomizer({ prompt, tones, styles }) {
     }
   }, [prompt]);
 
-  const updatePrompt = (tone, style) => {
+  const updatePrompt = (tone, style, target, role) => {
     let newPrompt = '';
     
     if (tone) {
@@ -41,6 +49,20 @@ export default function PromptCustomizer({ prompt, tones, styles }) {
       const selectedStyle = styles.find(s => s.Name === style);
       if (selectedStyle) {
         newPrompt += `Stijl: ${selectedStyle.Name} - ${selectedStyle.Effect}\n\n`;
+      }
+    }
+
+    if (target) {
+      const selectedTarget = targets.find(t => t.id === target);
+      if (selectedTarget) {
+        newPrompt += `Doelgroep: ${selectedTarget.name} - ${selectedTarget.description}\n\n`;
+      }
+    }
+
+    if (role) {
+      const selectedRole = roles.find(r => r.id === role);
+      if (selectedRole) {
+        newPrompt += `Rol: ${selectedRole.name} - ${selectedRole.description}\n\n`;
       }
     }
 
@@ -66,62 +88,70 @@ export default function PromptCustomizer({ prompt, tones, styles }) {
   return (
     <>
       <div className="space-y-6 relative">
-        {/* Formule icoon rechtsboven */}
-        {prompt.formula && (
-          <div className="absolute top-0 right-0 p-2">
-            <button
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-              title={t('prompt.showFormula')}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-            </button>
-          </div>
-        )}
-
         {/* Tone Selection */}
         <div>
-          <label className="block text-sm font-medium mb-2">
-            {t('customize.selectTone')}
-          </label>
-          <select
+          <SearchableDropdown
+            options={tones}
             value={selectedTone}
-            onChange={(e) => {
-              setSelectedTone(e.target.value);
-              updatePrompt(e.target.value, selectedStyle);
+            onChange={(value) => {
+              setSelectedTone(value);
+              updatePrompt(value, selectedStyle, selectedTarget, selectedRole);
             }}
-            className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
-          >
-            <option value="">{t('customize.noTone')}</option>
-            {tones?.map((tone) => (
-              <option key={tone.Name} value={tone.Name}>
-                {tone.Name} - {tone.Effect}
-              </option>
-            ))}
-          </select>
+            label={t('customize.selectTone')}
+            placeholder={t('customize.noTone')}
+          />
         </div>
 
         {/* Style Selection */}
         <div>
-          <label className="block text-sm font-medium mb-2">
-            {t('customize.selectStyle')}
-          </label>
-          <select
+          <SearchableDropdown
+            options={styles}
             value={selectedStyle}
-            onChange={(e) => {
-              setSelectedStyle(e.target.value);
-              updatePrompt(selectedTone, e.target.value);
+            onChange={(value) => {
+              setSelectedStyle(value);
+              updatePrompt(selectedTone, value, selectedTarget, selectedRole);
             }}
-            className="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
-          >
-            <option value="">{t('customize.noStyle')}</option>
-            {styles?.map((style) => (
-              <option key={style.Name} value={style.Name}>
-                {style.Name} - {style.Effect}
-              </option>
-            ))}
-          </select>
+            label={t('customize.selectStyle')}
+            placeholder={t('customize.noStyle')}
+          />
+        </div>
+
+        {/* Target Selection */}
+        <div>
+          <SearchableDropdown
+            options={targets?.map(target => ({
+              Name: target.name,
+              Effect: target.description,
+              id: target.id
+            }))}
+            value={targets?.find(t => t.id === selectedTarget)?.name || ''}
+            onChange={(value) => {
+              const target = targets.find(t => t.name === value);
+              setSelectedTarget(target?.id || '');
+              updatePrompt(selectedTone, selectedStyle, target?.id || '', selectedRole);
+            }}
+            label={t('customize.selectTarget')}
+            placeholder={t('customize.noTarget')}
+          />
+        </div>
+
+        {/* Role Selection */}
+        <div>
+          <SearchableDropdown
+            options={roles?.map(role => ({
+              Name: role.name,
+              Effect: role.description,
+              id: role.id
+            }))}
+            value={roles?.find(r => r.id === selectedRole)?.name || ''}
+            onChange={(value) => {
+              const role = roles.find(r => r.name === value);
+              setSelectedRole(role?.id || '');
+              updatePrompt(selectedTone, selectedStyle, selectedTarget, role?.id || '');
+            }}
+            label={t('customize.selectRole')}
+            placeholder={t('customize.noRole')}
+          />
         </div>
 
         {/* Prompt Editor */}

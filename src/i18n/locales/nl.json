@@ -57,7 +57,11 @@
     "result": "Aangepaste prompt",
     "sendToLLM": "Genereer content",
     "promptText": "Jouw prompt",
-    "editPrompt": "Bewerk hier je prompt..."
+    "editPrompt": "Bewerk hier je prompt...",
+    "selectTarget": "Selecteer doelgroep",
+    "selectRole": "Selecteer rol",
+    "noTarget": "Geen specifieke doelgroep",
+    "noRole": "Geen specifieke rol"
   },
   "errors": {
     "generation": "Er is een fout opgetreden bij het genereren van content. Probeer het opnieuw."

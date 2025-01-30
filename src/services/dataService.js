@@ -4,6 +4,8 @@ import stylesEN from '../data/prompt_styles_en.json';
 import stylesNL from '../data/prompt_styles_nl.json';
 import tonesEN from '../data/prompt_tones_en.json';
 import tonesNL from '../data/prompt_tones_nl.json';
+import targetsNL from '../data/prompt_target_nl.json';
+import rolesNL from '../data/prompt_role_nl.json';
 
 // Helper function to normalize tone data
 const normalizeToneData = (tones, isEnglish = true) => {
@@ -62,18 +64,50 @@ const normalizePromptData = (prompts) => {
   return filtered;
 };
 
+// Helper function to normalize target data
+const normalizeTargetData = (targets) => {
+  if (!Array.isArray(targets)) {
+    console.error('Invalid targets data:', targets);
+    return [];
+  }
+
+  return targets.map(target => ({
+    id: target.target_id,
+    name: target.target_name,
+    description: target.target_description,
+    category: target.target_category
+  }));
+};
+
+// Helper function to normalize role data
+const normalizeRoleData = (roles) => {
+  if (!Array.isArray(roles)) {
+    console.error('Invalid roles data:', roles);
+    return [];
+  }
+
+  return roles.map(role => ({
+    id: role.role_id,
+    name: role.role_name,
+    description: role.role_description,
+    category: role.role_category
+  }));
+};
+
 export const loadData = () => {
   try {
     const rawPrompts = promptsNL;
-    
-    // Load raw data
     const rawStyles = stylesNL;
     const rawTones = tonesNL;
+    const rawTargets = targetsNL;
+    const rawRoles = rolesNL;
 
     // Normalize data
     const prompts = normalizePromptData(rawPrompts);
     const styles = normalizeStyleData(rawStyles);
     const tones = normalizeToneData(rawTones);
+    const targets = normalizeTargetData(rawTargets);
+    const roles = normalizeRoleData(rawRoles);
 
     // Get categories
     const categories = getUniqueCategories(prompts);
@@ -97,10 +131,17 @@ export const loadData = () => {
       isSequential
     });
 
-    return { prompts, styles, tones, categories };
+    return { prompts, styles, tones, categories, targets, roles };
   } catch (error) {
     console.error('Error loading data:', error);
-    return { prompts: [], styles: [], tones: [], categories: [] };
+    return { 
+      prompts: [], 
+      styles: [], 
+      tones: [], 
+      categories: [],
+      targets: [],
+      roles: []
+    };
   }
 };
 

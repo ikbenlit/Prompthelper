@@ -14,6 +14,8 @@ export function PromptProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
   const { i18n } = useTranslation();
+  const [targets, setTargets] = useState([]);
+  const [roles, setRoles] = useState([]);
 
   // Load data when language changes
   useEffect(() => {
@@ -21,7 +23,10 @@ export function PromptProvider({ children }) {
       try {
         setLoading(true);
         const data = loadData('nl');
-        console.log('Raw data from service:', data);
+        console.log('Loaded data:', { 
+          targetsCount: data.targets?.length,
+          rolesCount: data.roles?.length
+        });
         
         if (!data.prompts?.length) {
           console.error('No prompts loaded! Check data source');
@@ -30,6 +35,8 @@ export function PromptProvider({ children }) {
         setPrompts(data.prompts || []);
         setStyles(data.styles || []);
         setTones(data.tones || []);
+        setTargets(data.targets || []);
+        setRoles(data.roles || []);
         
         const uniqueCategories = [...new Set(data.prompts?.map(prompt => 
           prompt.category
@@ -57,6 +64,8 @@ export function PromptProvider({ children }) {
     allPrompts: prompts,
     styles,
     tones,
+    targets,
+    roles,
     categories,
     selectedCategory,
     setSelectedCategory,
