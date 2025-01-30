@@ -15,9 +15,9 @@ const normalizeToneData = (tones) => {
   }
 
   return tones.map(tone => ({
-    id: tone.tone_id,
-    name: tone.tone_name,
-    description: tone.tone_description
+    tone_id: tone.tone_id,
+    tone_name: tone.tone_name,
+    tone_description: tone.tone_description
   }));
 };
 
@@ -148,16 +148,11 @@ export const loadData = () => {
 
 // Helper function to filter prompts by category
 export const filterPromptsByCategory = (prompts, category) => {
-  return prompts.filter(prompt => prompt.category === category);
+  if (!prompts) return [];
+  return category ? prompts.filter(prompt => prompt.category === category) : prompts;
 };
 
 // Helper function to get unique categories
 export const getUniqueCategories = (prompts) => {
   return [...new Set(prompts.map(prompt => prompt.category))];
-};
-
-// Helper function to get favorites
-export const getFavorites = (styles) => {
-  const favoriteField = styles[0]?.Favorites ? 'Favorites' : 'Favorieten';
-  return styles.filter(style => style[favoriteField] === 'Yes');
 }; 

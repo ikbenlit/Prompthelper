@@ -23,23 +23,7 @@ export function FavoritesProvider({ children }) {
 
   const addFavorite = (prompt) => {
     if (!prompt) return;
-    
-    setFavorites(prev => {
-      // Check if already exists
-      if (prev.some(fav => fav.prompt_id === prompt.prompt_id)) {
-        return prev;
-      }
-      
-      // Bewaar alle relevante velden
-      return [...prev, {
-        prompt_id: prompt.prompt_id,
-        title: prompt.title,
-        prompt: prompt.prompt,
-        category: prompt.category,
-        formula: prompt.formula,
-        more_examples: prompt.more_examples
-      }];
-    });
+    setFavorites(prev => [...prev, prompt]);
   };
 
   const removeFavorite = (prompt) => {

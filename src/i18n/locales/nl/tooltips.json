@@ -1,0 +1,27 @@
+{
+  "customize": {
+    "tone": "De toon bepaalt hoe je boodschap overkomt bij de lezer. Kies een toon die past bij je doelgroep en doel.",
+    "style": "De schrijfstijl bepaalt de manier waarop je boodschap wordt gepresenteerd. Kies een stijl die past bij je communicatiedoel en het gewenste effect op de lezer.",
+    "target": "De doelgroep bepaalt voor wie je schrijft. Dit helpt je boodschap beter af te stemmen op je publiek.",
+    "role": "De rol bepaalt vanuit welk perspectief je schrijft. Dit geeft je tekst de juiste autoriteit en context.",
+    "editor": "Hier zie je je aangepaste prompt met de geselecteerde toon, stijl, doelgroep en rol. Je kunt de tekst nog aanpassen voordat je content genereert."
+  },
+  "help": {
+    "welcome": "Welkom bij PromptMuse",
+    "intro": "PromptMuse helpt je om effectievere prompts te maken voor AI-tools zoals ChatGPT.",
+    "features": {
+      "title": "Wat kun je hier doen?",
+      "search": "🔍 Zoeken: Vind prompts op basis van titel, categorie of inhoud",
+      "filter": "🏷️ Filteren: Gebruik categorieën om snel relevante prompts te vinden",
+      "customize": "✨ Aanpassen: Pas elke prompt aan met toon, stijl, doelgroep en rol",
+      "generate": "🚀 Genereren: Test je aangepaste prompt direct met AI"
+    },
+    "tips": {
+      "title": "Tips voor het beste resultaat",
+      "categories": "Begin met het kiezen van een categorie die past bij je doel",
+      "keywords": "Gebruik specifieke zoekwoorden om relevante prompts te vinden",
+      "customize": "Experimenteer met verschillende tonen en stijlen voor het beste resultaat",
+      "iterate": "Verfijn je prompts op basis van de gegenereerde resultaten"
+    }
+  }
+} 

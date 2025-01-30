@@ -23,13 +23,13 @@
     "backToHome": "Terug naar Home",
     "copy": "Kopieer",
     "copied": "Gekopieerd!",
-    "generate": "Genereer Content",
+    "generate": "Genereer voorbeeld",
     "generating": "Bezig met genereren...",
-    "makeContent": "Maak content",
+    "makeContent": "Bekijk voorbeeld",
     "close": "Sluit"
   },
   "search": {
-    "placeholder": "Zoek prompts...",
+    "placeholder": "Type hier een keyword om een prompt te vinden zoals; script, idee, effectief",
     "noResults": "Geen prompts gevonden die aan je zoekopdracht voldoen."
   },
   "favorites": {
@@ -49,19 +49,19 @@
     "showMoreExamples": "Meer voorbeelden"
   },
   "customize": {
-    "selectTone": "Selecteer toon",
-    "selectStyle": "Selecteer stijl",
-    "noTone": "Geen specifieke toon",
-    "noStyle": "Geen specifieke stijl",
+    "selectTone": "Kies de toon die je wil gebruiken",
+    "selectStyle": "Kies de schrijfstijl die je wil gebruiken",
+    "noTone": "Klik en type hier om een toon te kiezen",
+    "noStyle": "Klik en type hier om een schrijfstijl te kiezen",
     "apply": "Pas aanpassingen toe",
     "result": "Aangepaste prompt",
     "sendToLLM": "Genereer content",
-    "promptText": "Jouw prompt",
+    "promptText": "Hieronder komt jouw eigen customized prompt. Kopieer en plak hem in je eigen ChatGPT of andere LLM.",
     "editPrompt": "Bewerk hier je prompt...",
-    "selectTarget": "Selecteer doelgroep",
-    "selectRole": "Selecteer rol",
-    "noTarget": "Geen specifieke doelgroep",
-    "noRole": "Geen specifieke rol"
+    "selectTarget": "Kies de doelgroep waarvoor je schrijft",
+    "selectRole": "Kies de rol waarin je schrijft.",
+    "noTarget": "Klik en type hier om een doelgroep te kiezen",
+    "noRole": "Klik en type hier om een rol te kiezen"
   },
   "errors": {
     "generation": "Er is een fout opgetreden bij het genereren van content. Probeer het opnieuw."

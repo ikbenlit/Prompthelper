@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { usePrompts } from '../context/PromptContext';
-import { useFavorites } from '../context/FavoritesContext';
 import { useTranslation } from 'react-i18next';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import PromptCustomizer from '../components/PromptCustomizer/PromptCustomizer';
@@ -9,10 +8,11 @@ import debounce from 'lodash/debounce';
 
 export default function PromptDetail() {
   const { id } = useParams();
+  const location = useLocation();
+  const savedCustomization = location.state?.customization;
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { allPrompts: prompts, styles, tones, targets, roles, loading } = usePrompts();
-  const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const [copiedText, setCopiedText] = useState('');
   const [showExamples, setShowExamples] = useState(false);
   const [showFormula, setShowFormula] = useState(false);
@@ -194,6 +194,7 @@ export default function PromptDetail() {
             styles={styles}
             targets={targets}
             roles={roles}
+            initialCustomization={savedCustomization}
           />
         </div>
 
@@ -264,20 +265,6 @@ export default function PromptDetail() {
                     </div>
                   )}
                 </div>
-                <button
-                  className={`${
-                    isFavorite(prompt)
-                      ? 'text-yellow-500 dark:text-yellow-400'
-                      : 'text-gray-400 dark:text-gray-500'
-                  } hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors`}
-                  onClick={() => {
-                    isFavorite(prompt) ? removeFavorite(prompt) : addFavorite(prompt);
-                  }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                    <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                  </svg>
-                </button>
               </div>
             </div>
 

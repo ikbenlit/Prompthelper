@@ -2,10 +2,10 @@ import { useEffect, useState, useMemo } from 'react';
 import { usePrompts } from '../context/PromptContext';
 import { useTranslation } from 'react-i18next';
 import Fuse from 'fuse.js';
-import { useFavorites } from '../context/FavoritesContext';
 import { Link } from 'react-router-dom';
 import { filterPromptsByCategory } from '../services/dataService';
 import usePromptFilter from '../hooks/usePromptFilter';
+import Modal from '../components/Modal/Modal';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ export default function Home() {
     setSelectedCategory: setFilteredSelectedCategory,
     filteredPrompts 
   } = usePromptFilter();
-  const { isFavorite, addFavorite, removeFavorite } = useFavorites();
+  const [showHelpModal, setShowHelpModal] = useState(false);
 
   // Configure Fuse.js for fuzzy search
   const fuse = useMemo(() => {
@@ -57,24 +57,66 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Search Bar */}
-      <div className="relative mb-8 max-w-2xl mx-auto">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
-          </svg>
+    <div className="container mx-auto px-4">
+      <div className="flex items-center gap-4 mb-4">
+        <button
+          className="whitespace-nowrap px-4 py-2 text-sm bg-blue-600 text-white dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 rounded-lg transition-colors shadow-sm"
+          onClick={() => setShowHelpModal(true)}
+        >
+          Wat kan ik hier doen?
+        </button>
+      </div>
+
+      {/* Help Modal */}
+      <Modal isOpen={showHelpModal} onClose={() => setShowHelpModal(false)}>
+        <div className="space-y-6 max-w-2xl">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            {t('tooltips:help.welcome')}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            {t('tooltips:help.intro')}
+          </p>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+              {t('tooltips:help.features.title')}
+            </h3>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+              <li>{t('tooltips:help.features.search')}</li>
+              <li>{t('tooltips:help.features.filter')}</li>
+              <li>{t('tooltips:help.features.customize')}</li>
+              <li>{t('tooltips:help.features.generate')}</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+              {t('tooltips:help.tips.title')}
+            </h3>
+            <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+              <li>{t('tooltips:help.tips.categories')}</li>
+              <li>{t('tooltips:help.tips.keywords')}</li>
+              <li>{t('tooltips:help.tips.customize')}</li>
+              <li>{t('tooltips:help.tips.iterate')}</li>
+            </ul>
+          </div>
         </div>
+      </Modal>
+
+      {/* Search input */}
+      <div className="relative mb-6">
         <input
           type="text"
-          placeholder={t('search.placeholder')}
           value={searchQuery}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-            setFilteredSelectedCategory(null);
-          }}
-          className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-shadow"
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder={t('search.placeholder')}
+          className="w-full px-4 py-3 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
         />
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
       </div>
 
       {/* Category Filter */}
@@ -124,21 +166,6 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {prompt.title}
                 </h3>
-                <button
-                  className={`flex items-center justify-center w-8 h-8 rounded-full ${
-                    isFavorite(prompt)
-                      ? 'text-yellow-500 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20'
-                      : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'
-                  } transition-all`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    isFavorite(prompt) ? removeFavorite(prompt) : addFavorite(prompt);
-                  }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                    <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                  </svg>
-                </button>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                 {prompt.prompt}

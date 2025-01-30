@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import tooltips from './locales/nl/tooltips.json';
 
 import translationEN from './locales/en.json';
 import translationNL from './locales/nl.json';
@@ -14,7 +15,8 @@ i18n
         translation: translationEN
       },
       nl: {
-        translation: translationNL
+        translation: translationNL,
+        tooltips: tooltips
       }
     },
     fallbackLng: 'nl',

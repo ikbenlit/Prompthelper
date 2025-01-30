@@ -13,7 +13,6 @@ export default function Navigation() {
 
   const navItems = [
     { path: '/', label: t('navigation.home') },
-    { path: '/favorites', label: t('navigation.favorites') },
   ];
 
   return (

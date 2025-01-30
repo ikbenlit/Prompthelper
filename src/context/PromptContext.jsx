@@ -51,10 +51,10 @@ export function PromptProvider({ children }) {
     };
 
     loadAllData();
-  }, []);
+  }, [language]);
 
   // Filter prompts based on selected category
-  const filteredPrompts = filterPromptsByCategory(prompts, selectedCategory, language);
+  const filteredPrompts = filterPromptsByCategory(prompts, selectedCategory);
 
   const value = {
     prompts: filteredPrompts,
