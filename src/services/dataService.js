@@ -8,15 +8,16 @@ import targetsNL from '../data/prompt_target_nl.json';
 import rolesNL from '../data/prompt_role_nl.json';
 
 // Helper function to normalize tone data
-const normalizeToneData = (tones, isEnglish = true) => {
+const normalizeToneData = (tones) => {
   if (!Array.isArray(tones)) {
     console.error('Invalid tones data:', tones);
     return [];
   }
 
   return tones.map(tone => ({
-    Name: tone.Name || tone.Tone,
-    Effect: tone.Effect || tone.Description
+    id: tone.tone_id,
+    name: tone.tone_name,
+    description: tone.tone_description
   }));
 };
 

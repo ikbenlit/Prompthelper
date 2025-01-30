@@ -1,110 +1,137 @@
 [
     {
-        "Name": "Beschrijvend",
-        "Effect": "Gebruikt levendige taal en zintuiglijke details om beelden te creëren; helpt lezers een scène of concept te visualiseren."
+        "tone_id": "1",
+        "tone_name": "Beschrijvend",
+        "tone_description": "Gebruikt levendige taal en zintuiglijke details om beelden te creëren; helpt lezers een scène of concept te visualiseren."
     },
     {
-        "Name": "Objectief",
-        "Effect": "Presenteert informatie op een neutrale, onbevooroordeelde manier; vaak gebruikt in journalistiek of verslaggeving."
+        "tone_id": "2",
+        "tone_name": "Objectief",
+        "tone_description": "Presenteert informatie op een neutrale, onbevooroordeelde manier; vaak gebruikt in journalistiek of verslaggeving."
     },
     {
-        "Name": "Suspenseful",
-        "Effect": "Bouwt spanning, anticipatie of onzekerheid op; vaak gebruikt in fictie of verhalend schrijven."
+        "tone_id": "3",
+        "tone_name": "Suspenseful",
+        "tone_description": "Bouwt spanning, anticipatie of onzekerheid op; vaak gebruikt in fictie of verhalend schrijven."
     },
     {
-        "Name": "Educatief",
-        "Effect": "Informeert, onderwijst of legt concepten uit; vaak gebruikt in een educatieve of academische context."
+        "tone_id": "4",
+        "tone_name": "Educatief",
+        "tone_description": "Informeert, onderwijst of legt concepten uit; vaak gebruikt in een educatieve of academische context."
     },
     {
-        "Name": "Poëtisch",
-        "Effect": "Bevat ritme, figuurlijke taal of andere poëtische middelen; voegt schoonheid of diepte toe aan de tekst."
+        "tone_id": "5",
+        "tone_name": "Poëtisch",
+        "tone_description": "Bevat ritme, figuurlijke taal of andere poëtische middelen; voegt schoonheid of diepte toe aan de tekst."
     },
     {
-        "Name": "Ironisch",
-        "Effect": "Geeft betekenis door middel van tegenstrijdigheid, vaak om absurditeit te benadrukken of om een punt te benadrukken."
+        "tone_id": "6",
+        "tone_name": "Ironisch",
+        "tone_description": "Geeft betekenis door middel van tegenstrijdigheid, vaak om absurditeit te benadrukken of om een punt te benadrukken."
     },
     {
-        "Name": "Opgewonden",
-        "Effect": "Spreekt opwinding, passie of gretigheid uit; betrekt lezers met energieke taal."
+        "tone_id": "7",
+        "tone_name": "Opgewonden",
+        "tone_description": "Spreekt opwinding, passie of gretigheid uit; betrekt lezers met energieke taal."
     },
     {
-        "Name": "Satirisch",
-        "Effect": "Gebruikt humor, ironie of overdrijving om een onderwerp te bekritiseren of te bespotten, vaak om verandering uit te lokken."
+        "tone_id": "8",
+        "tone_name": "Satirisch",
+        "tone_description": "Gebruikt humor, ironie of overdrijving om een onderwerp te bekritiseren of te bespotten, vaak om verandering uit te lokken."
     },
     {
-        "Name": "Provocatief",
-        "Effect": "Daagt veronderstellingen uit, zet aan tot debat of roept sterke reacties op; vaak gebruikt om discussie te stimuleren."
+        "tone_id": "9",
+        "tone_name": "Provocatief",
+        "tone_description": "Daagt veronderstellingen uit, zet aan tot debat of roept sterke reacties op; vaak gebruikt om discussie te stimuleren."
     },
     {
-        "Name": "Welsprekend",
-        "Effect": "Gebruikt elegante, welbespraakte of expressieve taal; vaak gebruikt om complexe ideeën of emoties over te brengen."
+        "tone_id": "10",
+        "tone_name": "Welsprekend",
+        "tone_description": "Gebruikt elegante, welbespraakte of expressieve taal; vaak gebruikt om complexe ideeën of emoties over te brengen."
     },
     {
-        "Name": "Romantiek",
-        "Effect": "Richt zich op emoties, relaties of schoonheid; vaak gebruikt in persoonlijk of expressief schrijven."
+        "tone_id": "11",
+        "tone_name": "Romantiek",
+        "tone_description": "Richt zich op emoties, relaties of schoonheid; vaak gebruikt in persoonlijk of expressief schrijven."
     },
     {
-        "Name": "Inspirerend",
-        "Effect": "Motiveert, verheft of moedigt lezers aan; vaak gebruikt voor overtuigende of ambitieuze boodschappen."
+        "tone_id": "12",
+        "tone_name": "Inspirerend",
+        "tone_description": "Motiveert, verheft of moedigt lezers aan; vaak gebruikt voor overtuigende of ambitieuze boodschappen."
     },
     {
-        "Name": "Melancholisch",
-        "Effect": "Roept gevoelens op van droefheid, introspectie of weemoed; vaak gebruikt in reflectieve of sombere contexten."
+        "tone_id": "13",
+        "tone_name": "Melancholisch",
+        "tone_description": "Roept gevoelens op van droefheid, introspectie of weemoed; vaak gebruikt in reflectieve of sombere contexten."
     },
     {
-        "Name": "Humoristisch",
-        "Effect": "Bevat humor, vermaak of ironie; verlicht de stemming en betrekt lezers op een speelse manier."
+        "tone_id": "14",
+        "tone_name": "Humoristisch",
+        "tone_description": "Bevat humor, vermaak of ironie; verlicht de stemming en betrekt lezers op een speelse manier."
     },
     {
-        "Name": "Kritisch",
-        "Effect": "Analyseert, evalueert of bekritiseert een onderwerp; vaak gebruikt in recensies of analytisch schrijven."
+        "tone_id": "15",
+        "tone_name": "Kritisch",
+        "tone_description": "Analyseert, evalueert of bekritiseert een onderwerp; vaak gebruikt in recensies of analytisch schrijven."
     },
     {
-        "Name": "Overtuigend",
-        "Effect": "Wil lezers overtuigen of beïnvloeden; bevat sterke argumenten of doet een beroep op emoties."
+        "tone_id": "16",
+        "tone_name": "Overtuigend",
+        "tone_description": "Wil lezers overtuigen of beïnvloeden; bevat sterke argumenten of doet een beroep op emoties."
     },
     {
-        "Name": "Formeel",
-        "Effect": "Duidt op autoriteit, professionaliteit en ernst; vaak gebruikt in academische of officiële contexten."
+        "tone_id": "17",
+        "tone_name": "Formeel",
+        "tone_description": "Duidt op autoriteit, professionaliteit en ernst; vaak gebruikt in academische of officiële contexten."
     },
     {
-        "Name": "Nostalgisch",
-        "Effect": "Roept gevoelens van verlangen of sentimentaliteit op; kan reflecteren op gebeurtenissen, tijdperken of ervaringen uit het verleden."
+        "tone_id": "18",
+        "tone_name": "Nostalgisch",
+        "tone_description": "Roept gevoelens van verlangen of sentimentaliteit op; kan reflecteren op gebeurtenissen, tijdperken of ervaringen uit het verleden."
     },
     {
-        "Name": "Confessioneel",
-        "Effect": "Geeft persoonlijke gedachten, gevoelens of ervaringen toe of openbaart ze; bevordert kwetsbaarheid en openheid."
+        "tone_id": "19",
+        "tone_name": "Confessioneel",
+        "tone_description": "Geeft persoonlijke gedachten, gevoelens of ervaringen toe of openbaart ze; bevordert kwetsbaarheid en openheid."
     },
     {
-        "Name": "Informeel",
-        "Effect": "Creëert een informele, ontspannen sfeer; geschikt voor casual communicatie."
+        "tone_id": "20",
+        "tone_name": "Informeel",
+        "tone_description": "Creëert een informele, ontspannen sfeer; geschikt voor casual communicatie."
     },
     {
-        "Name": "Sarcastisch",
-        "Effect": "Gebruikt ironie, spot of satire; kan worden gebruikt om kritiek te leveren of om een punt te benadrukken door middel van humor."
+        "tone_id": "21",
+        "tone_name": "Sarcastisch",
+        "tone_description": "Gebruikt ironie, spot of satire; kan worden gebruikt om kritiek te leveren of om een punt te benadrukken door middel van humor."
     },
     {
-        "Name": "Conversationeel",
-        "Effect": "Bootst de natuurlijke stroom en het ritme van gesproken taal na; creëert een informele, relateerbare toon."
+        "tone_id": "22",
+        "tone_name": "Conversationeel",
+        "tone_description": "Bootst de natuurlijke stroom en het ritme van gesproken taal na; creëert een informele, relateerbare toon."
     },
     {
-        "Name": "Gezaghebbend",
-        "Effect": "Geeft deskundigheid, besluitvaardigheid en vertrouwen; geschikt om meningen van experts te presenteren."
+        "tone_id": "23",
+        "tone_name": "Gezaghebbend",
+        "tone_description": "Geeft deskundigheid, besluitvaardigheid en vertrouwen; geschikt om meningen van experts te presenteren."
     },
     {
-        "Name": "Empathisch",
-        "Effect": "Geeft blijk van begrip, medeleven of gevoeligheid; maakt emotioneel contact met lezers."
+        "tone_id": "24",
+        "tone_name": "Empathisch",
+        "tone_description": "Geeft blijk van begrip, medeleven of gevoeligheid; maakt emotioneel contact met lezers."
     },
     {
-        "Name": "Speels",
-        "Effect": "Boeit lezers met luchtig, grillig of amusant taalgebruik; creëert een leuke, onderhoudende sfeer."
+        "tone_id": "25",
+        "tone_name": "Speels",
+        "tone_description": "Boeit lezers met luchtig, grillig of amusant taalgebruik; creëert een leuke, onderhoudende sfeer."
     },
     {
-        "Name": "Vriendelijk",
-        "Effect": "Roept warmte, benaderbaarheid en kameraadschap op; geschikt voor persoonlijke of sociale situaties."
+        "tone_id": "26",
+        "tone_name": "Vriendelijk",
+        "tone_description": "Roept warmte, benaderbaarheid en kameraadschap op; geschikt voor persoonlijke of sociale situaties."
     },
     {
-        "Name": "Academisch",
-        "Effect": "Verwijst naar het gebruik van wetenschappelijke, formele of intellectuele taal en concepten; vaak gebruikt in onderzoeks-, educatieve of professionele contexten."
+        "tone_id": "27",
+        "tone_name": "Academisch",
+        "tone_description": "Verwijst naar het gebruik van wetenschappelijke, formele of intellectuele taal en concepten; vaak gebruikt in onderzoeks-, educatieve of professionele contexten."
     }
 ]

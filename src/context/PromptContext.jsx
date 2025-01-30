@@ -23,32 +23,29 @@ export function PromptProvider({ children }) {
       try {
         setLoading(true);
         const data = loadData('nl');
-        console.log('Loaded data:', { 
-          targetsCount: data.targets?.length,
-          rolesCount: data.roles?.length
-        });
+        console.log('Loaded data:', data);  // Debug log
         
-        if (!data.prompts?.length) {
-          console.error('No prompts loaded! Check data source');
+        if (!data.prompts) {
+          console.error('No prompts data loaded');
+          setPrompts([]);
+          return;
         }
 
-        setPrompts(data.prompts || []);
+        setPrompts(data.prompts);
         setStyles(data.styles || []);
         setTones(data.tones || []);
         setTargets(data.targets || []);
         setRoles(data.roles || []);
         
-        const uniqueCategories = [...new Set(data.prompts?.map(prompt => 
+        const uniqueCategories = [...new Set(data.prompts.map(prompt => 
           prompt.category
         ))].filter(Boolean);
         
         setCategories(uniqueCategories.sort());
-        console.log('First loaded prompt:', data.prompts?.[0]);
-        
-        setLoading(false);
       } catch (error) {
         console.error('Error loading data:', error);
         setPrompts([]);
+      } finally {
         setLoading(false);
       }
     };

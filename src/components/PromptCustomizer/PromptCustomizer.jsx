@@ -25,6 +25,11 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
     roles: roles?.length 
   });
   console.log('Roles data:', roles);
+  console.log('Tone mapping:', tones?.map(tone => ({
+    Name: tone.tone_name,
+    Effect: tone.tone_description,
+    id: tone.tone_id
+  })));
 
   useEffect(() => {
     if (prompt) {
@@ -39,9 +44,9 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
     let newPrompt = '';
     
     if (tone) {
-      const selectedTone = tones.find(t => t.Name === tone);
+      const selectedTone = tones.find(t => t.id === tone);
       if (selectedTone) {
-        newPrompt += `Toon: ${selectedTone.Name} - ${selectedTone.Effect}\n\n`;
+        newPrompt += `Toon: ${selectedTone.name} - ${selectedTone.description}\n\n`;
       }
     }
     
@@ -91,11 +96,16 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
         {/* Tone Selection */}
         <div>
           <SearchableDropdown
-            options={tones}
-            value={selectedTone}
+            options={tones?.map(tone => ({
+              Name: tone.name,
+              Effect: tone.description,
+              id: tone.id
+            }))}
+            value={tones?.find(t => t.id === selectedTone)?.name || ''}
             onChange={(value) => {
-              setSelectedTone(value);
-              updatePrompt(value, selectedStyle, selectedTarget, selectedRole);
+              const tone = tones.find(t => t.name === value);
+              setSelectedTone(tone?.id || '');
+              updatePrompt(tone?.id || '', selectedStyle, selectedTarget, selectedRole);
             }}
             label={t('customize.selectTone')}
             placeholder={t('customize.noTone')}

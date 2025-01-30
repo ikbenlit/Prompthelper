@@ -16,6 +16,13 @@ export default function SearchableDropdown({
   const dropdownRef = useRef(null);
   const inputRef = useRef(null);
 
+  // Voeg deze console.log toe aan het begin van de component
+  console.log('SearchableDropdown props:', {
+    options,
+    value,
+    filteredOptions
+  });
+
   // Sluit dropdown wanneer er buiten wordt geklikt
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -90,18 +97,21 @@ export default function SearchableDropdown({
       {isOpen && (
         <div className="absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg">
           <ul className="max-h-60 overflow-auto">
-            {filteredOptions?.map((option) => (
-              <li
-                key={`${option.id || ''}-${option.Name}`}
-                onClick={() => handleOptionClick(option)}
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer group relative"
-              >
-                <div className="font-medium">{option.Name}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 group-hover:block">
-                  {option.Effect}
-                </div>
-              </li>
-            ))}
+            {filteredOptions?.map((option, index) => {
+              console.log('Rendering option:', option);
+              return (
+                <li
+                  key={`${option.id}-${index}`}
+                  onClick={() => handleOptionClick(option)}
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer group relative"
+                >
+                  <div className="font-medium">{option.Name}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400 group-hover:block">
+                    {option.Effect}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
           
           {filteredOptions?.length > displayCount && (
