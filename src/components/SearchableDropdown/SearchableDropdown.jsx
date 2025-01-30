@@ -103,34 +103,32 @@ export default function SearchableDropdown({
         </svg>
       </div>
 
+      {/* Options List */}
       {isOpen && (
-        <div className="absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600 shadow-lg overflow-hidden">
-          <ul className="max-h-60 overflow-auto">
-            {displayedOptions?.map((option, index) => (
-              <li
-                key={`${option.id}-${index}`}
-                onClick={() => handleOptionClick(option)}
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer group relative"
-              >
-                <div className="font-medium">{option.Name}</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400 group-hover:block">
-                  {option.Effect}
-                </div>
-              </li>
-            ))}
-          </ul>
-          
-          {filteredOptions?.length > displayedOptions.length && (
+        <div 
+          className="absolute z-10 w-full mt-1 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 max-h-[40vh] overflow-y-auto"
+        >
+          {/* Search Results Header */}
+          <div className="sticky top-0 bg-gray-50 dark:bg-gray-900 p-2 text-xs text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700">
+            {filteredOptions.length} resultaten
+          </div>
+          {filteredOptions.map((option, index) => (
             <button
-              onClick={() => setPage(prev => prev + 1)}
-              className="w-full p-2 text-blue-600 dark:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 border-t border-gray-200 dark:border-gray-600"
+              key={option.id || option.Name}
+              onClick={() => handleOptionClick(option)}
+              className={`w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700
+                ${index !== filteredOptions.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''}
+                ${option.Name === value ? 'bg-blue-50 dark:bg-blue-900/20' : ''}`}
             >
-              Meer laden...
+              <div className="font-medium mb-1">{option.Name}</div>
+              {option.Effect && (
+                <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 line-clamp-2">{option.Effect}</div>
+              )}
             </button>
-          )}
-          
-          {(!filteredOptions || filteredOptions.length === 0) && (
-            <div className="p-2 text-gray-500 dark:text-gray-400 text-center">
+          ))}
+          {/* Empty State */}
+          {filteredOptions.length === 0 && (
+            <div className="p-4 text-center text-gray-500 dark:text-gray-400">
               Geen resultaten gevonden
             </div>
           )}
