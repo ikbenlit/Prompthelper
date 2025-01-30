@@ -22,7 +22,7 @@ export default function PromptDetail() {
   const [hoveredExample, setHoveredExample] = useState(null);
   const [showFormulaContent, setShowFormulaContent] = useState(false);
   const formulaPopoverRef = useRef(null);
-  const [isRightPanelExpanded, setIsRightPanelExpanded] = useState(true);
+  const [isRightPanelExpanded, setIsRightPanelExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredExamples, setFilteredExamples] = useState([]);
   const [displayCount, setDisplayCount] = useState(5);
