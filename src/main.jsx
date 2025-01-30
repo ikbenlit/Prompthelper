@@ -6,6 +6,9 @@ import './index.css';
 import './i18n/config';
 import { auth } from './firebase';
 import { AuthProvider } from './context/AuthContext';
+import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { PromptProvider } from './context/PromptContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,7 +19,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       }}
     >
       <AuthProvider>
-        <App />
+        <LanguageProvider>
+          <ThemeProvider>
+            <PromptProvider>
+              <App />
+            </PromptProvider>
+          </ThemeProvider>
+        </LanguageProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -10,39 +10,18 @@ export default function PromptDetail() {
   const { id } = useParams();
   const location = useLocation();
   const savedCustomization = location.state?.customization;
-  const navigate = useNavigate();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const { allPrompts: prompts, styles, tones, targets, roles, loading } = usePrompts();
   const [copiedText, setCopiedText] = useState('');
   const [showExamples, setShowExamples] = useState(false);
-  const [showFormula, setShowFormula] = useState(false);
-  const [formulaPopover, setFormulaPopover] = useState({ show: false, x: 0, y: 0 });
-  const formulaButtonRef = useRef(null);
-  const [expandedExamples, setExpandedExamples] = useState(true);
+  const [expandedExamples, setExpandedExamples] = useState(false);
   const [hoveredExample, setHoveredExample] = useState(null);
-  const [showFormulaContent, setShowFormulaContent] = useState(false);
-  const formulaPopoverRef = useRef(null);
   const [isRightPanelExpanded, setIsRightPanelExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredExamples, setFilteredExamples] = useState([]);
   const [displayCount, setDisplayCount] = useState(5);
   const LOAD_MORE_INCREMENT = 5;
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        formulaButtonRef.current && 
-        !formulaButtonRef.current.contains(event.target) &&
-        formulaPopoverRef.current && 
-        !formulaPopoverRef.current.contains(event.target)
-      ) {
-        setFormulaPopover(prev => ({ ...prev, show: false }));
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   const prompt = useMemo(() => {
     const numericId = Number(id);
@@ -116,9 +95,21 @@ export default function PromptDetail() {
     }
   };
 
-  const handleFormulaClick = (e) => {
-    setFormulaPopover(prev => ({ ...prev, show: !prev.show }));
+  console.log('Tones in PromptDetail:', tones);
+
+  const applyExample = (example) => {
+    const customizerTextarea = document.querySelector('.prompt-customizer textarea');
+    if (customizerTextarea) {
+      customizerTextarea.value = example;
+      const event = new Event('input', { bubbles: true });
+      customizerTextarea.dispatchEvent(event);
+    }
   };
+
+  console.log('Search term:', searchTerm);
+  console.log('Filtered examples:', filteredExamples);
+  console.log('Display count:', displayCount);
+  console.log('Expanded examples:', expandedExamples);
 
   const CopyButton = ({ text, className = '' }) => {
     const { t } = useTranslation();
@@ -143,36 +134,20 @@ export default function PromptDetail() {
             <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-sm text-green-500">Gekopieerd</span>
+            <span className="text-sm text-green-500">{t('actions.copied')}</span>
           </>
         ) : (
           <>
-            <svg className="w-4 h-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Kopieer</span>
+            <span className="text-sm">{t('actions.copy')}</span>
           </>
         )}
       </button>
     );
   };
-
-  console.log('Tones in PromptDetail:', tones);
-
-  const applyExample = (example) => {
-    const customizerTextarea = document.querySelector('.prompt-customizer textarea');
-    if (customizerTextarea) {
-      customizerTextarea.value = example;
-      const event = new Event('input', { bubbles: true });
-      customizerTextarea.dispatchEvent(event);
-    }
-  };
-
-  console.log('Search term:', searchTerm);
-  console.log('Filtered examples:', filteredExamples);
-  console.log('Display count:', displayCount);
-  console.log('Expanded examples:', expandedExamples);
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -223,61 +198,18 @@ export default function PromptDetail() {
               <h1 className="text-2xl font-bold">
                 {prompt.Title || prompt.Titel}
               </h1>
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <button
-                    ref={formulaButtonRef}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setFormulaPopover(prev => ({ 
-                        show: !prev.show,
-                        x: 0,
-                        y: 0
-                      }));
-                    }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                      <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                    </svg>
-                    <span>Prompt formule</span>
-                  </button>
-
-                  {formulaPopover.show && (
-                    <div 
-                      ref={formulaPopoverRef}
-                      className="absolute z-50 mt-2 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 min-w-[300px]"
-                      style={{
-                        left: 0,
-                        top: '100%'
-                      }}
-                    >
-                      <div className="relative group">
-                        <p className="text-gray-600 dark:text-gray-300 font-mono text-sm whitespace-pre-wrap">
-                          {prompt.formula}
-                        </p>
-                        <CopyButton
-                          text={prompt.formula}
-                          className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
 
             <div className="mb-8">
-              <h2 className="text-xl font-semibold mb-4">Voorbeeld</h2>
+              <h2 className="text-xl font-semibold mb-4">Formule</h2>
               <div className="relative group bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
                 <p className="text-gray-600 dark:text-gray-300 pr-12 cursor-pointer"
-                   onClick={() => applyExample(prompt.prompt)}>
-                  {prompt.prompt}
+                   onClick={() => applyExample(prompt.formula)}>
+                  {prompt.formula}
                 </p>
                 <div className="absolute top-4 right-4">
                   <CopyButton
-                    text={prompt.prompt}
+                    text={prompt.formula}
                     className="opacity-0 group-hover:opacity-100 transition-opacity"
                   />
                 </div>

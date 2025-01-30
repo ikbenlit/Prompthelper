@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
 import clsx from 'clsx';
 import { useState } from 'react';
-import logo from '../../assets/promptmuse_feather_head.png';
+import logo from '../../assets/promptbuilder_logo.png';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -24,10 +24,8 @@ export default function Navigation() {
             <Link to="/" className="flex items-center space-x-3">
               <img 
                 src={logo}
-                alt="PromptMuse Logo"
-                className={`h-16 w-auto transition-opacity hover:opacity-80 ${
-                  darkMode ? 'opacity-90' : ''
-                }`}
+                alt="PromptBuilder Logo"
+                className="h-12 w-auto transition-opacity hover:opacity-80"
               />
             </Link>
           </div>

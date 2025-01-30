@@ -75,29 +75,9 @@
         "Select": "Brand Voices"
     },
     {
-        "Name": "Confessioneel",
-        "Effect": "Geeft persoonlijke gedachten, gevoelens of ervaringen toe of openbaart ze; bevordert kwetsbaarheid en openheid",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Conversationeel",
-        "Effect": "Bootst de natuurlijke stroom en het ritme van gesproken taal na; creëert een informele, relateerbare toon.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Cormac McCarthy",
         "Effect": "The Road, Blood Meridian, No Country for Old Men",
         "Select": "Auteursstijlen"
-    },
-    {
-        "Name": "Kritisch",
-        "Effect": "Analyseert, beoordeelt of bekritiseert een onderwerp; vaak gebruikt in recensies of analytisch schrijven.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Beschrijvend",
-        "Effect": "Gebruikt levendige taal en zintuiglijke details om beelden te creëren; helpt lezers een scène of concept te visualiseren",
-        "Select": "Toon"
     },
     {
         "Name": "Disney",
@@ -105,29 +85,9 @@
         "Select": "Brand Voices"
     },
     {
-        "Name": "Dramatisch",
-        "Effect": "Maakt gebruik van verhoogde emoties, actie of intensiteit; vaak gebruikt bij het vertellen van verhalen of expressief schrijven.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Educatief",
-        "Effect": "Informeert, onderwijst of legt concepten uit; vaak gebruikt in educatieve of academische contexten.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Welsprekend",
-        "Effect": "Gebruikt elegante, welbespraakte of expressieve taal; vaak gebruikt om complexe ideeën of emoties over te brengen.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Emily Brontë",
         "Effect": "Gotische sfeer, sterke emoties en complexe personages",
         "Select": "Auteur Styles"
-    },
-    {
-        "Name": "Empathisch",
-        "Effect": "Toont begrip, medeleven of gevoeligheid; sluit emotioneel aan bij lezers.",
-        "Select": "Toon"
     },
     {
         "Name": "Ernest Hemingway",
@@ -140,29 +100,14 @@
         "Select": "Tijdschriften/Journaals"
     },
     {
-        "Name": "Opgewonden",
-        "Effect": "Geeft uitdrukking aan opwinding, passie of gretigheid; boeit lezers met energieke taal.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Fast Company",
         "Effect": "Bedrijfsleven, innovatie, ontwerp",
         "Select": "Tijdschriften/Tijdschriften"
     },
     {
-        "Name": "Formeel",
-        "Effect": "straalt autoriteit, professionaliteit en ernst uit; vaak gebruikt in academische of officiële contexten.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Franz Kafka",
         "Effect": "Absurdistische en existentiële thema's, bureaucratische nachtmerries",
         "Select": "Auteur Stijlen"
-    },
-    {
-        "Name": "Vriendelijk",
-        "Effect": "Roept warmte, benaderbaarheid en kameraadschap op; geschikt voor persoonlijke of sociale situaties",
-        "Select": "Toon"
     },
     {
         "Name": "Fjodor Dostojevski",
@@ -220,34 +165,9 @@
         "Select": "Auteursstijlen"
     },
     {
-        "Name": "Humoristisch",
-        "Effect": "Bevat humor, vermaak of ironie; vrolijkt de stemming op en betrekt lezers op een speelse manier.",
-        "Select": "Toon"
-    },
-    {
         "Name": "IKEA",
         "Effect": "Scandinavisch design, betaalbaarheid en functionaliteit.",
         "Select": "Brand Voices"
-    },
-    {
-        "Name": "Informeel",
-        "Effect": "Creëert een informele, conversationele sfeer; geschikt voor ontspannen of persoonlijke contexten.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Inspirerend",
-        "Effect": "Motiveert, verheft of moedigt lezers aan; vaak gebruikt voor overtuigende of ambitieuze boodschappen.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Interview",
-        "Effect": "Beroemdheid, cultuur, kunst",
-        "Select": "Tijdschriften/Journaals"
-    },
-    {
-        "Name": "Ironisch",
-        "Effect": "Geeft betekenis door tegenstrijdigheid, vaak om absurditeit te benadrukken of een punt te benadrukken.",
-        "Select": "Toon"
     },
     {
         "Name": "Italo Calvino",
@@ -320,11 +240,6 @@
         "Select": "Brand Voices"
     },
     {
-        "Name": "Melancholisch",
-        "Effect": "wekt gevoelens op van droefheid, introspectie of weemoed; vaak gebruikt in reflectieve of sombere contexten.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Microsoft",
         "Effect": "Empowerment, productiviteit en samenwerking.",
         "Select": "Brand Voices"
@@ -354,16 +269,6 @@
         "Select": "Brand Voices"
     },
     {
-        "Name": "Nostalgisch",
-        "Effect": "wekt gevoelens van verlangen of sentimentaliteit op; kan terugblikken op gebeurtenissen, tijdperken of ervaringen uit het verleden.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Objectief",
-        "Effect": "presenteert informatie op een neutrale, onbevooroordeelde manier; vaak gebruikt in journalistiek of verslaggeving.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Oreo",
         "Effect": "Speelsheid, plezier en de vreugde van het delen.",
         "Select": "Brand Voices"
@@ -379,29 +284,9 @@
         "Select": "Merk Stemmen"
     },
     {
-        "Name": "Overtuigend",
-        "Effect": "Probeert lezers te overtuigen of te beïnvloeden; gebruikt sterke argumenten of roept emoties op",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Speels",
-        "Effect": "Boeit lezers met lichtvoetig, grillig of amusant taalgebruik; creëert een leuke, onderhoudende sfeer.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Poëtisch",
-        "Effect": "Bevat ritme, figuurlijke taal of andere poëtische middelen; voegt schoonheid of diepte toe aan de tekst.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Popular Science",
         "Effect": "Wetenschap, technologie, milieu",
         "Select": "Tijdschriften/Journaals"
-    },
-    {
-        "Name": "Provocerend",
-        "Effect": "Daagt aannames uit, wakkert discussie aan of lokt heftige reacties uit; vaak gebruikt om discussie te stimuleren.",
-        "Select": "Toon"
     },
     {
         "Name": "Puma",
@@ -429,24 +314,9 @@
         "Select": "Tijdschriften/Journaals"
     },
     {
-        "Name": "Romantisch",
-        "Effect": "Richt zich op emoties, relaties of schoonheid; vaak gebruikt in persoonlijk of expressief schrijven.",
-        "Select": "Toon"
-    },
-    {
         "Name": "Samuel Beckett",
         "Effect": "Minimalisme, existentialisme en donkere humor",
         "Select": "Auteursstijlen"
-    },
-    {
-        "Name": "Sarcastisch",
-        "Effect": "Maakt gebruik van ironie, spot of satire; kan worden gebruikt om kritiek te leveren of een punt te benadrukken met humor.",
-        "Select": "Toon"
-    },
-    {
-        "Name": "Satirisch",
-        "Effect": "Gebruikt humor, ironie of overdrijving om een onderwerp te bekritiseren of te bespotten, vaak om verandering uit te lokken.",
-        "Select": "Toon"
     },
     {
         "Name": "Scientific American",
@@ -467,11 +337,6 @@
         "Name": "Starbucks",
         "Effect": "Consistentie, gemeenschap en kwaliteit koffie-ervaring.",
         "Select": "Brand Voices"
-    },
-    {
-        "Name": "Spannend",
-        "Effect": "Bouwt spanning, anticipatie of onzekerheid op; vaak gebruikt in fictie of verhalend schrijven.",
-        "Select": "Toon"
     },
     {
         "Name": "Sylvia Plath",
