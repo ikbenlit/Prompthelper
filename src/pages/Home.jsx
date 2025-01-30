@@ -121,11 +121,11 @@ export default function Home() {
       </div>
 
       {/* Category Filter */}
-      <div className="mb-4 md:mb-8 -mx-2 sm:-mx-4 px-2 sm:px-4 overflow-x-auto scrollbar-hide">
-        <div className="flex flex-nowrap gap-2 pb-2">
+      <div className="mb-4 md:mb-8">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
           <button
             onClick={() => setFilteredSelectedCategory(null)}
-            className={`px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-lg md:rounded-xl whitespace-nowrap transition-all ${
+            className={`w-full sm:w-auto px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-lg md:rounded-xl transition-all ${
               !filteredSelectedCategory 
                 ? 'bg-blue-600 text-white shadow-md' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -140,7 +140,7 @@ export default function Home() {
                 setFilteredSelectedCategory(prev => prev === category ? null : category);
                 setSearchQuery('');
               }}
-              className={`px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-lg md:rounded-xl whitespace-nowrap transition-all ${
+              className={`w-full sm:w-auto px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-lg md:rounded-xl transition-all ${
                 filteredSelectedCategory === category
                   ? `bg-${getCategoryColor(category)}-600 text-white shadow-md`
                   : `bg-${getCategoryColor(category)}-50 dark:bg-${getCategoryColor(category)}-900/10 
