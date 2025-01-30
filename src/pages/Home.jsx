@@ -70,7 +70,7 @@ export default function Home() {
 
       {/* Help Modal */}
       <Modal isOpen={showHelpModal} onClose={() => setShowHelpModal(false)}>
-        <div className="space-y-4 md:space-y-6 max-w-2xl p-4 md:p-6 max-h-[80vh] overflow-y-auto">
+        <div className="space-y-4 md:space-y-6 overflow-y-auto max-h-[calc(100vh-8rem)]">
           <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
             {t('tooltips:help.welcome')}
           </h2>
@@ -82,7 +82,7 @@ export default function Home() {
             <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
               {t('tooltips:help.features.title')}
             </h3>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+            <ul className="space-y-3 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>{t('tooltips:help.features.search')}</li>
               <li>{t('tooltips:help.features.filter')}</li>
               <li>{t('tooltips:help.features.customize')}</li>
@@ -94,7 +94,7 @@ export default function Home() {
             <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
               {t('tooltips:help.tips.title')}
             </h3>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+            <ul className="space-y-3 text-gray-600 dark:text-gray-300 text-sm md:text-base">
               <li>{t('tooltips:help.tips.categories')}</li>
               <li>{t('tooltips:help.tips.keywords')}</li>
               <li>{t('tooltips:help.tips.customize')}</li>

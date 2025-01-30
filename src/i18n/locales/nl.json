@@ -56,7 +56,7 @@
     "apply": "Pas aanpassingen toe",
     "result": "Aangepaste prompt",
     "sendToLLM": "Genereer content",
-    "promptText": "Kopieer en plak je custom prompt in je eigen ChatGPT of andere LLM.",
+    "promptText": "Hieronder staat jouw custom prompt",
     "editPrompt": "Bewerk hier je prompt...",
     "selectTarget": "Kies de doelgroep waarvoor je schrijft",
     "selectRole": "Kies de rol waarin je schrijft.",

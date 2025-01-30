@@ -194,22 +194,22 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
         </div>
 
         {/* Right Column - Prompt Editor */}
-        <div className="space-y-2 flex flex-col -mt-[2rem]">
+        <div className="space-y-2 flex flex-col mt-4 md:mt-6">
           {/* Prompt Editor */}
           <div className="mb-1">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
               <div className="flex items-center gap-2">
                 <label className="block text-sm font-medium">
                   {t('customize.promptText')}
                 </label>
                 <InfoTooltip text={t('tooltips:customize.editor')} />
-                <button
-                  onClick={() => navigator.clipboard.writeText(customizedPrompt)}
-                  className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-                >
-                  {t('actions.copy')}
-                </button>
               </div>
+              <button
+                onClick={() => navigator.clipboard.writeText(customizedPrompt)}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              >
+                {t('actions.copy')}
+              </button>
             </div>
           </div>
           <div className="relative group bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
