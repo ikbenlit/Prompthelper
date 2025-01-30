@@ -57,10 +57,11 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="flex items-center gap-4 mb-4">
+    <div className="container mx-auto px-2 sm:px-4 space-y-3 sm:space-y-4 md:space-y-6">
+      {/* Help Button */}
+      <div className="flex items-center gap-2 md:gap-4">
         <button
-          className="whitespace-nowrap px-4 py-2 text-sm bg-blue-600 text-white dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 rounded-lg transition-colors shadow-sm"
+          className="whitespace-nowrap px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm bg-blue-600 text-white dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 rounded-lg transition-colors shadow-sm"
           onClick={() => setShowHelpModal(true)}
         >
           Wat kan ik hier doen?
@@ -69,8 +70,8 @@ export default function Home() {
 
       {/* Help Modal */}
       <Modal isOpen={showHelpModal} onClose={() => setShowHelpModal(false)}>
-        <div className="space-y-6 max-w-2xl">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="space-y-4 md:space-y-6 max-w-2xl p-4 md:p-6 max-h-[80vh] overflow-y-auto">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
             {t('tooltips:help.welcome')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300">
@@ -120,11 +121,11 @@ export default function Home() {
       </div>
 
       {/* Category Filter */}
-      <div className="mb-8 overflow-x-auto">
+      <div className="mb-4 md:mb-8 -mx-2 sm:-mx-4 px-2 sm:px-4 overflow-x-auto scrollbar-hide">
         <div className="flex flex-nowrap gap-2 pb-2">
           <button
             onClick={() => setFilteredSelectedCategory(null)}
-            className={`px-4 py-2 rounded-xl whitespace-nowrap transition-all ${
+            className={`px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-lg md:rounded-xl whitespace-nowrap transition-all ${
               !filteredSelectedCategory 
                 ? 'bg-blue-600 text-white shadow-md' 
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -139,7 +140,7 @@ export default function Home() {
                 setFilteredSelectedCategory(prev => prev === category ? null : category);
                 setSearchQuery('');
               }}
-              className={`px-4 py-2 rounded-xl whitespace-nowrap transition-all ${
+              className={`px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-lg md:rounded-xl whitespace-nowrap transition-all ${
                 filteredSelectedCategory === category
                   ? `bg-${getCategoryColor(category)}-600 text-white shadow-md`
                   : `bg-${getCategoryColor(category)}-50 dark:bg-${getCategoryColor(category)}-900/10 
@@ -154,14 +155,14 @@ export default function Home() {
       </div>
 
       {/* Prompts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
         {filteredPrompts.map((prompt) => (
           <Link
             key={`prompt-${prompt.prompt_id}`}
             to={`/prompts/${prompt.prompt_id}`}
             className="group block"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl p-6 transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500">
+            <div className="bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl shadow-sm hover:shadow-md sm:hover:shadow-xl p-4 sm:p-6 transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500">
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {prompt.title}
