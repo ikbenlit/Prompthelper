@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { filterPromptsByCategory } from '../services/dataService';
 import usePromptFilter from '../hooks/usePromptFilter';
 import Modal from '../components/Modal/Modal';
+import clsx from 'clsx';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -57,15 +58,35 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto px-2 sm:px-4 space-y-3 sm:space-y-4 md:space-y-6">
+    <div className="container mx-auto px-4 py-6 space-y-6">
       {/* Help Button */}
-      <div className="flex items-center gap-2 md:gap-4">
+      <div className="flex items-center justify-between gap-4">
         <button
-          className="whitespace-nowrap px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm bg-blue-600 text-white dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 rounded-lg transition-colors shadow-sm"
+          className={clsx(
+            'inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+            'bg-primary-600 text-white shadow-sm',
+            'hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600',
+            'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+            'dark:focus:ring-primary-400 dark:focus:ring-offset-gray-800'
+          )}
           onClick={() => setShowHelpModal(true)}
         >
+          <svg 
+            className="w-4 h-4" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+            />
+          </svg>
           Wat kan ik hier doen?
         </button>
+        <div className="flex-1" />
       </div>
 
       {/* Help Modal */}

@@ -1,6 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../context/ThemeContext';
+import { useAuth } from '../../context/AuthContext';
 import clsx from 'clsx';
 import { useState } from 'react';
 import logo from '../../assets/promptbuilder_logo.png';
@@ -8,6 +9,8 @@ import logo from '../../assets/promptbuilder_logo.png';
 export default function Navigation() {
   const { t } = useTranslation();
   const { darkMode, toggleDarkMode } = useTheme();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,8 +18,17 @@ export default function Navigation() {
     { path: '/', label: t('navigation.home') },
   ];
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/login');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
+
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md">
+    <nav className="bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -25,7 +37,7 @@ export default function Navigation() {
               <img 
                 src={logo}
                 alt="PromptBuilder Logo"
-                className="h-12 w-auto transition-opacity hover:opacity-80"
+                className="h-16 w-16 max-w-none max-h-none transition-all duration-200 hover:opacity-90 hover:scale-105"
               />
             </Link>
           </div>
@@ -39,18 +51,41 @@ export default function Navigation() {
                 className={clsx(
                   'px-3 py-2 rounded-md text-sm font-medium transition-colors',
                   location.pathname === item.path
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    ? 'bg-primary-600 text-white shadow-sm'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
                 )}
               >
                 {item.label}
               </Link>
             ))}
 
+            {/* Auth Button */}
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-sm font-medium"
+              >
+                {t('navigation.logout')}
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-sm font-medium"
+              >
+                {t('navigation.login')}
+              </Link>
+            )}
+
             {/* Theme Toggle */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
+              className={clsx(
+                'p-2 rounded-full transition-all duration-200',
+                'text-gray-600 dark:text-gray-300',
+                'hover:bg-primary-50 hover:text-primary-600',
+                'dark:hover:bg-gray-700 dark:hover:text-primary-400',
+                'focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
+              )}
               title={darkMode ? t('settings.theme.light') : t('settings.theme.dark')}
             >
               {darkMode ? (
@@ -112,6 +147,23 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
+
+            {/* Mobile Auth Button */}
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="block w-full text-left px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-base font-medium"
+              >
+                {t('navigation.logout')}
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="block w-full text-left px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-base font-medium"
+              >
+                {t('navigation.login')}
+              </Link>
+            )}
           </div>
         </div>
       )}

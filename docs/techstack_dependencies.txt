@@ -8,25 +8,33 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 ## 1. Techstack
 
 ### **Frontend (React & Vite)**
-- **React.js** - Voor een interactieve gebruikersinterface.
-- **Vite.js** - Supersnelle ontwikkelomgeving en build-tool.
-- **Tailwind CSS** - Utility-first CSS-framework voor styling.
-- **React Router** - Routing en paginanavigatie.
-- **Axios** - Voor API-communicatie met de backend.
-- **React Quill** - Rijke teksteditor voor bewerking van prompts.
-- **Fuse.js** - Zoekfunctionaliteit met fuzzy search.
-- **LocalStorage API** - Opslaan van favorieten en voorkeuren in de browser.
-- **Firebase Auth** - Voor gebruikersauthenticatie en autorisatie.
+- **React.js** - Voor een interactieve gebruikersinterface
+- **Vite.js** - Supersnelle ontwikkelomgeving en build-tool
+- **Tailwind CSS** - Utility-first CSS-framework voor styling
+- **React Router** - Routing en paginanavigatie
+- **Axios** - Voor API-communicatie
+- **React Quill** - Rijke teksteditor voor bewerking van prompts
+- **Fuse.js** - Zoekfunctionaliteit met fuzzy search
+- **i18next** - Internationalisatie
+- **LocalStorage API** - Opslaan van favorieten en voorkeuren
+- **React Context API** - Voor state management
+
+### **API Integratie**
+- **OpenAI API** - Voor het genereren van content
+- **Axios** - HTTP client voor API requests
+
+### **Development & Build Tools**
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **PostCSS** - CSS transformaties
+- **Vite** - Build tool en dev server
+- **dotenv** - Omgevingsvariabelen beheer
 
 ### **Backend & Services**
 - **WordPress** - Gebruikt als backend voor prompts, tonen en stijlen.
 - **WP REST API** - Voor het ophalen en bewerken van content.
 - **Firebase** - Voor authenticatie en gebruikersbeheer.
 - **Advanced Custom Fields (ACF)** - Voor aangepaste gegevensopslag.
-
-### **AI-integratie**
-- **OpenAI API** - Voor het genereren van content op basis van aangepaste prompts.
-- **Axios** - API-verzoeken naar OpenAI.
 
 ### **Hosting & Deployment**
 - **Vercel** - Voor de hosting van de React-frontend.
@@ -44,37 +52,41 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 
 ## 2. Dependencies (package.json)
 
-### **Essentiële dependencies**
-
+### **Core Dependencies**
 ```json
 {
   "dependencies": {
+    "@openai/api": "^0.8.0",
+    "axios": "^1.6.2",
+    "clsx": "^2.0.0",
+    "i18next": "^23.7.8",
+    "i18next-browser-languagedetector": "^7.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0",
-    "axios": "^1.5.0",
-    "tailwindcss": "^3.4.0",
-    "vite": "^4.5.0",
+    "react-i18next": "^13.5.0",
+    "react-router-dom": "^6.20.1",
     "react-quill": "^2.0.0",
-    "fuse.js": "^6.6.2",
-    "clsx": "^2.0.0",
-    "dotenv": "^16.0.3",
-    "firebase": "^10.7.0",
-    "@firebase/auth": "^1.5.0"
+    "fuse.js": "^7.0.0",
+    "tailwindcss": "^3.3.5"
   }
 }
 ```
 
-### **Development dependencies**
-
+### **Development Dependencies**
 ```json
 {
   "devDependencies": {
-    "@vitejs/plugin-react": "^3.2.0",
-    "eslint": "^8.41.0",
-    "prettier": "^2.8.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-react": "^7.32.2"
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.0",
+    "vite": "^5.0.6"
   }
 }
 ```
@@ -83,44 +95,104 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 
 ## 3. Installatie en Setup
 
-### **Stap 1: Initialiseren van het project**
+### **Stap 1: Project Initialisatie**
 ```bash
 npm create vite@latest prompt-helper -- --template react
 cd prompt-helper
 npm install
-npm install firebase @firebase/auth
-npx tailwindcss init
-npm run dev
 ```
 
-### **Stap 2: Configuratie van Tailwind CSS**
+### **Stap 2: Core Dependencies Installatie**
+```bash
+npm install axios clsx i18next i18next-browser-languagedetector react-i18next react-router-dom react-quill fuse.js
+```
+
+### **Stap 3: Development Dependencies**
+```bash
+npm install -D @types/react @types/react-dom @vitejs/plugin-react autoprefixer eslint eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks postcss prettier
+```
+
+### **Stap 4: Tailwind CSS Setup**
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+### **Stap 5: Configuratie Files**
+
+#### **tailwind.config.js**
 ```js
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#4F46E5',
+        secondary: '#10B981',
+      },
+    },
   },
   plugins: [],
-};
+}
 ```
 
-### **Stap 3: Configuratie van .env bestand**
+#### **.env**
 ```
-VITE_API_BASE_URL=https://jouw-wordpress-site.nl/wp-json/wp/v2
 VITE_OPENAI_API_KEY=your-openai-api-key
-VITE_FIREBASE_API_KEY=your-firebase-api-key
-VITE_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
-VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
+VITE_API_BASE_URL=your-api-base-url
 ```
 
 ---
 
-## 4. Waarom deze stack?
-- **Snelheid:** Dankzij Vite is de ontwikkelervaring razendsnel.
-- **Schaalbaarheid:** Makkelijk uitbreidbaar met extra functionaliteit.
-- **Gebruiksvriendelijkheid:** Moderne styling en duidelijke structuur.
-- **Flexibiliteit:** Eenvoudig nieuwe prompts, tonen en stijlen toevoegen via WordPress.
-- **Veiligheid:** Robuuste authenticatie via Firebase.
+## 4. Projectvereisten
+
+### **Systeemvereisten**
+- Node.js 16.0 of hoger
+- npm 7.0 of hoger
+- Modern browsers (Chrome, Firefox, Safari, Edge laatste 2 versies)
+
+### **Development Environment**
+- VS Code met ESLint en Prettier extensies
+- Git voor versiebeheer
+- Terminal toegang
+
+### **Productie Environment**
+- Static hosting platform (Vercel/Netlify)
+- HTTPS ondersteuning
+- Environment variables configuratie
+
+---
+
+## 5. Performance Optimalisatie
+
+### **Build Optimalisatie**
+- Code splitting via React.lazy()
+- Tree shaking met Vite
+- Asset optimalisatie
+- Caching strategieën
+
+### **Runtime Optimalisatie**
+- Memoization met useMemo en useCallback
+- Lazy loading van componenten
+- Image optimalisatie
+- Performance monitoring
+
+---
+
+## 6. Browser Support
+
+### **Ondersteunde Browsers**
+- Chrome (laatste 2 versies)
+- Firefox (laatste 2 versies)
+- Safari (laatste 2 versies)
+- Edge (laatste 2 versies)
+
+### **Polyfills**
+- Core-js voor oudere browsers
+- Regenerator-runtime voor async/await
 
 ---
 

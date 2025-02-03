@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { usePrompts } from '../context/PromptContext';
 import { useTranslation } from 'react-i18next';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+import CopyButton from '../components/Button/CopyButton';
 import PromptCustomizer from '../components/PromptCustomizer/PromptCustomizer';
 import debounce from 'lodash/debounce';
 
@@ -111,49 +111,11 @@ export default function PromptDetail() {
   console.log('Display count:', displayCount);
   console.log('Expanded examples:', expandedExamples);
 
-  const CopyButton = ({ text, className = '' }) => {
-    const { t } = useTranslation();
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = () => {
-      navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    };
-
-    return (
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          handleCopy();
-        }}
-        className={`flex items-center gap-2 p-1.5 rounded bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all ${className}`}
-      >
-        {copied ? (
-          <>
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-sm text-green-500">{t('actions.copied')}</span>
-          </>
-        ) : (
-          <>
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span className="text-sm">{t('actions.copy')}</span>
-          </>
-        )}
-      </button>
-    );
-  };
-
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4 py-6">
       <button
         onClick={() => navigate(-1)}
-        className="mb-6 text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-2"
+        className="mb-6 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors flex items-center gap-2"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
@@ -208,9 +170,10 @@ export default function PromptDetail() {
                   {prompt.formula}
                 </p>
                 <div className="absolute top-4 right-4">
-                  <CopyButton
-                    text={prompt.formula}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                  <CopyButton 
+                    text={prompt.formula} 
+                    variant="default"
+                    className="opacity-0 group-hover:opacity-100" 
                   />
                 </div>
               </div>
@@ -262,9 +225,10 @@ export default function PromptDetail() {
                           {example.trim()}
                         </p>
                         <div className="absolute top-4 right-4 z-10">
-                          <CopyButton
-                            text={example.trim()}
-                            className="opacity-0 group-hover:opacity-100 transition-opacity"
+                          <CopyButton 
+                            text={example.trim()} 
+                            variant="default"
+                            className="opacity-0 group-hover:opacity-100" 
                           />
                         </div>
                       </div>

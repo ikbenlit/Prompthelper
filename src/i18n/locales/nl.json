@@ -2,7 +2,20 @@
   "navigation": {
     "home": "Home",
     "favorites": "Favorieten",
-    "settings": "Instellingen"
+    "settings": "Instellingen",
+    "login": "Inloggen",
+    "logout": "Uitloggen"
+  },
+  "login": {
+    "title": "Welkom bij PromptBuilder",
+    "subtitle": "Log in om door te gaan",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "submit": "Inloggen",
+    "error": "Inloggen mislukt. Controleer je gegevens.",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "welcome": "Welkom bij PromptBuilder",
+    "welcomeText": "🚀 Of je nu schrijft, brainstormt of automatiseert \nPromptBuilder helpt je sneller en creatiever te werken. \n\n 👨‍💻 Achter de schermen ben ik continu aan het experimenteren met AI-tools en het bouwen van innovatieve apps. Deze tool is onderdeel van mijn zoektocht naar slimme, praktische AI-oplossingen. Heb je ideeën of feedback? Laat het me weten! Log in en start met creëren!"
   },
   "settings": {
     "title": "Instellingen",

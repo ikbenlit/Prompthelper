@@ -4,6 +4,7 @@ import { generateContent } from '../../services/openAIService';
 import Modal from '../Modal/Modal';
 import SearchableDropdown from '../SearchableDropdown/SearchableDropdown';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
+import CopyButton from '../Button/CopyButton';
 
 export default function PromptCustomizer({ prompt, tones, styles, targets, roles, initialCustomization }) {
   const { t } = useTranslation();
@@ -72,43 +73,6 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const CopyButton = ({ text, className = '' }) => {
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = () => {
-      navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    };
-
-    return (
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          handleCopy();
-        }}
-        className={`flex items-center gap-2 p-1.5 rounded bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all ${className}`}
-      >
-        {copied ? (
-          <>
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            <span className="text-sm text-green-500">{t('actions.copied')}</span>
-          </>
-        ) : (
-          <>
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 4v12a2 2 0 002 2h8a2 2 0 002-2V7.242a2 2 0 00-.602-1.43L16.083 2.57A2 2 0 0014.685 2H10a2 2 0 00-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M16 18v2a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span className="text-sm">{t('actions.copy')}</span>
-          </>
-        )}
-      </button>
-    );
   };
 
   return (
@@ -197,19 +161,20 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
         <div className="space-y-2 flex flex-col mt-4 md:mt-6">
           {/* Prompt Editor */}
           <div className="mb-1">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-              <div className="flex items-center gap-2">
-                <label className="block text-sm font-medium">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+              <div className="space-y-1">
+                <label className="block text-base text-gray-900 dark:text-white">
                   {t('customize.promptText')}
                 </label>
-                <InfoTooltip text={t('tooltips:customize.editor')} />
+                <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xl">
+                  {t('tooltips:customize.editor')}
+                </p>
               </div>
-              <button
-                onClick={() => navigator.clipboard.writeText(customizedPrompt)}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-              >
-                {t('actions.copy')}
-              </button>
+              <CopyButton
+                text={customizedPrompt}
+                variant="primary"
+                className="min-w-[120px] justify-center sm:self-start flex-shrink-0"
+              />
             </div>
           </div>
           <div className="relative group bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-gray-600">
@@ -270,14 +235,10 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
               >
                 {t('actions.close')}
               </button>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(generatedContent);
-                }}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-              >
-                {t('actions.copy')}
-              </button>
+              <CopyButton
+                text={generatedContent}
+                variant="primary"
+              />
             </div>
           </div>
         </Modal>

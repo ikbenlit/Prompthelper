@@ -1,4 +1,9 @@
+import CopyButton from '../Button/CopyButton';
+import { useTranslation } from 'react-i18next';
+
 export default function Modal({ isOpen, onClose, children }) {
+  const { t } = useTranslation();
+
   if (!isOpen) return null;
 
   return (

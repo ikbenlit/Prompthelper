@@ -1,71 +1,131 @@
-├── public/                    # Statische bestanden die direct toegankelijk zijn
-│   ├── index.html              # Hoofdpagina waarin React wordt geladen
-│   ├── favicon.ico             # App-icoon
-│   └── manifest.json            # PWA-instellingen (optioneel)
-├── src/                        # Bronbestanden voor de app
-│   ├── assets/                  # Afbeeldingen, logo's en andere statische middelen
-│   ├── components/               # Herbruikbare UI-componenten
-│   │   ├── PromptCard.jsx         # Component om een prompt weer te geven
-│   │   ├── SearchBar.jsx          # Zoekbalkcomponent
-│   │   ├── FilterOptions.jsx      # Filteropties voor categorieën
-│   │   ├── PromptEditor.jsx       # Editor om prompts te bewerken
-│   │   └── Button.jsx             # Algemene knopcomponent
-│   ├── pages/                     # Pagina-componenten (voor routing)
-│   │   ├── Home.jsx                # Hoofdpagina met zoekfunctie
-│   │   ├── Favorites.jsx            # Pagina met opgeslagen favorieten
-│   │   ├── Settings.jsx             # Instellingenpagina voor toon en stijl
-│   │   ├── NotFound.jsx              # 404 pagina
-│   ├── context/                    # Context API voor state management
-│   │   ├── PromptContext.jsx         # Globale state voor prompts
-│   ├── hooks/                       # Custom React hooks
-│   │   ├── useLocalStorage.js         # Hook voor opslag van favorieten in localStorage
-│   │   ├── useFetchData.js             # Hook voor het ophalen van data uit JSON of API
-│   ├── services/                     # API-service laag
-│   │   ├── promptService.js            # Functies voor interactie met de prompts (fetch, filter)
-│   │   ├── openAiService.js             # Functies voor AI-gegenereerde content
-│   ├── styles/                        # CSS/Tailwind-configuraties
-│   │   ├── globals.css                  # Algemene stijlen
-│   │   ├── tailwind.config.js            # Tailwind configuratiebestand
-│   ├── utils/                          # Hulpfuncties
-│   │   ├── helpers.js                    # Algemene hulpfuncties
-│   ├── data/                           # JSON-bestanden met de prompt-data
-│   │   ├── prompts_en.json               # Engelse prompts
-│   │   ├── prompts_nl.json                # Nederlandse prompts
-│   │   ├── tones_en.json                  # Engelse tonen
-│   │   ├── tones_nl.json                   # Nederlandse tonen
-│   ├── App.jsx                          # Hoofdbestand van de app
-│   ├── main.jsx                          # Rootbestand waar React wordt gerenderd
-│   ├── index.css                         # Globale stijlen
-├── docs                    
-│   ├── projectstructuur.txt			#beschrijving van de projectstructuur
-├── .env                                 # Milieuvariabelen voor API-keys
-├── .gitignore                           # Bestanden die niet in Git mogen
-├── package.json                         # Projectconfiguratie en dependencies
-├── vite.config.js                        # Configuratie voor Vite.js
 ├── README.md                            # Documentatie voor installatie en gebruik
-└── public/                              # Bevat statische bestanden zoals favicons, manifest.json
+├── index.html                           # Root HTML bestand voor Vite
+├── public/                              # Statische bestanden die direct toegankelijk zijn
+│   ├── favicon/                         # Map met favicon bestanden
+│   │   ├── Promptbuilder_favicon.svg    # SVG favicon
+│   │   ├── favicon-32x32.png           # 32x32 favicon
+│   │   ├── favicon-16x16.png           # 16x16 favicon
+│   │   └── apple-touch-icon.png        # iOS icon
+│   └── manifest.json                    # PWA-instellingen
+├── src/                                 # Bronbestanden voor de app
+│   ├── assets/                          # Afbeeldingen, logo's en andere statische middelen
+│   │   └── promptbuilder_logo.png      # PromptBuilder logo
+│   ├── components/                      # Herbruikbare UI-componenten
+│   │   ├── ErrorBoundary/              # Error handling
+│   │   │   └── ErrorBoundary.jsx       # Globale error boundary
+│   │   ├── Layout/                     # Layout componenten
+│   │   │   └── Layout.jsx             # Hoofdlayout met navigatie
+│   │   ├── Navigation/                 # Navigatie componenten
+│   │   │   └── Navigation.jsx         # Hoofdnavigatie met logo
+│   │   ├── Modal/                      # Modal componenten
+│   │   │   └── Modal.jsx              # Herbruikbare modal
+│   │   ├── PromptCard/                 # Prompt kaart componenten
+│   │   │   └── PromptCard.jsx         # Kaart voor prompt weergave
+│   │   ├── PromptSearch/               # Zoekcomponenten voor prompts
+│   │   │   └── PromptSearch.jsx       # Zoekfunctionaliteit
+│   │   ├── InfoTooltip/                # Tooltip componenten
+│   │   │   └── InfoTooltip.jsx        # Info tooltip component
+│   │   ├── Tooltip/                    # Algemene tooltips
+│   │   │   └── Tooltip.jsx            # Basis tooltip component
+│   │   ├── SearchableDropdown/         # Dropdown componenten
+│   │   │   └── SearchableDropdown.jsx # Zoekbare dropdown
+│   │   ├── PromptCustomizer/           # Prompt customization
+│   │   │   └── PromptCustomizer.jsx   # Prompt aanpassing component
+│   │   └── SearchBar/                  # Zoekbalk componenten
+│   │       └── SearchBar.jsx          # Zoekbalk component
+│   ├── context/                        # Context API voor state management
+│   │   ├── AuthContext.jsx            # Authenticatie context
+│   │   ├── LanguageContext.jsx        # Taal context
+│   │   ├── ThemeContext.jsx           # Thema context
+│   │   ├── FavoritesContext.jsx       # Favorieten beheer
+│   │   └── PromptContext.jsx          # Prompts context
+│   ├── hooks/                          # Custom React hooks
+│   │   ├── usePromptFilter.js         # Hook voor prompt filtering
+│   │   └── useSearch.js               # Hook voor zoekfunctionaliteit
+│   ├── i18n/                           # Internationalisatie
+│   │   ├── config.js                  # i18n configuratie
+│   │   └── locales/                   # Vertalingen
+│   │       └── nl/                    # Nederlandse vertalingen
+│   │           ├── common.json        # Algemene vertalingen
+│   │           ├── tooltips.json      # Tooltip vertalingen
+│   │           └── translation.json   # UI vertalingen
+│   ├── pages/                         # Pagina-componenten (voor routing)
+│   │   ├── Home.jsx                  # Hoofdpagina met zoekfunctie
+│   │   ├── Settings.jsx             # Instellingenpagina voor toon en stijl
+│   │   └── PromptDetail.jsx         # Detail pagina voor prompts
+│   ├── services/                     # API-service laag
+│   │   ├── dataService.js           # Data ophaal service
+│   │   └── openAIService.js         # Functies voor AI-gegenereerde content
+│   ├── styles/                      # CSS/Tailwind-configuraties
+│   │   ├── globals.css             # Algemene stijlen
+│   │   └── tailwind.config.js      # Tailwind configuratiebestand
+│   ├── utils/                      # Hulpfuncties
+│   │   ├── categoryColors.js       # Categorie kleur mapping
+│   │   └── helpers.js             # Algemene hulpfuncties
+│   ├── data/                      # JSON-bestanden met de prompt-data
+│   │   ├── prompts_en.json       # Engelse prompts
+│   │   ├── prompts_nl.json       # Nederlandse prompts
+│   │   ├── prompt_styles_en.json # Engelse stijlen
+│   │   ├── prompt_styles_nl.json # Nederlandse stijlen
+│   │   ├── tones_en.json        # Engelse tonen
+│   │   ├── tones_nl.json        # Nederlandse tonen
+│   │   ├── prompt_target_nl.json # Nederlandse doelgroepen
+│   │   └── prompt_role_nl.json  # Nederlandse rollen
+│   ├── App.jsx                  # Hoofdbestand van de app
+│   ├── main.jsx                # Rootbestand waar React wordt gerenderd
+│   └── index.css              # Globale stijlen
+├── docs/                      # Projectdocumentatie
+│   ├── projectstructuur.txt   # Deze bestandsstructuur uitleg
+│   ├── Prompthelper.txt      # App beschrijving
+│   └── techstack_dependencies.txt # Technische details
+├── .env                      # Milieuvariabelen voor API-keys
+├── .gitignore               # Bestanden die niet in Git mogen
+├── package.json             # Projectconfiguratie en dependencies
+├── postcss.config.js        # PostCSS configuratie
+├── tailwind.config.js       # Tailwind CSS configuratie
+└── vite.config.js          # Configuratie voor Vite.js
 
-1. public/
-Bevat statische bestanden die de browser direct kan benaderen. Denk aan de index.html waarin de React-app wordt geladen.
+# Mappenstructuur Toelichting
 
-2. src/
-Bevat de kern van je applicatie, waaronder:
+1. Root
+- index.html: Het hoofdbestand waarin Vite de React-app injecteert
+- README.md: Projectdocumentatie en setup instructies
+- Configuratiebestanden (.env, package.json, etc.)
 
-components/: Alle herbruikbare React-componenten.
-pages/: De hoofdweergaven die via React Router bereikbaar zijn.
-context/: Voor het managen van globale state met React Context API.
-hooks/: Aangepaste hooks voor data-ophaling en opslag.
-services/: API-logica zoals het ophalen van prompts en interactie met OpenAI.
-styles/: CSS-bestanden en Tailwind-configuraties.
-data/: JSON-bestanden met alle prompts en vertalingen.
-3. utils/
-Handige hulpfuncties die overal in de app kunnen worden hergebruikt, zoals string-helpers of API-verzoeken.
+2. public/
+Bevat statische bestanden die direct toegankelijk zijn voor de browser:
+- favicon/: App iconen voor verschillende platforms
+- manifest.json: PWA configuratie
 
-4. App.jsx en main.jsx
-App.jsx is het hoofdcomponent waarin routes en context worden geregeld.
-main.jsx is het entry-point waarin React wordt gerenderd in de index.html.
-5. .env
-Om gevoelige gegevens zoals API-sleutels (voor OpenAI) buiten de codebase te houden.
+3. src/
+De broncode van de applicatie:
+- assets/: Statische middelen zoals afbeeldingen en logo's
+- components/: Herbruikbare React-componenten
+- context/: React Context providers voor state management
+- hooks/: Custom React hooks
+- i18n/: Internationalisatie configuratie en vertalingen
+- pages/: Hoofdpagina's voor routing
+- services/: API en data services
+- styles/: CSS en Tailwind configuraties
+- utils/: Hulpfuncties
+- data/: JSON databestanden
 
-6. package.json
-Projectconfiguratie waarin alle dependencies (React, Axios, Tailwind, etc.) zijn vastgelegd.
+4. docs/
+Projectdocumentatie:
+- projectstructuur.txt: Bestandsstructuur documentatie
+- Prompthelper.txt: Applicatie beschrijving
+- techstack_dependencies.txt: Technische details
+
+5. Configuratiebestanden
+- .env: Omgevingsvariabelen
+- package.json: NPM configuratie
+- vite.config.js: Vite configuratie
+- tailwind.config.js: Tailwind CSS configuratie
+- postcss.config.js: PostCSS configuratie
+
+Opmerkingen:
+1. Er is een dubbele vermelding van de public/ directory verwijderd
+2. De indentatie en uitlijning is consistent gemaakt
+3. De structuur van de i18n/locales/ map zou mogelijk ook een en/ directory kunnen bevatten voor Engelse vertalingen
+4. Het zou nuttig kunnen zijn om een tests/ directory toe te voegen voor unit en integratie tests
+5. Een types/ of interfaces/ directory voor TypeScript definities zou nuttig kunnen zijn als het project TypeScript gebruikt
