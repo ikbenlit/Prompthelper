@@ -128,49 +128,69 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Welcome Section (Right) met Hero animatie */}
+        {/* Welcome Section (Right) met moderne animaties */}
         <div 
           className={clsx(
             'hidden md:flex md:w-2/3',
             'relative overflow-hidden',
-            'bg-gradient-to-b from-orange-500 via-pink-500 to-purple-900'
+            'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600'
           )}
         >
-          {/* Grid Effect */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
-            <div className="absolute w-[200%] h-full bg-gradient-to-r from-white/10 to-transparent bg-[length:50px_50px] transform perspective-1000 rotate-x-60 animate-moveGrid" />
-          </div>
-
-          {/* Lichtstralen */}
-          {[...Array(10)].map((_, i) => (
+          {/* Moderne floating circles */}
+          {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className="absolute bottom-0 w-0.5 bg-gradient-to-t from-yellow-400 to-transparent animate-beamRise"
+              className="absolute rounded-full bg-white/10 backdrop-blur-sm animate-pulse-subtle"
               style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
+                width: `${Math.random() * 200 + 100}px`,
+                height: `${Math.random() * 200 + 100}px`,
+                left: `${Math.random() * 80 + 10}%`,       // aangepast voor betere positionering
+                top: `${Math.random() * 80 + 10}%`,        // aangepast voor betere positionering
+                animationDelay: `${i * 2}s`,               // consistentere delays
+                animationDuration: `${Math.random() * 4 + 8}s`,  // langere duratie
+                opacity: Math.random() * 0.3 + 0.2,        // toegevoegd voor subtielere bubbles
               }}
             />
           ))}
 
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-screen text-white text-center">
-            <img src={logo} alt="PromptBuilder" className="h-12 mx-auto" />
-            <div className="space-y-4">
-              <h1 className="text-5xl font-bold">
-                {t('login.welcome')}
-              </h1>
-              <p className="mt-4 text-lg">
-                {t('login.welcomeText')}
-              </p>
+          {/* Glassmorphism card */}
+          <div className="relative z-10 w-full h-full flex items-center justify-center p-12">
+              <div className="max-w-xl text-center">
+                <img src={logo} alt="PromptBuilder" className="h-14 mb-8 mx-auto" />
+                <h1 className="text-3xl font-bold text-white mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+                  {t('login.welcome')}
+                </h1>
+                <p className="text-1xl text-white/90 leading-relaxed mb-12 whitespace-pre-line">
+                  {t('login.welcomeText')}
+                </p>
+                
+                {/* Feature bullets
+                <div className="mt-8 space-y-6">
+                  {['Personaliseer je prompts', 'Verhoog je productiviteit', 'Verbeter je resultaten'].map((feature, index) => (
+                    <div key={index} className="flex items-center justify-center text-white/90">
+                      <svg className="w-6 h-6 mr-4 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-xl">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                */}
             </div>
           </div>
 
-          {/* Wave Effect */}
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-orange-500/70 via-pink-500/50 to-transparent blur-xl transform-gpu origin-bottom animate-wavePulse" />
-
-          {/* Overgang naar de volgende sectie */}
-          <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-b from-transparent to-gray-900 z-10" />
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          
+          {/* Animated mesh gradient */}
+          <div 
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M50 0v100M0 50h100" stroke="white" stroke-width="0.5" fill="none" /%3E%3C/svg%3E")',
+              backgroundSize: '30px 30px',
+              animation: 'moveGrid 20s linear infinite'
+            }}
+          />
         </div>
       </div>
     </div>

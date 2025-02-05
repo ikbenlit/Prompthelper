@@ -67,7 +67,7 @@ export default {
       colors: customColors,
       animation: {
         'fade-in': 'fadeIn 0.2s ease-in-out',
-        'pulse-subtle': 'pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-subtle': 'pulseSubtle 4s ease-in-out infinite',
         'moveGrid': 'moveGrid 20s linear infinite',
         'wavePulse': 'wavePulse 8s ease-in-out infinite',
         'beamRise': 'beamRise 4s ease-in-out infinite',
@@ -89,8 +89,8 @@ export default {
         },
 
         pulseSubtle: {
-          '0%, 100%': { opacity: 1 },
-          '50%': { opacity: 0.8 },
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.1' },
+          '50%': { transform: 'scale(1.1)', opacity: '0.2' },
         }, 
         
         beamRise: {
