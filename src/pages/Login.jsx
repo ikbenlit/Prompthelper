@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { resetPassword } from '../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
@@ -114,16 +115,15 @@ export default function Login() {
                   {t('login.submit')}
                 </button>
               </div>
-{/*
+
               <div className="text-center mt-4">
-                <a 
-                  href="#" 
-                  className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-                >
-                  {t('login.forgotPassword')}
-                </a>
-              </div>
-*/}
+              <a 
+    href="/forgot-password"
+    className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+  >
+    {t('login.forgotPassword')}
+  </a>
+            </div>
             </form>
           </div>
         </div>

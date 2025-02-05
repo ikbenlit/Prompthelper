@@ -15,7 +15,14 @@
     "error": "Inloggen mislukt. Controleer je gegevens.",
     "forgotPassword": "Wachtwoord vergeten?",
     "welcome": "Welkom bij PromptBuilder",
-    "welcomeText": "🚀 Of je nu schrijft, brainstormt of automatiseert \nPromptBuilder helpt je sneller en creatiever te werken. \n\n 👨‍💻 Achter de schermen ben ik continu aan het experimenteren met AI-tools en het bouwen van innovatieve apps. Deze tool is onderdeel van mijn zoektocht naar slimme, praktische AI-oplossingen. Heb je ideeën of feedback? Laat het me weten! Log in en start met creëren!"
+    "welcomeText": "🚀 Of je nu schrijft, brainstormt of automatiseert \nPromptBuilder helpt je sneller en creatiever te werken. \n\n 👨‍💻 Achter de schermen ben ik continu aan het experimenteren met AI-tools en het bouwen van innovatieve apps. Deze tool is onderdeel van mijn zoektocht naar slimme, praktische AI-oplossingen. Heb je ideeën of feedback? Laat het me weten! Log in en start met creëren!",
+    "forgotPasswordSubtitle": "Voer je e-mailadres in en we sturen je een link om je wachtwoord opnieuw in te stellen.",
+    "sendResetLink": "Verstuur reset link",
+    "resetSuccess": "Een e-mail met instructies is verstuurd naar je inbox.",
+    "resetError": "Er is iets misgegaan. Controleer je e-mailadres en probeer opnieuw.",
+    "backToLogin": "Terug naar inloggen"
+
+ 
   },
   "settings": {
     "title": "Instellingen",
