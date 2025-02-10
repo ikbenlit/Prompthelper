@@ -20,6 +20,16 @@ export default function Home() {
   } = usePromptFilter();
   const [showHelpModal, setShowHelpModal] = useState(false);
 
+  // Check if it's the first visit and show the modal
+  useEffect(() => {
+    const hasSeenModal = localStorage.getItem('hidePromptSearchInfo');
+    console.log('Home - localStorage value:', hasSeenModal);
+    if (!hasSeenModal) {
+      console.log('Home - Opening modal on first visit');
+      setShowHelpModal(true);
+    }
+  }, []);
+
   // Configure Fuse.js for fuzzy search
   const fuse = useMemo(() => {
     return new Fuse(prompts, {
