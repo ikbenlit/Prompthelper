@@ -56,7 +56,6 @@ import React, {
       ...rest
     } = props;
     const instanceRef = useRef<ConfettiInstance | null>(null);
-    const [trigger, setTrigger] = useState(0);
   
     const canvasRef = useCallback((node: HTMLCanvasElement | null) => {
       if (node !== null) {
@@ -81,15 +80,10 @@ import React, {
     useImperativeHandle(ref, () => api, [api]);
   
     useEffect(() => {
-      if (!manualStart || trigger > 0) {
+      if (!manualStart) {
         fire();
       }
-      const interval = setInterval(() => {
-        setTrigger(prev => prev + 1);
-      }, 8000);
-      
-      return () => clearInterval(interval);
-    }, [manualStart, fire, trigger]);
+    }, [manualStart, fire]);
   
     return (
       <>

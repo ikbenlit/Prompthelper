@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { resetPassword } from '../context/AuthContext';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -17,6 +17,20 @@ export default function Login() {
   const location = useLocation();
   const { t } = useTranslation();
   const [currentFocus, setCurrentFocus] = useState("EMAIL");
+  const confettiRef = useRef(null);
+
+  // Confetti configuratie
+  const confettiConfig = {
+    particleCount: 50,
+    spread: 70,
+    colors: ['#ffffff', '#fbbf24', '#f59e0b'],
+    origin: { y: 0.6 }
+  };
+
+  // Confetti bij page load
+  useEffect(() => {
+    confettiRef.current?.fire(confettiConfig);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,6 +41,12 @@ export default function Login() {
     } catch (error) {
       setError(t('login.error'));
     }
+  };
+
+  // Confetti bij focus op input velden
+  const handleFocus = (field) => {
+    setCurrentFocus(field);
+    confettiRef.current?.fire(confettiConfig);
   };
 
   return (
@@ -73,7 +93,7 @@ export default function Login() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    onFocus={() => setCurrentFocus("EMAIL")}
+                    onFocus={() => handleFocus("EMAIL")}
                     className={clsx(
                       'block w-full px-4 py-3 rounded-lg text-sm transition-colors',
                       'border border-gray-300 dark:border-gray-600',
@@ -94,7 +114,7 @@ export default function Login() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    onFocus={() => setCurrentFocus("PASSWORD")}
+                    onFocus={() => handleFocus("PASSWORD")}
                     className={clsx(
                       'block w-full px-4 py-3 rounded-lg text-sm transition-colors',
                       'border border-gray-300 dark:border-gray-600',
@@ -145,18 +165,15 @@ export default function Login() {
 
         {/* Welcome Section (Right) met moderne animaties */}
         <div className="hidden md:flex md:w-2/3 relative overflow-hidden bg-gradient-to-b from-white via-red-500 via-orange-300 to-yellow-300">
-          {/* Confetti overlay */}
           <Confetti
+            ref={confettiRef}
             className="absolute inset-0 z-20"
             options={{
-              particleCount: 30,
-              spread: 70,
-              origin: { y: 0.6 },
-              colors: ['#ffffff', '#fbbf24', '#f59e0b'],
+              ...confettiConfig,
               gravity: 0.15,
               ticks: 200
             }}
-            manualStart={false}
+            manualStart={true}
           />
 
           {/* Animated grid overlay */}
