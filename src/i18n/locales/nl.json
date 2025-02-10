@@ -20,7 +20,8 @@
     "sendResetLink": "Verstuur reset link",
     "resetSuccess": "Een e-mail met instructies is verstuurd naar je inbox.",
     "resetError": "Er is iets misgegaan. Controleer je e-mailadres en probeer opnieuw.",
-    "backToLogin": "Terug naar inloggen"
+    "backToLogin": "Terug naar inloggen",
+    "createAccount": "Nog geen account? Maak er één aan!" 
   },
   "settings": {
     "title": "Instellingen",
@@ -79,7 +80,13 @@
     "selectTarget": "Kies de doelgroep waarvoor je schrijft",
     "selectRole": "Kies de rol waarin je schrijft.",
     "noTarget": "Klik en type hier om een doelgroep te kiezen",
-    "noRole": "Klik en type hier om een rol te kiezen"
+    "noRole": "Klik en type hier om een rol te kiezen",
+    "labels": {
+      "tone": "Gebruik deze toon",
+      "style": "Gebruik deze schrijfstijl",
+      "target": "De doelgroep is",
+      "role": "Ik schrijf vanuit deze rol"
+    }
   },
   "errors": {
     "generation": "Er is een fout opgetreden bij het genereren van content. Probeer het opnieuw."
@@ -98,4 +105,4 @@
   "common": {
     "close": "Sluiten"
   }
-} 
+}

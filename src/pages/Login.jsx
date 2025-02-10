@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { resetPassword } from '../context/AuthContext';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import logo from '../assets/promptbuilder_logo.png';
@@ -28,6 +28,7 @@ export default function Login() {
       setError(t('login.error'));
     }
   };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="flex min-h-screen w-full">
@@ -42,13 +43,14 @@ export default function Login() {
                 {t('login.subtitle')}
               </p>
             </div>
-            {/* Bear Animation */}
+
             <div>
               <BearAnimation 
                 currentFocus={currentFocus}
                 emailLength={email.length}
               />
             </div>
+
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
               {error && (
                 <div className="rounded-lg bg-red-50 dark:bg-red-900/50 p-4 border border-red-200 dark:border-red-800">
@@ -121,14 +123,22 @@ export default function Login() {
                 </button>
               </div>
 
-              <div className="text-center mt-4">
-              <a 
-    href="/forgot-password"
-    className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-  >
-    {t('login.forgotPassword')}
-  </a>
-            </div>
+              <div className="text-center mt-4 space-y-2">
+                {/*
+                <Link 
+                  to="/signup"
+                  className="block text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  {t('login.createAccount')}
+                </Link>
+                */}
+                <Link 
+                  to="/forgot-password"
+                  className="block text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  {t('login.forgotPassword')}
+                </Link>
+              </div>
             </form>
           </div>
         </div>
@@ -156,21 +166,6 @@ export default function Login() {
             ))}
           </div>
 
-          {/* Animated light beams
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-full bg-white/20 opacity-50 animate-lightBeam"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${i * 2}s`,
-                  animationDuration: `${Math.random() * 6 + 8}s`,
-                }}
-              />
-            ))}
-          </div>
- */}
           <div className="relative z-10 w-full h-full flex items-center justify-center p-12">
             <div className="max-w-xl text-center">
               <img src={logo} alt="PromptBuilder" className="h-14 mb-8 mx-auto" />

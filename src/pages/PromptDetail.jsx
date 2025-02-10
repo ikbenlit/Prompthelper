@@ -177,6 +177,7 @@ export default function PromptDetail() {
                   />
                 </div>
               </div>
+
             </div>
 
             {prompt.more_examples && (
