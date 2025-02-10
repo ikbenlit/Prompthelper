@@ -58,6 +58,10 @@ export default {
         `bg-${color}-900/20`,
         `dark:bg-${color}-900/10`,
         `dark:bg-${color}-900/20`,
+        'bg-gradient-to-r',
+        'from-blue-600',
+        'via-purple-600',
+        'to-pink-600',
       ])
     ),
   ],
@@ -71,40 +75,35 @@ export default {
         'moveGrid': 'moveGrid 20s linear infinite',
         'wavePulse': 'wavePulse 8s ease-in-out infinite',
         'beamRise': 'beamRise 4s ease-in-out infinite',
+        'lightBeam': 'lightBeam 6s linear infinite',
+        'bearWatch': 'bearWatch 0.3s ease-in-out',
+        'bearHide': 'bearHide 0.3s ease-in-out'
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
+        moveGrid: {
+          '0%': { transform: 'perspective(1000px) rotateX(60deg) translateY(0)' },
+          '100%': { transform: 'perspective(1000px) rotateX(60deg) translateY(-100px)' },
         },
         
     moveGrid: {
           '0%': { transform: 'perspective(1000px) rotateX(60deg) translateY(0)' },
           '100%': { transform: 'perspective(1000px) rotateX(60deg) translateY(-100px)' }
         },
-        
-        wavePulse: {
-          '0%, 100%': { transform: 'scaleY(1)', opacity: 1 },
-          '50%': { transform: 'scaleY(1.1)', opacity: 0.8 }
+        lightBeam: {
+          '0%': { transform: 'translateY(100%)', opacity: 0 },
+          '50%': { opacity: 0.5 },
+          '100%': { transform: 'translateY(-100%)', opacity: 0 },
+      },
+        bearWatch: {
+          '0%': { transform: 'translateY(2px)' },
+          '100%': { transform: 'translateY(0)' }
         },
-
-        pulseSubtle: {
-          '0%, 100%': { transform: 'scale(1)', opacity: '0.1' },
-          '50%': { transform: 'scale(1.1)', opacity: '0.2' },
-        }, 
-        
-        beamRise: {
-          '0%, 100%': { height: '30%', opacity: 0.3 },
-          '50%': { height: '70%', opacity: 0.8 }
+        bearHide: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(2px)' }
         }
-      },
-      
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-subtle': 'linear-gradient(to right, var(--tw-gradient-stops))',
-      },
     },
   },
   plugins: [],
 }
-
+}

@@ -1,10 +1,22 @@
 import { useSearch } from '../../hooks/useSearch';
 import PromptCard from '../PromptCard/PromptCard';
 import { useTranslation } from 'react-i18next';
-import InfoTooltip from '../InfoTooltip/InfoTooltip';
+import { useEffect, useState } from 'react';
+import InfoModal from '../InfoModal/InfoModal';
 
 export default function PromptSearch({ prompts, onSelect }) {
   const { t } = useTranslation();
+  const [showInfoModal, setShowInfoModal] = useState(false);
+  
+  useEffect(() => {
+    const hasSeenModal = localStorage.getItem('hidePromptSearchInfo');
+    console.log('PromptSearch - localStorage value:', hasSeenModal);
+    if (!hasSeenModal) {
+      console.log('PromptSearch - Opening modal');
+      setShowInfoModal(true);
+    }
+  }, []);
+
   const searchConfig = {
     keys: ['Title', 'prompt', 'category'],
     debounceMs: 500,
@@ -24,7 +36,7 @@ export default function PromptSearch({ prompts, onSelect }) {
       <div className="flex items-center gap-4 mb-4">
         <button
           className="whitespace-nowrap px-4 py-2 text-sm bg-blue-600 text-white dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 rounded-lg transition-colors shadow-sm"
-          onClick={() => {}}
+          onClick={() => setShowInfoModal(true)}
           title={t('tooltips:customize.search')}
         >
           Wat kan ik hier doen?
@@ -48,7 +60,32 @@ export default function PromptSearch({ prompts, onSelect }) {
           </svg>
         </div>
       </div>
-      
+
+      <InfoModal 
+        isOpen={showInfoModal}
+        onClose={() => setShowInfoModal(false)}
+        content={{
+          features: {
+            title: t('tooltips:help.features.title'),
+            items: [
+              t('tooltips:help.features.search'),
+              t('tooltips:help.features.filter'),
+              t('tooltips:help.features.customize'),
+              t('tooltips:help.features.generate')
+            ]
+          },
+          tips: {
+            title: t('tooltips:help.tips.title'),
+            items: [
+              t('tooltips:help.tips.categories'),
+              t('tooltips:help.tips.keywords'),
+              t('tooltips:help.tips.customize'),
+              t('tooltips:help.tips.iterate')
+            ]
+          }
+        }}
+      />
+
       {loading ? (
         <div>Laden...</div>
       ) : (

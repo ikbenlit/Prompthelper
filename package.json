@@ -10,7 +10,9 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "clsx": "^2.1.0",
+    "@types/canvas-confetti": "^1.9.0",
+    "canvas-confetti": "^1.9.3",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
     "firebase": "9.23.0",
     "fuse.js": "^7.0.0",
@@ -23,10 +25,12 @@
     "react-dom": "^18.2.0",
     "react-error-boundary": "^5.0.0",
     "react-i18next": "^15.4.0",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.21.3",
+    "tailwind-merge": "^3.0.1",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
+    "@types/react": "^18.3.18",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.20",

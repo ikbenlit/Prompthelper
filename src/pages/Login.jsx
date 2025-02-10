@@ -5,6 +5,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import logo from '../assets/promptbuilder_logo.png';
+import BearAnimation from '../components/BearAnimation';
+import { Confetti } from '../components/Confetti';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -14,6 +16,7 @@ export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
+  const [currentFocus, setCurrentFocus] = useState("EMAIL");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,18 +28,12 @@ export default function Login() {
       setError(t('login.error'));
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto flex min-h-screen">
+      <div className="flex min-h-screen w-full">
         {/* Login Form Section (Left) */}
         <div className="w-full md:w-1/3 p-8 flex items-center justify-center">
           <div className="w-full max-w-md space-y-8 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-            {/* Mobile Logo */}
-            <div className="md:hidden flex justify-center mb-6">
-              <img src={logo} alt="PromptBuilder" className="h-8" />
-            </div>
-
             <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 {t('login.title')}
@@ -45,7 +42,13 @@ export default function Login() {
                 {t('login.subtitle')}
               </p>
             </div>
-
+            {/* Bear Animation */}
+            <div>
+              <BearAnimation 
+                currentFocus={currentFocus}
+                emailLength={email.length}
+              />
+            </div>
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
               {error && (
                 <div className="rounded-lg bg-red-50 dark:bg-red-900/50 p-4 border border-red-200 dark:border-red-800">
@@ -68,6 +71,7 @@ export default function Login() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    onFocus={() => setCurrentFocus("EMAIL")}
                     className={clsx(
                       'block w-full px-4 py-3 rounded-lg text-sm transition-colors',
                       'border border-gray-300 dark:border-gray-600',
@@ -88,6 +92,7 @@ export default function Login() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    onFocus={() => setCurrentFocus("PASSWORD")}
                     className={clsx(
                       'block w-full px-4 py-3 rounded-lg text-sm transition-colors',
                       'border border-gray-300 dark:border-gray-600',
@@ -129,70 +134,56 @@ export default function Login() {
         </div>
 
         {/* Welcome Section (Right) met moderne animaties */}
-        <div 
-          className={clsx(
-            'hidden md:flex md:w-2/3',
-            'relative overflow-hidden',
-            'bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600'
-          )}
-        >
-          {/* Moderne floating circles */}
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white/10 backdrop-blur-sm animate-pulse-subtle"
-              style={{
-                width: `${Math.random() * 200 + 100}px`,
-                height: `${Math.random() * 200 + 100}px`,
-                left: `${Math.random() * 80 + 10}%`,       // aangepast voor betere positionering
-                top: `${Math.random() * 80 + 10}%`,        // aangepast voor betere positionering
-                animationDelay: `${i * 2}s`,               // consistentere delays
-                animationDuration: `${Math.random() * 4 + 8}s`,  // langere duratie
-                opacity: Math.random() * 0.3 + 0.2,        // toegevoegd voor subtielere bubbles
-              }}
-            />
-          ))}
+        <div className="hidden md:flex md:w-2/3 relative overflow-hidden bg-gradient-to-b from-white via-red-500 via-orange-300 to-yellow-300">
+          {/* Confetti overlay */}
+          <Confetti
+            className="absolute inset-0 z-20"
+            options={{
+              particleCount: 30,
+              spread: 70,
+              origin: { y: 0.6 },
+              colors: ['#ffffff', '#fbbf24', '#f59e0b'],
+              gravity: 0.15,
+              ticks: 200
+            }}
+            manualStart={false}
+          />
 
-          {/* Glassmorphism card */}
-          <div className="relative z-10 w-full h-full flex items-center justify-center p-12">
-              <div className="max-w-xl text-center">
-                <img src={logo} alt="PromptBuilder" className="h-14 mb-8 mx-auto" />
-                <h1 className="text-3xl font-bold text-white mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-                  {t('login.welcome')}
-                </h1>
-                <p className="text-1xl text-white/90 leading-relaxed mb-12 whitespace-pre-line">
-                  {t('login.welcomeText')}
-                </p>
-                
-                {/* Feature bullets
-                <div className="mt-8 space-y-6">
-                  {['Personaliseer je prompts', 'Verhoog je productiviteit', 'Verbeter je resultaten'].map((feature, index) => (
-                    <div key={index} className="flex items-center justify-center text-white/90">
-                      <svg className="w-6 h-6 mr-4 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-xl">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                */}
-            </div>
+          {/* Animated grid overlay */}
+          <div className="absolute inset-0 grid grid-cols-20 grid-rows-20 gap-2 opacity-10 animate-moveGrid">
+            {[...Array(400)].map((_, i) => (
+              <div key={i} className="w-1 h-1 bg-white/20 rounded-full" />
+            ))}
           </div>
 
-          {/* Animated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          
-          {/* Animated mesh gradient */}
-          <div 
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M50 0v100M0 50h100" stroke="white" stroke-width="0.5" fill="none" /%3E%3C/svg%3E")',
-              backgroundSize: '30px 30px',
-              animation: 'moveGrid 20s linear infinite'
-            }}
-          />
+          {/* Animated light beams
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-full bg-white/20 opacity-50 animate-lightBeam"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 2}s`,
+                  animationDuration: `${Math.random() * 6 + 8}s`,
+                }}
+              />
+            ))}
+          </div>
+ */}
+          <div className="relative z-10 w-full h-full flex items-center justify-center p-12">
+            <div className="max-w-xl text-center">
+              <img src={logo} alt="PromptBuilder" className="h-14 mb-8 mx-auto" />
+              <h1 className="text-3xl font-bold text-white mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+                {t('login.welcome')}
+              </h1>
+              <p className="text-1xl text-white/90 leading-relaxed mb-12 whitespace-pre-line">
+                {t('login.welcomeText')}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-} 
+}

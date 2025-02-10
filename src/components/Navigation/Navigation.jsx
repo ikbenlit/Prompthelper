@@ -4,7 +4,8 @@ import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import clsx from 'clsx';
 import { useState } from 'react';
-import logo from '../../assets/promptbuilder_logo.png';
+import logoLight from '../../assets/promptbuilder_logo.png';
+import logoDark from '../../assets/promptbuilder_logo_darkmode.png';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -13,10 +14,6 @@ export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = [
-    { path: '/', label: t('navigation.home') },
-  ];
 
   const handleLogout = async () => {
     try {
@@ -28,49 +25,36 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4">
+<nav className="bg-gradient-to-r from-white via-red-500 via-orange-300 to-yellow-300 dark:from-gray-800 dark:via-gray-900 dark:to-black shadow-md border-b border-red-500">
+      
+<div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src={logo}
-                alt="PromptBuilder Logo"
-                className="h-16 w-16 max-w-none max-h-none transition-all duration-200 hover:opacity-90 hover:scale-105"
-              />
+               <img 
+                  src={darkMode ? logoDark : logoLight} 
+                  alt="PromptBuilder Logo"
+                  className="h-12 w-auto object-contain transition-all duration-200 hover:opacity-90 hover:scale-105"
+                />
             </Link>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={clsx(
-                  'px-3 py-2 rounded-md text-sm font-medium transition-colors',
-                  location.pathname === item.path
-                    ? 'bg-primary-600 text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
 
             {/* Auth Button */}
             {user ? (
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-sm font-medium"
+                className="px-4 py-2 bg-white text-gray-900 hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 rounded-lg transition-colors shadow-sm text-sm font-medium"
               >
                 {t('navigation.logout')}
               </button>
             ) : (
               <Link
                 to="/login"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-sm font-medium"
+                className="px-4 py-2 bg-white text-gray-900 hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 rounded-lg transition-colors shadow-sm text-sm font-medium"
               >
                 {t('navigation.login')}
               </Link>
@@ -81,10 +65,9 @@ export default function Navigation() {
               onClick={toggleDarkMode}
               className={clsx(
                 'p-2 rounded-full transition-all duration-200',
-                'text-gray-600 dark:text-gray-300',
-                'hover:bg-primary-50 hover:text-primary-600',
-                'dark:hover:bg-gray-700 dark:hover:text-primary-400',
-                'focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
+                'text-white hover:bg-white hover:text-gray-900',
+                'dark:hover:bg-gray-700 dark:hover:text-white',
+                'focus:outline-none focus:ring-2 focus:ring-white'
               )}
               title={darkMode ? t('settings.theme.light') : t('settings.theme.dark')}
             >
@@ -99,74 +82,8 @@ export default function Navigation() {
               )}
             </button>
           </div>
-
-          {/* Mobile menu button */}
-          <div className="flex items-center space-x-2 md:hidden">
-            {/* Theme Toggle Mobile */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
-            >
-              {darkMode ? (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </button>
-
-            {/* Menu Toggle */}
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 dark:text-gray-200">
-              <span className="sr-only">Open menu</span>
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
-      
-      {/* Mobile menu panel */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={clsx(
-                  'block px-3 py-2 rounded-md text-base font-medium',
-                  location.pathname === item.path
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-
-            {/* Mobile Auth Button */}
-            {user ? (
-              <button
-                onClick={handleLogout}
-                className="block w-full text-left px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-base font-medium"
-              >
-                {t('navigation.logout')}
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                className="block w-full text-left px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg transition-colors shadow-sm text-base font-medium"
-              >
-                {t('navigation.login')}
-              </Link>
-            )}
-          </div>
-        </div>
-      )}
     </nav>
   );
-} 
+}

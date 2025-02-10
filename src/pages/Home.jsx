@@ -5,7 +5,7 @@ import Fuse from 'fuse.js';
 import { Link } from 'react-router-dom';
 import { filterPromptsByCategory } from '../services/dataService';
 import usePromptFilter from '../hooks/usePromptFilter';
-import Modal from '../components/Modal/Modal';
+import InfoModal from '../components/InfoModal/InfoModal';
 import clsx from 'clsx';
 
 export default function Home() {
@@ -90,40 +90,30 @@ export default function Home() {
       </div>
 
       {/* Help Modal */}
-      <Modal isOpen={showHelpModal} onClose={() => setShowHelpModal(false)}>
-        <div className="space-y-4 md:space-y-6 overflow-y-auto max-h-[calc(100vh-8rem)]">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-            {t('tooltips:help.welcome')}
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            {t('tooltips:help.intro')}
-          </p>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
-              {t('tooltips:help.features.title')}
-            </h3>
-            <ul className="space-y-3 text-gray-600 dark:text-gray-300 text-sm md:text-base">
-              <li>{t('tooltips:help.features.search')}</li>
-              <li>{t('tooltips:help.features.filter')}</li>
-              <li>{t('tooltips:help.features.customize')}</li>
-              <li>{t('tooltips:help.features.generate')}</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
-              {t('tooltips:help.tips.title')}
-            </h3>
-            <ul className="space-y-3 text-gray-600 dark:text-gray-300 text-sm md:text-base">
-              <li>{t('tooltips:help.tips.categories')}</li>
-              <li>{t('tooltips:help.tips.keywords')}</li>
-              <li>{t('tooltips:help.tips.customize')}</li>
-              <li>{t('tooltips:help.tips.iterate')}</li>
-            </ul>
-          </div>
-        </div>
-      </Modal>
+      <InfoModal 
+        isOpen={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        content={{
+          features: {
+            title: t('tooltips:help.features.title'),
+            items: [
+              t('tooltips:help.features.search'),
+              t('tooltips:help.features.filter'),
+              t('tooltips:help.features.customize'),
+              t('tooltips:help.features.generate')
+            ]
+          },
+          tips: {
+            title: t('tooltips:help.tips.title'),
+            items: [
+              t('tooltips:help.tips.categories'),
+              t('tooltips:help.tips.keywords'),
+              t('tooltips:help.tips.customize'),
+              t('tooltips:help.tips.iterate')
+            ]
+          }
+        }}
+      />
 
       {/* Search input */}
       <div className="relative mb-6">

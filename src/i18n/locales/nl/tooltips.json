@@ -23,5 +23,14 @@
       "customize": "Experimenteer met verschillende tonen en stijlen voor het beste resultaat",
       "iterate": "Verfijn je prompts op basis van de gegenereerde resultaten"
     }
+  },
+  "promptSearch": {
+    "info": {
+      "dontShowAgain": "Toon dit venster niet meer",
+      "close": "Sluiten"
+    }
+  },
+  "common": {
+    "close": "Sluiten"
   }
 } 
