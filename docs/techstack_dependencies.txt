@@ -19,10 +19,6 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 - **LocalStorage API** - Opslaan van favorieten en voorkeuren
 - **React Context API** - Voor state management
 
-### **API Integratie**
-- **OpenAI API** - Voor het genereren van content
-- **Axios** - HTTP client voor API requests
-
 ### **Development & Build Tools**
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
@@ -56,7 +52,6 @@ Deze app helpt gebruikers bij het zoeken, personaliseren en genereren van conten
 ```json
 {
   "dependencies": {
-    "@openai/api": "^0.8.0",
     "axios": "^1.6.2",
     "clsx": "^2.0.0",
     "i18next": "^23.7.8",
@@ -141,7 +136,6 @@ module.exports = {
 
 #### **.env**
 ```
-VITE_OPENAI_API_KEY=your-openai-api-key
 VITE_API_BASE_URL=your-api-base-url
 ```
 

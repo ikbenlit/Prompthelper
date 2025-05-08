@@ -55,7 +55,7 @@
 │   │   └── PromptDetail.jsx         # Detail pagina voor prompts
 │   ├── services/                     # API-service laag
 │   │   ├── dataService.js           # Data ophaal service
-│   │   └── openAIService.js         # Functies voor AI-gegenereerde content
+│   │   └── storageService.js        # Local storage service
 │   ├── styles/                      # CSS/Tailwind-configuraties
 │   │   ├── globals.css             # Algemene stijlen
 │   │   └── tailwind.config.js      # Tailwind configuratiebestand

@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { generateContent } from '../../services/openAIService';
-import Modal from '../Modal/Modal';
 import SearchableDropdown from '../SearchableDropdown/SearchableDropdown';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import CopyButton from '../Button/CopyButton';
@@ -11,10 +9,6 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
   const [selectedTone, setSelectedTone] = useState(initialCustomization?.tone || '');
   const [selectedStyle, setSelectedStyle] = useState(initialCustomization?.style || '');
   const [customizedPrompt, setCustomizedPrompt] = useState('');
-  const [generatedContent, setGeneratedContent] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTarget, setSelectedTarget] = useState(initialCustomization?.target || '');
   const [selectedRole, setSelectedRole] = useState(initialCustomization?.role || '');
   const selectedToneDescription = tones?.find(t => t.tone_name === selectedTone)?.tone_description;
@@ -59,20 +53,6 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
     newPrompt += `Prompt:\n${prompt.prompt}`;
 
     setCustomizedPrompt(newPrompt);
-  };
-
-  const handleGenerate = async () => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      const content = await generateContent(customizedPrompt);
-      setGeneratedContent(content);
-      setIsModalOpen(true);
-    } catch (err) {
-      setError(t('errors.generation'));
-    } finally {
-      setIsLoading(false);
-    }
   };
 
   return (
@@ -206,51 +186,8 @@ export default function PromptCustomizer({ prompt, tones, styles, targets, roles
               </svg>
               Kopieer je custom prompt en ga naar ChatGPT
             </button>
-
-            <button
-              onClick={handleGenerate}
-              disabled={isLoading}
-              className="w-full px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
-            >
-              {isLoading ? t('actions.generating') : t('actions.makeContent')}
-            </button>
           </div>
         </div>
-      </div>
-
-      {/* Error Message */}
-      {error && (
-        <div className="p-4 bg-red-100 text-red-700 rounded-lg">
-          {error}
-        </div>
-      )}
-
-      {/* Generated Content Modal */}
-      <div className="relative z-[200]">
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div className="flex flex-col h-full max-h-[80vh]">
-            <h2 className="text-2xl font-bold mb-4">{t('generate.result')}</h2>
-            
-            <div className="flex-1 overflow-y-auto mb-4">
-              <div className="prose dark:prose-invert max-w-none">
-                <p className="whitespace-pre-wrap">{generatedContent}</p>
-              </div>
-            </div>
-
-            <div className="sticky bottom-0 bg-white dark:bg-gray-800 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between gap-4">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 rounded-lg transition-colors"
-              >
-                {t('actions.close')}
-              </button>
-              <CopyButton
-                text={generatedContent}
-                variant="primary"
-              />
-            </div>
-          </div>
-        </Modal>
       </div>
     </>
   );

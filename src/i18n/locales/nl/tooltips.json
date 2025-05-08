@@ -1,10 +1,12 @@
 {
   "customize": {
-    "tone": "De toon bepaalt hoe je boodschap overkomt bij de lezer. Kies een toon die past bij je doelgroep en doel.",
-    "style": "De schrijfstijl bepaalt de manier waarop je boodschap wordt gepresenteerd. Kies een stijl die past bij je communicatiedoel en het gewenste effect op de lezer.",
-    "target": "De doelgroep bepaalt voor wie je schrijft. Dit helpt je boodschap beter af te stemmen op je publiek.",
-    "role": "De rol bepaalt vanuit welk perspectief je schrijft. Dit geeft je tekst de juiste autoriteit en context.",
-    "editor": "Hier zie je je aangepaste prompt met de geselecteerde toon, stijl, doelgroep en rol. Je kunt de tekst nog aanpassen voordat je deze kopieert en plakt in ChatGPT of je favoriete bot."
+    "tone": "Kies een toon die past bij je doelgroep en voordat je deze kopieert en plakt in je favoriete AI-tool.",
+    "style": "Pas de stijl aan om je content uniek te maken en voordat je deze kopieert en plakt in je favoriete AI-tool.",
+    "target": "Definieer je doelgroep voor betere resultaten en voordat je deze kopieert en plakt in je favoriete AI-tool.",
+    "role": "Kies een rol die past bij je doel en voordat je deze kopieert en plakt in je favoriete AI-tool.",
+    "intro": "PromptBuilder helpt je om effectievere prompts te maken voor AI-tools.",
+    "editor": "Pas je prompt aan en voeg extra context toe voor betere resultaten.",
+    "generate": "🚀 Kopieer en plak je custom prompt in je favoriete AI-tool"
   },
   "help": {
     "welcome": "Welkom bij PromptBuilder",

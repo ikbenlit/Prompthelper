@@ -291,10 +291,14 @@ export default function EmailVerificationPage() {
             <p className="mb-3">{t('verification.emailPreview.content.greeting')}</p>
             <p className="mb-3">{t('verification.emailPreview.content.message')}</p>
             <div className="my-4 text-center">
-              <button className="bg-blue-600 text-white px-4 py-2 rounded">
-                {t('verification.emailPreview.content.button')}
-              </button>
-            </div>
+    {/* Button vervangen door URL-link weergave */}
+    <div className="p-2 bg-gray-100 border border-gray-300 rounded-md text-blue-600 break-all">
+      https://promptbuilder.app/verify-email?oobCode=ABC123DEF456GHI789
+    </div>
+    <p className="mt-2 text-sm text-gray-500">
+      {t('verification.emailPreview.content.linkInstructions')}
+    </p>
+  </div>
             <p className="mb-3">{t('verification.emailPreview.content.disclaimer')}</p>
             <p>{t('verification.emailPreview.content.signature')}</p>
           </div>

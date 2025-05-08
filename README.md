@@ -1,6 +1,6 @@
 # Prompt Helper
 
-AI-powered prompt customization tool for content creators with multilingual support and OpenAI integration.
+AI-powered prompt customization tool for content creators with multilingual support.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
@@ -22,12 +22,6 @@ The Prompt-Helper app enables users to easily create high-quality content using 
   - Customizable styles
   - Target audience selection
   - Role-based adjustments
-
-- 🤖 **AI Integration**
-  - OpenAI API integration
-  - Real-time content generation
-  - Context-aware responses
-  - History tracking
 
 - 💾 **Data Management**
   - Local storage for favorites
@@ -60,7 +54,6 @@ The Prompt-Helper app enables users to easily create high-quality content using 
 - Local Storage
 
 ### Integrations
-- OpenAI API
 - i18next
 - Fuse.js
 - Axios
@@ -81,7 +74,6 @@ npm install
 3. **Environment Setup**
 Create a `.env` file in the root directory:
 ```env
-VITE_OPENAI_API_KEY=your_api_key_here
 VITE_API_BASE_URL=your_api_base_url
 ```
 
@@ -101,7 +93,7 @@ npm run build
 1. Browse or search for prompts
 2. Select a prompt to customize
 3. Choose tone and style
-4. Generate AI content
+4. Copy and use in your preferred AI tool
 5. Save favorites
 
 ### Advanced Features
@@ -157,7 +149,6 @@ We welcome contributions! Please follow these steps:
 - Node.js ≥ 16.0.0
 - npm ≥ 7.0.0
 - Modern web browser
-- Internet connection for AI features
 
 ## 📄 License
 
@@ -165,7 +156,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- OpenAI for their powerful API
 - React community for excellent tools
 - All contributors and users
 
