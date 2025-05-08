@@ -61,5 +61,58 @@
   },
   "filters": {
     "allCategories": "All categories"
+  },
+  "signup": {
+    "title": "Create Account",
+    "subtitle": "Join PromptBuilder",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Sign Up",
+    "loginLink": "Already have an account? Log in here",
+    "success": "Registration successful! Please check your email to verify your account.",
+    "error": "Registration failed. Please try again.",
+    "passwordMismatch": "Passwords do not match.",
+    "welcome": "Welcome to PromptBuilder!",
+    "welcomeText": "Discover the power of AI-driven prompts. Sign up now and start creating amazing content."
+  },
+  "verification": {
+    "title": "Verify your email address",
+    "instructions": "We have sent a verification email to your email address. Click the link in the email to verify your account.",
+    "success": {
+      "title": "Welcome to PromptBuilder!",
+      "message": "Your email address has been successfully verified. You can now use all features of PromptBuilder.",
+      "directAccess": "Go to application",
+      "autoRedirect": "You will be automatically redirected in 5 seconds..."
+    },
+    "resend": "Resend verification email",
+    "resendWait": "Resend",
+    "checkStatus": "Check verification status",
+    "checking": "Checking...",
+    "emailPreview": {
+      "title": "This is what the email looks like:",
+      "from": "From:",
+      "subject": "Subject:",
+      "content": {
+        "greeting": "Dear user,",
+        "message": "Thank you for registering with PromptBuilder. Click the button below to verify your email address:",
+        "button": "Verify my email address",
+        "disclaimer": "If you did not request this email, you can ignore it.",
+        "signature": "Best regards,\nThe PromptBuilder Team"
+      }
+    },
+    "noEmail": {
+      "title": "Didn't receive the email?",
+      "checkSpam": "Check your spam or junk mail folder",
+      "checkAddress": "Check if you entered the correct email address",
+      "waitAndRefresh": "Wait a few minutes and refresh this page"
+    },
+    "help": {
+      "title": "Need help?",
+      "message": "If you're having trouble verifying your email address, please contact our support team at",
+      "email": "support@promptbuilder.app"
+    }
   }
 } 

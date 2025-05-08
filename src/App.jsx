@@ -7,10 +7,12 @@ import Home from './pages/Home';
 import Settings from './pages/Settings';
 import PromptDetail from './pages/PromptDetail';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout/Layout';
 import ForgetPassword from './pages/ForgetPassword';
+import EmailVerificationPage from './pages/EmailVerificationPage';
 
 export default function App() {
   return (
@@ -19,8 +21,12 @@ export default function App() {
         <ThemeProvider>
           <PromptProvider>
             <Routes>
-              {/* Public routes zonder Layout */}
+              <Route path="/test" element={<div>Test Route Works!</div>} />
+              <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/forgot-password" element={<ForgetPassword />} />
+              <Route path="/verify-email" element={<EmailVerificationPage />} />
+              <Route path="/verify-email/:oobCode" element={<EmailVerificationPage />} />
 
               {/* Protected routes met Layout */}
               <Route element={<Layout />}>
@@ -35,9 +41,10 @@ export default function App() {
                   </ProtectedRoute>
                 } />
                 <Route path="/settings" element={<Settings />} />
-                <Route path="*" element={<NotFound />} />
-                <Route path="/forgot-password" element={<ForgetPassword />} />
               </Route>
+
+              {/* NotFound route moet als laatste komen */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </PromptProvider>
         </ThemeProvider>

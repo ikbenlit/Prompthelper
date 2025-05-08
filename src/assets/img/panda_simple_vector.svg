@@ -1,0 +1,15 @@
+
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg">
+  <g id="panda-head">
+    <circle cx="512" cy="400" r="200" fill="black" />
+    <circle cx="412" cy="350" r="50" fill="white" />
+    <circle cx="612" cy="350" r="50" fill="white" />
+  </g>
+  <g id="panda-left-paw">
+    <ellipse cx="350" cy="700" rx="80" ry="100" fill="black" />
+  </g>
+  <g id="panda-right-paw">
+    <ellipse cx="674" cy="700" rx="80" ry="100" fill="black" />
+  </g>
+  <circle cx="512" cy="600" r="250" fill="black" />
+</svg>

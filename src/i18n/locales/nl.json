@@ -104,5 +104,58 @@
   },
   "common": {
     "close": "Sluiten"
+  },
+  "signup": {
+    "title": "Account Aanmaken",
+    "subtitle": "Sluit je aan bij PromptBuilder",
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "confirmPassword": "Bevestig Wachtwoord",
+    "submit": "Registreren",
+    "loginLink": "Heb je al een account? Log hier in",
+    "success": "Registratie succesvol! Controleer je e-mail om je account te verifiëren.",
+    "error": "Registratie mislukt. Probeer het opnieuw.",
+    "passwordMismatch": "Wachtwoorden komen niet overeen.",
+    "welcome": "Welkom bij PromptBuilder!",
+    "welcomeText": "Ontdek de kracht van AI-gestuurde prompts. Registreer nu en begin met het creëren van geweldige content."
+  },
+  "verification": {
+    "title": "Verifieer je e-mailadres",
+    "instructions": "We hebben een verificatie-e-mail verstuurd naar je e-mailadres. Klik op de link in de e-mail om je account te verifiëren.",
+    "success": {
+      "title": "Welkom bij PromptBuilder!",
+      "message": "Je e-mailadres is succesvol geverifieerd. Je kunt nu alle functies van PromptBuilder gebruiken.",
+      "directAccess": "Direct naar PromptBuilder",
+      "autoRedirect": "Je wordt over 5 seconden automatisch doorgestuurd..."
+    },
+    "resend": "Verificatie-e-mail opnieuw versturen",
+    "resendWait": "Opnieuw versturen",
+    "checkStatus": "Verificatiestatus controleren",
+    "checking": "Controleren...",
+    "emailPreview": {
+      "title": "Zo ziet de e-mail eruit:",
+      "from": "Van:",
+      "subject": "Onderwerp:",
+      "content": {
+        "greeting": "Beste gebruiker,",
+        "message": "Bedankt voor je registratie bij PromptBuilder. Klik op de onderstaande knop om je e-mailadres te verifiëren:",
+        "button": "Verifieer mijn e-mailadres",
+        "disclaimer": "Als je deze e-mail niet hebt aangevraagd, kun je deze negeren.",
+        "signature": "Met vriendelijke groet,\nHet PromptBuilder Team"
+      }
+    },
+    "noEmail": {
+      "title": "Geen e-mail ontvangen?",
+      "checkSpam": "Controleer je spam- of ongewenste e-mail map",
+      "checkAddress": "Controleer of je het juiste e-mailadres hebt opgegeven",
+      "waitAndRefresh": "Wacht een paar minuten en vernieuw deze pagina"
+    },
+    "help": {
+      "title": "Heb je hulp nodig?",
+      "message": "Als je problemen ondervindt bij het verifiëren van je e-mailadres, neem dan contact op met onze klantenservice via",
+      "email": "support@promptbuilder.app"
+    }
   }
 }

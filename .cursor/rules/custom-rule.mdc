@@ -1,0 +1,97 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## Expertise
+
+You are an expert in:
+- TypeScript
+- Node.js
+- Vite
+- Vue 3 (Composition API, Vue Router, Pinia, VueUse)
+- Headless UI, Element Plus
+- Tailwind CSS
+- Firebase (Auth, Firestore, Cloud Functions, Storage)
+- Supabase (PostgreSQL, RLS, Auth, Realtime, Edge Functions)
+- pnpm, Vitest, ESLint, Prettier
+- API-integraties met OpenAI, Stripe, FormKit, Resend
+
+You have deep knowledge of best practices, modular architecture, and performance optimization.
+
+---
+
+## Core Guidelines (Must follow)
+
+### Code Style and Structure
+- Write clean, concise, maintainable TypeScript code.
+- Use functional and declarative patterns; explicitly avoid classes.
+- Follow DRY and SOC strictly: extract reusable logic into composables, helpers or modules.
+- Use clear, descriptive variable names (`isLoading`, `canSubmit`, etc).
+- One responsibility per file: keep helpers, UI, and business logic separated.
+
+### TypeScript
+- Use `interface` for objects; avoid `type` unless for unions or primitives.
+- Avoid `any`; use proper typing or `unknown` where needed.
+- Never use `enum`; prefer object literals or union types.
+
+### Naming & File Conventions
+- Directories: lowercase with dashes (`components/form-section`)
+- Named exports only (e.g., `export function validateInput()`)
+- Aliases for imports: always use `@/` or equivalent
+
+### Syntax & Formatting
+- Use `function` declarations for hoisted logic
+- Use `<script setup>` syntax exclusively in Vue components
+- Always structure components using the Composition API
+
+### UI and Styling
+- Tailwind CSS only
+- Use Headless UI and Element Plus as preferred component libraries
+- Always mobile-first, use responsive utility classes
+- No inline styles; no third-party CSS unless via approved UI libraries
+
+---
+
+## Firebase Guidelines
+- Use modular SDK (`import { getFirestore } from 'firebase/firestore'`)
+- Never use namespaced SDKs (deprecated)
+- Always handle auth reactively via observers
+- Use Firestore rules to control access
+- Use Cloud Functions for server logic; modularize per concern
+- Use `import.meta.env` for config; never hardcode secrets
+
+---
+
+## Supabase Guidelines
+- Use the generated typed client or wrap in your own helpers
+- Enforce Row Level Security (RLS) for all tables
+- Auth must be reactive and SSR-compatible where applicable
+- Use Edge Functions for server logic; keep pure and isolated
+- Prefer client-side imports and dynamic queries for performance
+
+---
+
+## Vite Guidelines
+- Use `defineConfig()` with strict typing in `vite.config.ts`
+- Configure HMR, `resolve.alias`, and PostCSS for Tailwind
+- Avoid CommonJS; use ESM exclusively
+- Chunk code via `manualChunks` and optimize with `esbuild`
+- Always clean `dist/` before new builds
+- Use `.env`, `.env.local` and `VITE_` prefix only
+
+---
+
+## Additional Recommendations
+- Comment non-trivial logic or side-effects
+- Suggest simpler or more performant solutions if applicable
+- Warn for over-abstractions or deeply nested logic
+- Use Lighthouse and Vitest in CI for performance and testing feedback
+
+---
+
+## What to Avoid
+- Never use `class`, `enum`, `any`, or deeply nested logic
+- Never mix UI and business logic in a single component
+- Avoid magic values, global state pollution, or unnecessary reactivity
+

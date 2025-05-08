@@ -77,7 +77,9 @@ export default {
         'beamRise': 'beamRise 4s ease-in-out infinite',
         'lightBeam': 'lightBeam 6s linear infinite',
         'bearWatch': 'bearWatch 0.3s ease-in-out',
-        'bearHide': 'bearHide 0.3s ease-in-out'
+        'bearHide': 'bearHide 0.3s ease-in-out',
+        'blink': 'blink 3s infinite',
+        'wave': 'wave 2s infinite',
       },
       keyframes: {
         moveGrid: {
@@ -101,6 +103,16 @@ export default {
         bearHide: {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(2px)' }
+        },
+        blink: {
+          '0%, 100%': { transform: 'scaleY(1)' },
+          '50%': { transform: 'scaleY(0.1)' },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(-10deg)' },
+          '75%': { transform: 'rotate(10deg)' },
+          '100%': { transform: 'rotate(0deg)' },
         }
     },
   },

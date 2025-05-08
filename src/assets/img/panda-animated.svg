@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1024" 
+  height="1024" 
+  viewBox="0 0 1024 1024"
+>
+  <!-- Definities voor herbruikbare elementen -->
+  <defs>
+    <!-- Basis cirkel voor ogen -->
+    <circle id="eye-base" r="45" fill="white"/>
+    <!-- Zwarte pupil -->
+    <circle id="pupil" r="25" fill="black"/>
+  </defs>
+
+  <!-- Hoofdgroep voor de panda -->
+  <g id="panda">
+    <!-- Lichaam (wit met zwarte vlekken) -->
+    <g id="body">
+      <path id="main-body" 
+        d="M512 800 
+           C 700 800, 800 650, 800 500
+           C 800 300, 650 200, 512 200
+           C 374 200, 224 300, 224 500
+           C 224 650, 324 800, 512 800"
+        fill="white"
+        stroke="black"
+        stroke-width="2"
+      />
+    </g>
+
+    <!-- Hoofd -->
+    <g id="head" transform="translate(512,400)">
+      <!-- Basis hoofd vorm -->
+      <circle r="200" fill="white" stroke="black" stroke-width="2"/>
+      
+      <!-- Oren -->
+      <g id="ears">
+        <g id="left-ear" transform="translate(-120,-160)">
+          <circle r="60" fill="black"/>
+        </g>
+        <g id="right-ear" transform="translate(120,-160)">
+          <circle r="60" fill="black"/>
+        </g>
+      </g>
+
+      <!-- Ogen -->
+      <g id="eyes">
+        <g id="left-eye" transform="translate(-70,-20)">
+          <use xlink:href="#eye-base"/>
+          <use xlink:href="#pupil"/>
+        </g>
+        <g id="right-eye" transform="translate(70,-20)">
+          <use xlink:href="#eye-base"/>
+          <use xlink:href="#pupil"/>
+        </g>
+      </g>
+
+      <!-- Neus -->
+      <g id="nose" transform="translate(0,30)">
+        <ellipse rx="30" ry="20" fill="black"/>
+      </g>
+
+      <!-- Mond -->
+      <path id="mouth"
+        d="M-30,70 Q0,90 30,70"
+        fill="none"
+        stroke="black"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+    </g>
+
+    <!-- Zwarte vlekken -->
+    <g id="spots">
+      <circle id="spot-1" cx="400" cy="600" r="80" fill="black"/>
+      <circle id="spot-2" cx="624" cy="600" r="80" fill="black"/>
+    </g>
+  </g>
+</svg> 
